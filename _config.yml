@@ -1,37 +1,34 @@
-url: https​://mazipanneh.com/blog
+url: https://mazipan.github.io/blogs
 name: Irfan Maulana
 description: Pelajari, Tulis, Kemudian Bagikan
 email: mazipanneh@gmail.com
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "/blogs"
 url: "https://mazipan.github.io"
 lang: id
 excerpt_separator: <a name='more'></a>
 paginate: 8
-disqus:
-   shortname: phpid-jakarta
-google_analytics: UA-97096911-1
 copyright_year: 2018
 
 # Build settings
-markdown: kramdown
-theme: minima
-gems:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-autoprefixer
-  - jekyll-sitemap
+#markdown: kramdown
+#theme: minima
+#gems:
+#  - jekyll-paginate
+#  - jekyll-feed
+#  - jekyll-autoprefixer
+#  - jekyll-sitemap
 
 exclude:
   - Gemfile
   - Gemfile.lock
 
 # SASS setup
-sass:
-  sass_dir: _sass
-  style: compressed
+#sass:
+#  sass_dir: _sass
+#  style: compressed
 
 # autoprefixer
-autoprefixer:
-  only_production: true
-  browsers:
-  - last 2 versions
+#autoprefixer:
+#  only_production: true
+#  browsers:
+#  - last 2 versions
