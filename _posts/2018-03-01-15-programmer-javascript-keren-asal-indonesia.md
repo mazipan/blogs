@@ -1,18 +1,22 @@
 ---
 ID: 490
 post_title: >
-  Programmer JavaScript keren asal
+  15 programmer JavaScript keren asal
   Indonesia
 author: Irfan Maulana
 post_excerpt: ""
 layout: post
 permalink: >
-  https://mazipanneh.com/blog/2018/03/programmer-javascript-keren-asal-indonesia/
+  https://mazipanneh.com/blog/2018/03/15-programmer-javascript-keren-asal-indonesia/
 published: true
 post_date: 2018-03-01 14:12:22
 ---
-[caption id="" align="aligncenter" width="700"]<img src="https://static.cdn-cdpl.com/700x350/998b78e349061b4971c0a2b0e8d6be41/aa.png" alt="" width="700" height="350" /> Javascript | sumber: codepolitan.com[/caption]
-<blockquote>Disclaimer: artikel ini dibuat berdasarkan opini pribadi, tidak ada maksud untuk meng-endorse atau menjatuhkan siapapun. Adapun bila banyak teman-teman keren lain yang tidak bisa disebutkan dikarenakan memang terbatasnya media ini. Semoga berkenan.</blockquote>
+[caption id="" align="aligncenter" width="700"]<img src="https://static.cdn-cdpl.com/700x350/998b78e349061b4971c0a2b0e8d6be41/aa.png" alt="" width="700" height="350" /> Sumber gambar: codepolitan.com[/caption]
+
+<div style="border-left: 2px solid #fa5742; padding-left: 1em;">
+<p class="crayon-selected" style="text-align: left;"><i>Disclaimer: artikel ini dibuat berdasarkan opini pribadi, tidak ada maksud untuk meng-endorse atau menjatuhkan siapapun. Adapun bila banyak teman-teman keren lain yang tidak bisa disebutkan dikarenakan memang terbatasnya media ini. Semoga berkenan.</i></p>
+
+</div>
 Pasti sudah pada tahu JavaScript kan ? Salah satu bahasa pemrograman yang (baca: katanya) lagi <i>hype</i> beberapa waktu belakangan ini. Pada artikel kali ini kita akan sebutkan beberapa programmer JavaScript lokal keren yang bisa kita ikuti baik sosial medianya ataupun kalau sempat bertemu bisa langsung coba menyapa dan ngobrol dengan mereka-mereka ini. Kenapa saya rekomendasikan untuk mengikuti sosial media mereka ? Karena menurut saya beberapa dari mereka memang rajin untuk berbagi banyak informasi menarik baik perkembangan JavaScript terkini, tulisan-tulisan, maupun project-project yang sedang mereka kerjakan yang seringkali menarik dan layak untuk kita pelajari.
 
 Berikut daftar mereka yang tidak saya urutkan berdasarkan apapun, jadi jangan berekspektasi bahwa yang lebih atas berarti lebih keren daripada yang ada di daftar bawahnya. Semuanya keren-keren, berikut daftarnya:
@@ -30,6 +34,7 @@ Sonny Lazuardi, sekarang bekerja di Grab Singapore sebagai UX Engineer. Ketika b
  	<li>Github: <a href="https://github.com/sonnylazuardi" target="_blank" rel="noopener">https://github.com/sonnylazuardi</a></li>
  	<li>Top Skill: React Native, ReactJS</li>
 </ul>
+&nbsp;
 
 <strong>2. Muhammad Azammudin</strong>
 
@@ -41,6 +46,7 @@ Mas Azam, salah satu orang yang pertama menjadi ambasador ReactJS di Indonesia k
  	<li>Github: <a href="https://github.com/azamuddin" target="_blank" rel="noopener">https://github.com/azamuddin</a></li>
  	<li>Top Skill: ReactJS, SailsJS</li>
 </ul>
+&nbsp;
 
 <strong>3. Muhammad Naufal Rabbani</strong>
 
@@ -52,6 +58,7 @@ Mas Naufal ini salah satu programmer JavaScript keren asal Sidoarjo. Aktif sebag
  	<li>Github: <a href="https://github.com/bosnaufal" target="_blank" rel="noopener">https://github.com/bosnaufal</a></li>
  	<li>TopSkill: ReactJS, VueJS</li>
 </ul>
+&nbsp;
 
 <strong>4. Antony Budianto</strong>
 
@@ -63,6 +70,7 @@ Antony Budianto merupakan kontributor open source di banyak repositori. Membuat 
  	<li>Github: <a href="https://github.com/antonybudianto" target="_blank" rel="noopener">https://github.com/antonybudianto</a></li>
  	<li>TopSkill: ReactJS, Angular</li>
 </ul>
+&nbsp;
 
 <strong>5. Rian Yulianto W</strong>
 
@@ -74,6 +82,7 @@ Mas Rian atau kalian mungkin akan lebih familiar dengan gambar kucing di berbaga
  	<li>Github: <a href="https://github.com/GulajavaMinistudio" target="_blank" rel="noopener">https://github.com/GulajavaMinistudio</a></li>
  	<li>TopSkill: TypeScript, Angular</li>
 </ul>
+&nbsp;
 
 <strong>6. Jihad Dzikri Waspada</strong>
 
@@ -86,6 +95,7 @@ Mas Jihad, mantan programmer di TechInAsia Indonesia yang ternyata sekarang suda
  	<li>Medium: <a href="https://medium.com/@Dewey92" target="_blank" rel="noopener">https://medium.com/@Dewey92</a></li>
  	<li>TopSkill: ReactJS</li>
 </ul>
+&nbsp;
 
 <strong>7. Muhammad Mustadi</strong>
 
@@ -98,6 +108,7 @@ Muhammad Mustadi atau biasa dipanggil Ody ini salah seorang programmer Hackaton 
  	<li>Twitter: <a href="https://twitter.com/mathdroid" target="_blank" rel="noopener">https://twitter.com/mathdroid</a></li>
  	<li>TopSkill: ReactJS, NodeJS</li>
 </ul>
+&nbsp;
 
 <strong>8. Alfred Crosby</strong>
 
@@ -110,6 +121,7 @@ Programmer Tokopedia yang sekarang sudah hijrah ke Grab ini mungkin tidak begitu
  	<li>Medium: <a href="https://medium.com/@alfrcr" target="_blank" rel="noopener">https://medium.com/@alfrcr</a></li>
  	<li>TopSkill: ReactJS</li>
 </ul>
+&nbsp;
 
 <strong>9. Ega Wachid Radiegtya</strong>
 
@@ -121,6 +133,7 @@ Mas Ega pemilik <a href="https://www.facebook.com/dumbwaysdotid" target="_blank
  	<li>Github: <a href="https://github.com/radiegtya" target="_blank" rel="noopener">https://github.com/radiegtya</a></li>
  	<li>TopSkill: ReactJS, ReactNative, VueJS, NodeJS, MeteorJS</li>
 </ul>
+&nbsp;
 
 <strong>10. Yohan Toting</strong>
 
@@ -134,6 +147,7 @@ Mas Yohan, salah satu <em>Google Developer Advocate</em> yang jika kita kunjun
  	<li>Medium: <a href="https://medium.com/@tyohan" target="_blank" rel="noopener">https://medium.com/@tyohan</a></li>
  	<li>TopSkill: Polymer, ReactJS, VanillaJS</li>
 </ul>
+&nbsp;
 
 <strong>11. Riza Fahmi</strong>
 
@@ -145,6 +159,7 @@ Mas Riza ini salah satu organizer di <a href="https://www.meetup.com/JakartaJS/
  	<li>Github: <a href="https://github.com/rizafahmi" target="_blank" rel="noopener">https://github.com/rizafahmi</a></li>
  	<li>TopSkill: ReactJS, NodeJS</li>
 </ul>
+&nbsp;
 
 <strong>12. Fatih Kalifa</strong>
 
@@ -157,6 +172,7 @@ Fatih Kalifa saat ini bekerja di <a href="https://www.traveloka.com/" target="_
  	<li>Twitter: <a href="https://twitter.com/pveyes" target="_blank" rel="noopener">https://twitter.com/pveyes</a></li>
  	<li>TopSkill: ReactJS, NodeJS</li>
 </ul>
+&nbsp;
 
 <strong>13. Mulia Nasution</strong>
 
@@ -168,6 +184,7 @@ Mas Mulia sekarang bisa dibilang top ambassador bagi framework JavaScript VueJS.
  	<li>Github: <a href="https://github.com/mul14" target="_blank" rel="noopener">https://github.com/mul14</a></li>
  	<li>TopSkill: VueJS</li>
 </ul>
+&nbsp;
 
 <strong>14. Hengki Sihombing</strong>
 
@@ -179,6 +196,7 @@ Co-Founder dan CTO <a href="https://www.urbanhire.com/" target="_blank" rel="no
  	<li>Github: <a href="https://github.com/hengkiardo" target="_blank" rel="noopener">https://github.com/hengkiardo</a></li>
  	<li>TopSkill: ExpressJS</li>
 </ul>
+&nbsp;
 
 <strong>15. Galih Pratama</strong>
 
@@ -191,9 +209,12 @@ Pemilik <a href="https://www.facebook.com/belajarkoding.id/" target="_blank" re
  	<li>Twitter: <a href="https://twitter.com/galpratama" target="_blank" rel="noopener">https://twitter.com/galpratama</a></li>
  	<li>TopSkill: VueJS</li>
 </ul>
+&#x1f44d;
+
+&nbsp;
+
 Tentu masih banyak teman-teman lain yang tidak kalah keren di luar sana namun tidak masuk kedalam daftar ini. Bila ingin melihat beberapa programmer JavaScript lokal keren lain yang tidak bisa disebutkan di artikel ini, silahkan kunjungi tautan ini : <a href="http://git-awards.com/users?country=indonesia&amp;language=javascript" target="_blank" rel="noopener">http://git-awards.com/users?country=indonesia&amp;language=javascript</a> Sekali lagi mohon maaf karena tidak bisa menyebutkan semua temen-temen keren lain ya.
 
 Semoga bermanfaat.
 
-
-Artikel ini telah dipublikasikan di Codepolitan: <a href="https://www.codepolitan.com/programmer-javascript-lokal-keren-yang-bisa-kalian-ikuti-5ad71c72c4de2" rel="noopener" target="_blank">https://www.codepolitan.com/programmer-javascript-lokal-keren-yang-bisa-kalian-ikuti-5ad71c72c4de2</a>
+Artikel ini telah dipublikasikan di Codepolitan: <a href="https://www.codepolitan.com/programmer-javascript-lokal-keren-yang-bisa-kalian-ikuti-5ad71c72c4de2" target="_blank" rel="noopener">https://www.codepolitan.com/programmer-javascript-lokal-keren-yang-bisa-kalian-ikuti-5ad71c72c4de2</a>
