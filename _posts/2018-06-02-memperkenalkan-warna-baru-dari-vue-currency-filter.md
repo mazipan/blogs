@@ -24,7 +24,7 @@ Kebetulan kemarin-kemarin mas <a href="https://github.com/iqbalhood" target="_bl
 Pada prosesnya sendiri seperti bisa dipantau di issue diatas, mas <a href="https://github.com/iqbalhood" target="_blank" rel="noopener">@iqbalhood</a> memberikan 2 alternatif logo untuk saya pilih.
 Dan berikut adalah logo terbaru yang saya pilih untuk Vue-Currency-Filter:
 
-[caption id="" align="aligncenter" width="300"]<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-512px.png" alt="Vue-Currency-Filter Logo" width="300" height="300" /> Vue-Currency-Filter Logo[/caption]
+[caption id="" align="aligncenter" width="300"]<img src="https://raw.githubusercontent.com/mazipan/vue-currency-filter/master/assets/VueJS-Currency-512px.png" alt="Vue-Currency-Filter Logo" width="300" /> Vue-Currency-Filter Logo[/caption]
 
 Setelah logo didapat, maka saya pastikan logo tersebut memiliki tempat yang tepat untuk dipajang. Readme.md dan halaman demo merupakan tempat yang paling pas menurut saya. Untuk readme.md, saya tempatkan di sebelah kanan sedangkan untuk halaman demo belum banyak yang bisa saya ubah dikarenakan waktu yang terbatas.
 
