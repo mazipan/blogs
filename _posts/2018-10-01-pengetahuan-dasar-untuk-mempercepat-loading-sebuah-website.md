@@ -346,3 +346,7 @@ Dan terakhir, silahkan tonton video menarik Addy Osmani mengenai bahasan kita ka
 
 <a href="https://youtu.be/_srJ7eHS3IM" rel="noopener" target="_blank">https://youtu.be/_srJ7eHS3IM</a>
 </p>
+
+<p>
+Artikel ini sebelumnya telah dipublikasikan di Medium: <a href="https://medium.com/wwwid/berbagai-best-practice-dalam-memuat-halaman-website-20def6652adf" rel="noopener" target="_blank">https://medium.com/wwwid/berbagai-best-practice-dalam-memuat-halaman-website-20def6652adf</a>
+</p>
