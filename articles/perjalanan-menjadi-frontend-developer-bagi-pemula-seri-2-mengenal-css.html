@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 2 - Mengenal CSS - mazipanneh.com
+    </title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Irfan Maulana Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 2 - Mengenal CSS</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><img class="aligncenter" src="https://4.bp.blogspot.com/-bSC70QFZkuI/Vuww_pDfYWI/AAAAAAAAG9E/qyILtW2DIQQNAL6perYoxoMsU1bYnMSFQ/s640/css-introduction.png" alt="Mengenal CSS" />
+
+<p><strong>Mengenal <span class="caps">CSS</span></strong> &#8211; Setelah seri 1 <a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">membahas <span class="caps">HTML</span></a>, pada seri kedua kali ini saya akan membahas mengenai <span class="caps">CSS</span><span class="widont">&nbsp;</span>dasar.</p>
+<p>Sekali lagi saya mengingatkan bahwa tulisan ini adalah rangkaian untuk memberikan pengetahuan dasar bagi mereka yang pemula yang ingin belajar dan mengetahui dasar untuk menjadi Frontend<span class="widont">&nbsp;</span>Developer.</p>
+<p>Berikut bahasan mengenai <span class="caps">CSS</span>, silahkan<span class="widont">&nbsp;</span>disimak.</p>
+<p>&nbsp;</p>
+<p><strong>Apa itu <span class="caps">CSS</span><span class="widont">&nbsp;</span>?</strong></p>
+<p><span class="caps">CSS</span> merupakan kependekan dari <em>Cascading Style Sheet</em>. Beberapa orang menyebut <span class="caps">CSS</span> merupakan kosmetik dari sebuah halaman web namun pada penerapannya <span class="caps">CSS</span> seringkali mempunyai peran yang lebih vital dari hanya sebuah kosmetik. <span class="caps">CSS</span> memberikan layout, posisi, eksistensi dan variasi pada sebuah elemen <span class="caps">HTML</span>, <span class="caps">CSS</span> juga menentukan bagaimana satu elemen <span class="caps">HTML</span> ditampilkan disebuah website. <span class="caps">CSS</span> menghapuskan penggunaan <span class="caps">HTML</span> attribute sebagai style formatting dan memindahkan ke dalam<span class="widont">&nbsp;</span><span class="caps">CSS</span>.</p>
+<p>&nbsp;</p>
+<p><strong>Bagaimana memulai <span class="caps">CSS</span><span class="widont">&nbsp;</span>?</strong></p>
+<p><span class="caps">CSS</span> datang bersamaan dengan <span class="caps">HTML</span><span class="widont">&nbsp;</span>tag</p>
+<pre>&lt;style&gt;
+    body{something}
+&lt;/style&gt;&nbsp;
+</pre>
+
+<p>di dalam <em>head</em> block dari sebuah <span class="caps">HTML</span>, saya biasa menyebut <span class="caps">CSS</span> seperti ini sebagai <strong>internal<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
+<p><span class="caps">CSS</span> juga bisa datang bersamaan dengan <span class="caps">HTML</span> elemen dengan langsung menambahkan<span class="widont">&nbsp;</span>attribut</p>
+<pre>&lt;div style="..."&nbsp;&gt;&lt;/div&gt;
+</pre>
+
+<p>pada elemen tersebut, saya sendiri menyebut <span class="caps">CSS</span> seperti ini sebagai <strong>inline<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
+<p>Selain itu <span class="caps">CSS</span> juga bisa di definikan di file tersendiri yang artinya terpisah dari file <span class="caps">HTML</span> nya yakni menggunakan file dengan ekstensi .css. Untuk memanggilnya sendiri menggunakan tag <em>link</em> didalam head block juga, namun dengan pendefinisian url path dari file tersebut,<span class="widont">&nbsp;</span>misal</p>
+<pre>&lt;link rel="stylesheet" type="text/css" href="pathFileCSS" /&gt;&nbsp;
+</pre>
+
+<p><span class="caps">CSS</span> seperti ini saya sebut sebagai <strong>eksternal<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
+<p><span class="caps">CSS</span> memiliki urutan prioritas tersendiri bila ada hal yang sama didefinisikan namun dengan tipe <span class="caps">CSS</span> yang berbeda-beda, berikut adalah urutan prioritas tersebut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li>Inline <span class="caps">CSS</span> langsung pada attribute<span class="widont">&nbsp;</span><span class="caps">HTML</span>.</li>
+<li>Internal <span class="caps">CSS</span> dan kemudian Eksternal <span class="caps">CSS</span> yang terdefinikan di<span class="widont">&nbsp;</span>head.</li>
+<li>User Agent <span class="caps">CSS</span> atau <span class="caps">CSS</span> standard bawaan dari masing-masing<span class="widont">&nbsp;</span>browser.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong><span class="caps">CSS</span> Syntax</strong></p>
+<p>Syntax css ditulis menggunakan key-value dengan colon atau titik dua (:) sebagai pembatas antara key dan value ini, sementara untuk pembatas antara rule menggunakan semicolon atau titik koma<span class="widont">&nbsp;</span>(;).</p>
+<p>Misal :</p>
+<pre>font-size: 14px;
+color: red;
+</pre>
+
+<p>Jika menggunakan internal maupun eksternal <span class="caps">CSS</span> maka masing-masing rule dibuka dan tutup menggunakab curly bracket ({}), misal<span class="widont">&nbsp;</span>:</p>
+<pre>.font-red{
+    font-size: 14px;
+    color: red;
+}
+.font-blue{
+    font-size: 14px;
+    color: blue;
+}
+</pre>
+
+<p>&nbsp;</p>
+<p><strong><span class="caps">CSS</span> Selector Dasar</strong></p>
+<p><span class="caps">CSS</span> Selector digunakan untuk mencari element <span class="caps">HTML</span> yang akan diberikan style. <span class="caps">CSS</span> akan memberikan style kepada elemen <span class="caps">HTML</span> yang didefinisikan di dalam selector seperti berdasarkan attribut id, class atau yang lainnya. Selector <span class="caps">ID</span> digunakan untuk mencari elemen yang unik yang memiliki attribute <span class="caps">ID</span> seperti yang dituliskan dan hanya satu di suatu halaman web. Selector <span class="caps">ID</span> ditulis menggunakan awalan tagar (#) kemudian nama <span class="caps">ID</span> dari elemen tersebut, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>#font-red{
+    font-size: 14px;
+    color: red;
+}
+</pre>
+
+<p>Selector class akan memberikan style kepada semua elemen <span class="caps">HTML</span> yang memiliki attribute class dengan nilai seperti yang tersebut. Class ini tidak unik seperti <span class="caps">ID</span> dan tujuannya memang agar bisa digunakan berulang-ulang. Selector class ini ditulis dengan awalan titik (.), contoh<span class="widont">&nbsp;</span>:</p>
+<pre>.font-red{
+    font-size: 14px;
+    color: red;
+}
+</pre>
+
+<p>Kita bisa juga menggunakan selector langsung berupa element <span class="caps">HTML</span> nya yang mana akan berefek ke semua elemen yang di definisikan, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>input{
+    font-size: 14px;
+    color: red;
+}
+a{
+    color: blue;
+}
+</pre>
+
+<p>&nbsp;</p>
+<p><strong><span class="caps">CSS</span> Selector Kombinasi</strong></p>
+<p>Selector bisa juga dikombinasikan lebih dari satu, tujuannya biasanya untuk lebih mendetailkan pencarian suatu elemen. Selector kombinasi ini bisa dibagi menjadi dua berdasarkan<span class="widont">&nbsp;</span>funsinya.</p>
+<ol>
+<li>Bersarang (Nested)</li>
+</ol>
+<p>Digunakan untuk mencari anak dari suatu elemen <span class="caps">HTML</span> berdasarkan parent nya, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>.class1 p{
+    color: red;
+}
+.class1 &gt; p{
+    color: blue;
+}
+</pre>
+
+<p>Kita bisa menggunakan spasi maupun tanda panah kekanan (&gt;), dimana spasi akan mengambil semua anak dari parent nya sedangkan tanda &gt; hanya akan mengambil anak yang tepat berada dibawah<span class="widont">&nbsp;</span>parentnya.</p>
+<ol start="2">
+<li>Bersebelahan (Sibling)</li>
+</ol>
+<p>Untuk mencari sibling dari suatu elemen kita bisa menggunakan tanda (+) maupun tanda (<del>), dimana tanda (+) akan mencari yang tepat dan terdekat berada di sebelah (bukan sebagai anaknya) suatu elemen sedangkan tanda (</del>) akan mencari semua yang ada disebelah elemen tersebut, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>.class1 + p{
+    color: red;
+}
+.class1 ~ p{
+    color: blue;
+}
+</pre>
+
+<p>&nbsp;</p>
+<p><strong><span class="caps">CSS</span> Selector Lanjutan</strong></p>
+<p>Kita bisa juga memilih suatu elemen yang mengandung suatu kata, misal<span class="widont">&nbsp;</span>:</p>
+<pre>[class*="bli-"]{
+    color: red;
+}
+</pre>
+
+<p>Yang artinya kita ingin mendapatkan semua elemen yang mempunyai class dengan awalan<span class="widont">&nbsp;</span>bli-.</p>
+<p>Lebih lanjut soal selector <span class="caps">CSS</span> bisa dibaca <a href="https://www.w3schools.com/cssref/css_selectors.asp">disini</a></p>
+<p>**</p>
+<p>** </p>
+<p><strong>Pseudo Class</strong></p>
+<p>Digunakan untuk mendefinisikan beberapa spesial state dari suatu elemen <span class="caps">HTML</span> seperti ketika di hover, ketika aktif, ketika di disable dan state lainnya. Syntaxnya menggunakan titik dua (:) setelah selectornya, misal<span class="widont">&nbsp;</span>:</p>
+<pre>.link:hover{
+    color: red;
+}
+.link:focus{
+    color: red;
+}
+.link:active{
+    color: red;
+}
+
+</pre>
+
+<p>**</p>
+<p>** </p>
+<p><strong>Pseudo Element</strong></p>
+<p>Digunakan untuk memberikan style pada suatu bagian tertentu di dalam element <span class="caps">HTML</span>. Syntaxnya menggunakan dua kali titik dua (::) setelah selectornya, misal<span class="widont">&nbsp;</span>:</p>
+<pre>.link::before{
+    color: red;
+}
+.link::after{
+    color: red;
+}
+ul li::last-child{
+    color: red;
+}
+
+</pre>
+
+<p>**</p>
+<p>** </p>
+<p><strong>Menggabungkan Rule</strong></p>
+<p>Kita bisa menggabungkan beberapa rule yang memiliki spesifikasi sama kedalam satu inisialisasi. Syntaxnya menggunakan koma (,), misal<span class="widont">&nbsp;</span>:</p>
+<pre>.link, a, .ref{
+    color: red;
+}
+
+</pre>
+
+<p>**</p>
+<p>** </p>
+<p><strong>Catatan tambahan</strong></p>
+<p>Materi ini juga pernah saya bawakan di beberapa forum, berikut sumber materi nya<span class="widont">&nbsp;</span>:</p>
+<p>Slide presentasi :&nbsp;<a href="https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part2-the-cosmetic">disini</a></p>
+<p>Contoh kode :&nbsp;<a href="https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-2">disini</a></p>
+<p>Halaman demo :&nbsp;<a href="https://mazipan.github.io/journey-to-the-frontend-world/part-2/index.html">disini</a></p>
+<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">&laquo; Full blog</a></div>
+        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
+This footer text can be edited in about.md</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.</p>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur.</p>
+<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.</p>
+
+        </section>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

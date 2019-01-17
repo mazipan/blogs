@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Memberi style CSS sederhana pada Radio Button - mazipanneh.com
+    </title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Irfan Maulana Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Memberi style CSS sederhana pada Radio Button</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><img width="469" height="313" alt="Memberi style CSS sederhana pada Radio Button" src="https://i.stack.imgur.com/Ngv2E.png" title="" class="aligncenter size-custom" />
+
+<p>Pernahkan Anda melihat komponen input dengan tipe Radio standard yang di sajikan oleh <span class="caps">HTML</span> ? Betapa tidak enaknya dipandang mata bukan ? Maka sekarang kita akan coba memberikan sentuhan sederhana kita agar tampilan input dengan tipe Radio ini lebih nyaman untuk dilihat<span class="widont">&nbsp;</span>mata.</p>
+<p>Pertama, kita akan coba buat elemen <span class="caps">HTML</span> radio kita dan coba saja kita lihat apa yang ditampilkan oleh browser kita apabila tidak ada satupun style yang berada disana, berikut potongan kode <span class="caps">HTML</span> nya<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/064088c71371de3ed8e7150e611b0b1b.json">
+</div>
+
+<p>Dengan kode tersebut, akan menghasilkan tampilan seperti berikut<span class="widont">&nbsp;</span>:</p>
+<figure style="width: 191px" class="wp-caption aligncenter"><img src="https://cdn-images-1.medium.com/max/800/1*uyIFVh7aFFk0WHsg8nXEbA.png" alt="Radio Button Standard" width="191" height="24" /><figcaption class="wp-caption-text"><span style="color: #999999;"><em>Radio Button Standard</em></figcaption></figure></span>
+
+<p>Bila Anda kesulitan memahami kode <span class="caps">HTML</span> tersebut Anda mungkin perlu membaca tulisan ini dahulu&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">Perjalanan Menjadi Frontend Developer Bagi Pemula – Seri 1 – Mengenal<span class="widont">&nbsp;</span><span class="caps">HTML</span></a>.</p>
+<!--more-->
+
+<p>Untuk memberikan sentuhan baru pada komponen ini, maka kita perlu menambahkan beberapa rule <span class="caps">CSS</span> kepada potongan kode <span class="caps">HTML</span> tersebut. Namun karena kita kan banyak mengulang kata-kata class utama yang akan kita beri style jadi saya memilih menggunakan pre-processor <span class="caps">SASS</span> agar membantu memudahkan dalam menulis style tersebut, bila Anda belum tau apa itu <span class="caps">SASS</span> silahkan baca dulu artikel berikut&nbsp;<a href="https://mazipanneh.com/blog/2017/04/mengenal-dan-belajar-sass-sebagai-css-pre-processor/">Mengenal&nbsp;dan Belajar <span class="caps">SASS</span> Sebagai <span class="caps">CSS</span><span class="widont">&nbsp;</span>Pre-Processor.</a></p>
+<p>Langsung saja, saya telah membuat gist untuk kode <span class="caps">SASS</span> yang akan memberikan style pada elemen <span class="caps">HTML</span> kita diatas. Silahkan dibaca, dipelajari dan dimodifikasi seenak Anda sesuai dengan kebutuhan masing-masing. Anda bisa temui kodenya seperti berikut<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/b13a1add0b1983c6357092e360ed8f5f.json?file=simple-styling-radios.scss">
+</div>
+
+<p>Tampilan dari kode diatas akan menghasilkan tampilan yang kurang lebih seperti gambar berikut<span class="widont">&nbsp;</span>:</p>
+<figure style="width: 275px" class="wp-caption aligncenter"><img src="https://cdn-images-1.medium.com/max/800/1*RMQD11Vh2eqfTe3hP94gUw.png" alt="Radio Button Setelah diberi CSS" width="275" height="32" /><figcaption class="wp-caption-text"><span style="color: #999999;"><em>Radio Button Setelah diberi <span class="caps">CSS</span></em></figcaption></figure></span>
+
+<p>Pada intinya kita memanipulasi psedo element <strong>:before</strong> dan <strong>:after</strong> dari label input Radio tersebut dan menggantinya dengan border solid 1px yang ditambah border radius 50% agar menjadi lingkaran, kita juga menambahkan state di psedo class <strong>:checked</strong> untuk membedakan ketika radio tersebut sedang dalam keadaan terpilih dan<span class="widont">&nbsp;</span>tidak.</p>
+<p>Selamat belajar ya, bila Anda pemula dan susah memahami beberapa istilah yang saya sebutkan diatas Anda mungkin perlu membaca tulisan ini terlebih dahulu&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">Perjalanan Menjadi Frontend Developer Bagi Pemula – Seri 2 – Mengenal<span class="widont">&nbsp;</span><span class="caps">CSS</span></a>.</p>
+<p>Anda juga bisa melihat live preview dari pekerjaan tersebut <a href="https://codepen.io/mazipan/pen/ryQZON" target="_blank">disini</a>.</p>
+<p>Telah di posting juga di medium saya <a href="https://medium.com/@mazipanneh/sass-untuk-styling-sederhana-radio-1aaef180f62c" target="_blank">disini</a>.</p>
+<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
+<p>Terima kasih,</p>
+<p>Ditulis sesaat sebelum pulang kerja oleh Irfan<span class="widont">&nbsp;</span>Maulana</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">&laquo; Full blog</a></div>
+        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
+This footer text can be edited in about.md</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.</p>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur.</p>
+<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.</p>
+
+        </section>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
