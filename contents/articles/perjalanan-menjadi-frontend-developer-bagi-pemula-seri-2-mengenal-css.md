@@ -1,28 +1,13 @@
 ---
-id: 47
-title: 'Perjalanan Menjadi Frontend Developer Bagi Pemula &#8211; Seri 2 &#8211; Mengenal CSS'
+title: 'Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 2 - Mengenal CSS'
 date: 2017-03-13T22:12:36+00:00
 author: Irfan Maulana
-layout: post
-guid: http://mazipanneh.com/blog/?p=47
-permalink: /2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/
-ampforwp_custom_content_editor:
-  - ""
-ampforwp_custom_content_editor_checkbox:
-  - null
-ampforwp-amp-on-off:
-  - default
-dsq_thread_id:
-  - "5735945168"
-categories:
-  - CSS
-  - Frontend
-  - Programming
-tags:
-  - css
-  - frontend
-  - programming
+categories: CSS, Frontend, Programming
+tags: css, frontend, programming
+template: article.pug
+
 ---
+
 <img class="aligncenter" src="https://4.bp.blogspot.com/-bSC70QFZkuI/Vuww_pDfYWI/AAAAAAAAG9E/qyILtW2DIQQNAL6perYoxoMsU1bYnMSFQ/s640/css-introduction.png" alt="Mengenal CSS" />
 
 **Mengenal CSS** &#8211; Setelah seri 1 [membahas HTML](https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/), pada seri kedua kali ini saya akan membahas mengenai CSS dasar.

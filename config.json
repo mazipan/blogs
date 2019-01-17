@@ -1,0 +1,53 @@
+{
+  "locals": {
+    "baseUrl": "/",
+    "url": "http://localhost:8080",
+    "name": "mazipanneh.com",
+    "owner": "Irfan Maulana",
+    "description": "Irfan Maulana Personal Blog"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "wintersmith-sassify",
+    "wintersmith-contents",
+    "wintersmith-robots",
+    "wintersmith-sitemap",
+    "wintersmith-tag",
+    "./node_modules/wintersmith-i18n"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "sassify": {
+    "outputStyle": "compressed",
+    "sourceComments": false,
+    "sourceMap": false
+  },
+  "jade": {
+    "pretty": true
+  },
+  "pug": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "i18n": {
+    "locales": ["en", "id"],
+    "defaultLocale": "id",
+    "cookie": "_i18n"
+  },
+  "paginator": {
+    "perPage": 10
+  },
+  "tag": {
+      "perPage": 10
+  },
+  "jsbundler": {
+    "sourceMap": false,
+    "minify": true
+  }
+}

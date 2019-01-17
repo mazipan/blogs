@@ -1,27 +1,10 @@
 ---
-id: 39
-title: 'Perjalanan Menjadi Frontend Developer Bagi Pemula &#8211; Seri 1 &#8211; Mengenal HTML'
+title: 'Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 1 - Mengenal HTML'
 date: 2017-03-12T16:31:48+00:00
 author: Irfan Maulana
-layout: post
-guid: http://mazipanneh.com/blog/?p=39
-permalink: /2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/
-ampforwp_custom_content_editor:
-  - ""
-ampforwp_custom_content_editor_checkbox:
-  - null
-ampforwp-amp-on-off:
-  - default
-dsq_thread_id:
-  - "5737129459"
-categories:
-  - Frontend
-  - HTML
-  - Programming
-tags:
-  - frontend
-  - html
-  - programming
+categories: Frontend, HTML, Programming
+tags: frontend, html, programming
+template: article.pug
 ---
 <img class="aligncenter" src="https://d3rj1gznkm47xj.cloudfront.net/6c91737b-715e-4c59-aad0-b947bb097907.png" alt="Mengenal HTML" />
 

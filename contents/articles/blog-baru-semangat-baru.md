@@ -1,23 +1,11 @@
 ---
-id: 27
 title: Blog Baru, Semangat Baru
 date: 2017-03-10T19:24:50+00:00
 author: Irfan Maulana
-layout: post
-guid: http://mazipanneh.com/blog/?p=27
-permalink: /2017/03/blog-baru-semangat-baru/
-ampforwp_custom_content_editor:
-  - ""
-ampforwp_custom_content_editor_checkbox:
-  - ""
-ampforwp-amp-on-off:
-  - default
-dsq_thread_id:
-  - "5735783506"
-categories:
-  - Blogging
-tags:
-  - blogging
+categories: Blogging
+tags: blogging
+template: article.pug
+
 ---
 </p> 
 
