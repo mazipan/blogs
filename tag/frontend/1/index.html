@@ -359,11 +359,119 @@ ul li::last-child{
 
           </section>
         </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>12. March 2017</span></p>
+            <h2><a href="/articles/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 1 - Mengenal HTML</a></h2>
+          </header>
+          <section class="content"><img class="aligncenter" src="https://d3rj1gznkm47xj.cloudfront.net/6c91737b-715e-4c59-aad0-b947bb097907.png" alt="Mengenal HTML" />
+
+<p><strong>Mengenal <span class="caps">HTML</span></strong> &#8211; Web developer kini bisa dipisahkan ke dalam 2 spesialisasi yakni Backend dan Frontend developer. Dalam post ini kita akan membahas beberapa pengetahuan dasar untuk menjadi Frontend<span class="widont">&nbsp;</span>developer.&nbsp;</p>
+<p>Pada postingan pertama saya akan membahas pengetahuan dasar mengenai <span class="caps">HTML</span>, kenapa dimulai dari <span class="caps">HTML</span> ? Tentu saja karena <span class="caps">HTML</span> menjadi dasar bagi semua web developer dan saya ingin membahas dari hal yang mendasar karena memang target dari post ini adalah mereka yang benar-benar pemula dan ingin belajar mengenai web development terutama di sisi<span class="widont">&nbsp;</span>Frontend.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Apa itu <span class="caps">HTML</span><span class="widont">&nbsp;</span>?</strong></p>
+<p><span class="caps">HTML</span> atau Hypertext Markup Language merupakan kerangka dari halaman website, suatu kode yang membangun sebuah tampilan website. Saya memberikan ilustrasi bahwa membuat kode <span class="caps">HTML</span> sama seperti saat kita bermain game _Tetris&nbsp;_dimana kita diharuskan meletakkan satu blok ke dalam tempat yang sesuai, bila di anggap bahwa website itu adalah sebuah rumah maka <span class="caps">HTML</span> adalah batu bata yang menyusun dan menegakkan rumah<span class="widont">&nbsp;</span>tersebut.</p>
+<p>**</p>
+<p>** </p>
+<!--more-->
+
+<p><strong><span class="caps">HTML</span> Dasar</strong></p>
+<p><span class="caps">HTML</span> mempunyai inisialisasi deklarasi di baris paling<span class="widont">&nbsp;</span>awal&nbsp;</p>
+<pre>&lt;!DOCTYPE html&gt;</pre>
+
+<p>Setiap element <span class="caps">HTML</span> diawali dengan tag pembuka dan diakhiri dengan tag<span class="widont">&nbsp;</span>penutup.</p>
+<p>Kita bisa memulai kode <span class="caps">HTML</span> di dalam<span class="widont">&nbsp;</span>tag</p>
+<pre>&lt;html&gt;&lt;/html&gt;</pre>
+
+<p>Di bawah html tag ada tag <em>head</em> yang berisi informasi mengenai identitas suatu website seperti title, icon,<span class="widont">&nbsp;</span>metatag.</p>
+<p>Di dalam tag <em>head</em> kita juga bisa manambahkan sumber daya eksternal yang dibutuhkan untuk di load diawal seperti <span class="caps">CSS</span> ataupun kritikal<span class="widont">&nbsp;</span>Javascript.</p>
+<p>Setelah tag head baru akan ada tag _body_, di dalam tag body inilah kita akan menulis komponen <span class="caps">HTML</span> kita yang<span class="widont">&nbsp;</span>sebenarnya.</p>
+<p>Sebelum tag penutup <em>body</em> biasanya digunakan untuk meload script baik internal maupun<span class="widont">&nbsp;</span>eksternal.</p>
+<p>**</p>
+<p>** </p>
+<p><strong><span class="caps">HTML</span> Element</strong></p>
+<p><span class="caps">HTML</span> Element merupakan semua yang dimulai tag pembuka dan diakhiri dengan tag<span class="widont">&nbsp;</span>penutup.</p>
+<p><span class="caps">HTML</span> Element bisa dibuat bersarang (nested), yang artinya suatu elemen menjadi anak (child) dari elemen lainnya, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>&lt;div&gt;
+&nbsp; &nbsp; I am parent
+&nbsp; &nbsp; &lt;div&gt;I am child&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>**</p>
+<p>** </p>
+<p><strong><span class="caps">HTML</span> Attribute</strong></p>
+<p><span class="caps">HTML</span> Attribute merupakan informasi tambahan pada sebuah <span class="caps">HTML</span><span class="widont">&nbsp;</span>Element.</p>
+<p>Di deklarasikan pada tag pembuka dari sebuah <span class="caps">HTML</span><span class="widont">&nbsp;</span>Element.</p>
+<p><span class="caps">HTML</span> Element biasanya berupa key-value, contoh<span class="widont">&nbsp;</span>:</p>
+<pre>&lt;div id="sayaSebuahAttribute"&nbsp;
+class="sayaJugaAttibute"&nbsp;
+data-target="iniJugaLoh"&gt;
+&lt;/div&gt;</pre>
+
+<p>**</p>
+<p>** </p>
+<p><strong>Heading dan Text</strong></p>
+<p>Tag heading yang biasa digunakan untuk title dan subtitle adalah h1, h2, &#8230; h6. Penggunaan heading dapat membantu <span class="caps">SEO</span> karena memudahkan search engine untuk mengidentifikasi halaman website Anda. Heading akan membuat satu block yang artinya elemen setelahnya akan berada di baris baru bukan<span class="widont">&nbsp;</span>disampingnya.</p>
+<p>Untuk text sendiri kita bisa menggunakan tag  <em>p</em> yang mewakili sebuah paragraf baru ataupun <em>span</em> yang merupakan text biasa. Pada text juga terdapat beberapa tahun yang bisa digunakan untuk formating seperti _strong, b, i, em, small_, dan<span class="widont">&nbsp;</span>lainnya.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Block</strong></p>
+<p>Block adalah elemen <span class="caps">HTML</span> yang sering kali digunakan sebagai wadah bagi elemen-elemen lain. Sifat dasar block ini sendiri akan membuat satu baris baru dari elemen terakhir<span class="widont">&nbsp;</span>diatasnya.</p>
+<p>Block yang paling umum digunakan adalah tag <em>div</em>. Selain itu ada beberapa tag block yang merepresentasikan posisinya seperti&nbsp;<em>header, main, footer, aside, nav, article, section,</em> dan<span class="widont">&nbsp;</span>lain-lain.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Table</strong></p>
+<p>Table digunakan untuk menampilkan data atau bisa juga untuk mengorganisir beberapa elemen dengan lebih mudah dan teratur. Seperti namanya table ditandai dengan tag <em><table></table></em>.&nbsp;</p>
+<p>Di dalam table ada sebuah wadah&nbsp;<em>thead</em> yang merupakan wadah bagi header sebuah tabel dan juga <em>tbody</em> yang merupakan wadah bagi isi konten dari tabel<span class="widont">&nbsp;</span>tersebut.</p>
+<p>Baris pada sebuah table ditandai dengan tag <em><tr></em> sedangkan untuk kolom digunakan tag <em><td></em> kecuali jika kolom tersebut ada di dalam header maka bisa digunakan tag <em><th>._&nbsp;Kita bisa juga menggabungkan beberapa baris atau kolom dengan menambahkan attribute _rowspan</em> atau <em>colspan</em> di element yang akan<span class="widont">&nbsp;</span>digabungkan.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>List</strong></p>
+<p>List merupakan elemen yang digunakan untuk menyajikan data atau elemen secara berurutan kebawah. Untuk membuat liat kita bisa menggunakan block <ul>&nbsp;</ul> atau <ol>&nbsp;</ol> dimana <em>ol</em> biasa dikenal dengan ordered list atau liat yang berurutan dan <em>ul</em> sebaliknya. Untuk item dibawah nya kita bisa menggunakan tag <li>&nbsp;</li>.</p>
+<p>Yang perlu di garis bawahi adalah bahwa kita bisa menggunakan list tidak selalu untuk hal yg disusun berurutan secara horizontal namun bisa juga hal lainnya, namun kita sering menggunakan listrik ketika harus bermain dengan siblings nya pada akhirnya, seperti saat pembuatan menu atau<span class="widont">&nbsp;</span>navigasi.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Form</strong></p>
+<p>Form merupakan kumpulan dari beberapa inputan yang akan dikirimkan/diproses secara<span class="widont">&nbsp;</span>bersamaan.</p>
+<p>Menggunakan tag <form>&nbsp;</form> sebagai deklarasi nya dan terdapat block <fieldset>&nbsp;</fieldset> sebagai wadah bagi beberapa inputan yang akan disatukan kedalam satu kelompok<span class="widont">&nbsp;</span>tampilan.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Input</strong></p>
+<p>Input merupakan elemen yang bisa menerima isian dari pengguna. Terdapat banyak variasi dari input element ini yang masing-masing nya memiliki kegunaan dan tampilan yang berbeda sesuai dengan spesifikasi<span class="widont">&nbsp;</span>nya.</p>
+<p>Beberapa bisa dibedakan dengan menjelaskan attribute <em>type</em> pada input element ini. Attribute type yang tersedia antara lain : <em>text, password, number, tel, email, date, range, radio, checkbox</em> dan<span class="widont">&nbsp;</span>lain-lain.</p>
+<p>Inputan dengan tipe <em>radio</em> digunakan ketika pengguna hanya bisa memilih satu dari pilihan yang disediakan, jika pengguna bisa memilih lebih dari satu maka gunakan tipe <em>checkbox</em>.</p>
+<p>Anda bisa menggunakan <em>select</em> dan <em>option</em> jika pilihan yang disediakan terlalu banyak untuk<span class="widont">&nbsp;</span>ditampilkan.</p>
+<p>Inputan dengan tipe <em>submit</em> akan mengirimkan semua data yang ada dalam form ketika<span class="widont">&nbsp;</span>ditekan.</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Latihan</strong></p>
+<p>Percuma membaca seharian bila belum mencoba sendiri, ayo mulai buat layout sederhana kalian<span class="widont">&nbsp;</span>sendiri.</p>
+<p>Saya sendiri akan membuat satu tampilan <span class="caps">CRUD</span> dari sebuah Contact yang berisi nama, email, gender dan alamat. Selamat berkreasi&#8230;<span class="widont">&nbsp;</span>&#x1f4aa;&#x1f4aa;&#x1f4aa;</p>
+<p>**</p>
+<p>** </p>
+<p><strong>Bahan Bacaan</strong></p>
+<p>Baca lebih lengkap disini :&nbsp;<a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></p>
+<p>**</p>
+<p>** </p>
+<p><strong>Catatan tambahan</strong></p>
+<p>Materi ini juga pernah saya bawakan di beberapa forum, berikut sumber materi nya<span class="widont">&nbsp;</span>:</p>
+<p>Slide presentasi :&nbsp;<a href="https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part1-the-skeleton">https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part1-the-skeleton</a></p>
+<p>Contoh kode :&nbsp;<a href="https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-1">https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-1</a></p>
+<p>Halaman demo :&nbsp;<a href="https://mazipan.github.io/journey-to-the-frontend-world/part-1/index.html">https://mazipan.github.io/journey-to-the-frontend-world/part-1/index.html</a></p>
+<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
+<p>Jangan lupa nantikan seri selanjutnya ya<span class="widont">&nbsp;</span>&#x1f609;&#x1f609;&#x1f609;</p>
+<p>Ditulis di malam hari setelah menonton bola kala<span class="widont">&nbsp;</span>itu.</p>
+<p>Terima Kasih,</p>
+<p>Salam.</p>
+
+          </section>
+        </article>
       </div>
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="https://mazipan.github.io/blogs/archives/">&laquo; Archives</a><a href="/page/2/">Next page &raquo;</a>
+        <div class="nav"><a href="https://mazipan.github.io/blogs/archives/">&laquo; Archives</a>
         </div>
         <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
 This footer text can be edited in about.md</p>
