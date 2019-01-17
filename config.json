@@ -41,10 +41,10 @@
     "cookie": "_i18n"
   },
   "paginator": {
-    "perPage": 10
+    "perPage": 3
   },
   "tag": {
-      "perPage": 10
+    "perPage": 10
   },
   "jsbundler": {
     "sourceMap": false,
