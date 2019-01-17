@@ -1,7 +1,7 @@
 {
   "locals": {
-    "baseUrl": "/",
-    "url": "http://localhost:8080",
+    "baseUrl": "/blogs",
+    "url": "https://mazipan.github.io/blogs",
     "name": "mazipanneh.com",
     "owner": "Irfan Maulana",
     "description": "Irfan Maulana Personal Blog"
