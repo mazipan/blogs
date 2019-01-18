@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Belajar Angular - Bagian 6 - Persiapan File Production - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Belajar Angular - Bagian 6 - Persiapan File Production</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><figure style="width: 825px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-6-mazipanneh.jpg" alt="Belajar Angular - Bagian 6 - Persiapan File Production" width="825" height="35" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 6 - Persiapan File Production</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 6 - Persiapan File Production</strong> - Development Angular dengan bantuan Angular-<span class="caps">CLI</span> memang sangat dimudahkan baik dari mulai pembuatan project awal, penambahan berbagai komponen sampai pada pembuatan file production yang nantinya akan kita deploy atau<span class="widont">&nbsp;</span>host.</p>
+<p><span class="more"></span></p>
+<p>Tulisan ini merupakan serial pembahasan mengenai framework <strong>Angular</strong>, Anda mungkin ingin membaca tulisan lainnya berikut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li><a title="belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project" href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project/" target="_blank" rel="noopener noreferrer">Bagian 1 - Pengenalan dan Inisialisasi<span class="widont">&nbsp;</span>Project</a></li>
+<li><a title="belajar-angular-bagian-2-membuat-komponen" href="http://mazipanneh.com/blog/2017/05/belajar-angular-bagian-2-membuat-komponen/" target="_blank" rel="noopener noreferrer">Bagian 2 - Membuat<span class="widont">&nbsp;</span>Komponen</a></li>
+<li><a title="belajar-angular-bagian-3-membuat-service" href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-3-membuat-service/" target="_blank" rel="noopener noreferrer">Bagian 3 - Membuat<span class="widont">&nbsp;</span>Service</a></li>
+<li><a title="belajar-angular-bagian-4-membuat-route" href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-4-membuat-route/" target="_blank" rel="noopener noreferrer">Bagian 4 - Membuat<span class="widont">&nbsp;</span>Route</a></li>
+<li><a title="belajar-angular-bagian-5-membuat-custom-pipe-atau-filter" href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter/" target="_blank" rel="noopener noreferrer">Bagian 5 - Membuat Custom Pipe atau<span class="widont">&nbsp;</span>Filter</a></li>
+<li><a title="belajar-angular-bagian-6-persiapan-file-production" href="http://mazipanneh.com/blog/2017/07/belajar-angular-bagian-6-persiapan-file-production/" target="_blank" rel="noopener noreferrer">Bagian 6 - Persiapan File<span class="widont">&nbsp;</span>Production</a></li>
+</ol>
+<p>Dengan Angular-<span class="caps">CLI</span> kita bisa dengan mudah menyiapkan file untuk production dengan beberapa perintah bawaan yang telah<span class="widont">&nbsp;</span>disediakan.</p>
+<p>Berikut ini kita akan belajar bagaimana untuk menyiapkan file yang layak di deploy ke production serta beberapa catatan yang mungkin perlu diperhatikan<span class="widont">&nbsp;</span>:</p>
+<h3 id="build-file-dengan-angular-cli">Build file dengan<span class="widont">&nbsp;</span>Angular-<span class="caps">CLI</span></h3>
+<p>Angular-<span class="caps">CLI</span> bisa men-generate file build yang bisa kita deploy ke production dengan<span class="widont">&nbsp;</span>cara</p>
+<pre>ng build
+</pre>
+
+<p>Dengan perintah ini kita akan mendapatkan folder <code>/dist</code> yang berisi file <code>index.html</code> dan beberapa file .js hasil generate. File-file ini dalam folder ini adalah file yang nantinya bisa kita deploy ke<span class="widont">&nbsp;</span>production.</p>
+<p>Mudah bukan ?</p>
+<p>Tapi coba kita buka salah satu file .js hasil build nya, kita akan menemukan kode javascript yang belum di <em>minified</em> dan tentunya ini bukan harapan kita untuk di deploy ke production, untung nya lagi Angular-CLi juga telah menyediakan perintah untuk build file dengan mode yang sudah ter-<em>minified</em> yakni dengan<span class="widont">&nbsp;</span>perintah</p>
+<pre>ng build --prod
+</pre>
+
+<h3 id="set-base-href">Set Base Href</h3>
+<p>Angular memiliki fitur untuk melakukan routing di frontend dan untuk bisa melakukan ini di production, kita mungkin akan perlu menyesuaikan base-href dari <code>index.html</code> kita terutama bila kita akan mendeploy aplikasi kita ke tempat yang bukan merupakan root dari domain Anda, misalkan <code>irfan.com/apps/</code> maka kita perlu pindahkan base-href nya dari / ke /apps. Cara manual adalah dengan mengubah kode berikut sesuai dengan path yang akan digunakan di<span class="widont">&nbsp;</span>production.</p>
+<pre>&lt;base href="/path-production/"&gt;
+</pre>
+
+<p>Jika cara manual ini terlalu membuat Anda malas, maka kita bisa menambahkan option ketika akan build file menggunakan Angular-<span class="caps">CLI</span> seperti<span class="widont">&nbsp;</span>contoh</p>
+<pre>ng build --prod --base-href /apps/
+</pre>
+
+<p>Setelah menjalankan ini, maka base-href yang ada di file <code>index.html</code> akan mengarah ke option<span class="widont">&nbsp;</span>tersebut.</p>
+<p>Perintah diatas juga bisa disingkat seperti<span class="widont">&nbsp;</span>berikut</p>
+<pre>ng build --prod -bh /apps/
+</pre>
+
+<h3 id="set-deploy-url">Set Deploy Url</h3>
+<p>Seperti pada kasus sebelumnya, jika kita ingin mendeploy ke tempat yang bukan merupakan root domain seringkali terjadi salah path termasuk dari file-file yang di generate oleh<span class="widont">&nbsp;</span>Angular-<span class="caps">CLI</span>.</p>
+<p>Angular-<span class="caps">CLI</span> secara default akan membuatkan path yang mengarah ke file .js hasil build dengan tanpa path di depannya, contoh <code>main.bundle.js</code>. Secara teori harusnya tidak ada masalah dengan cara ini, karena dengan tidak menyebutkan path di depannya berarti akan diarahkan ke folder tempat <code>index.html</code> itu berada. Namun entah kenapa terkadang ada saja masalah dengan hal ini, dan salah satu caranya adalah dengan menambahkan relative path di<span class="widont">&nbsp;</span>depannya.</p>
+<p>Cara manual yang bisa kita lakukan adalah dengan mengubah path <code>main.bundle.js</code> menjadi</p>
+<p><code>/apps/main.bundle.js</code> misalnya. Namun cara ini lumayan membuat capek dan rentan terjadi kelupaan, kabar baiknya lagi Angular-<span class="caps">CLI</span> juga telah menyiapkan option untuk hal ini jadi kita tidak perlu mengubah manual lagi namun menggunakan perintah seperti<span class="widont">&nbsp;</span>berikut</p>
+<pre>ng build --prod -bh /apps/ --deploy-url /apps/
+</pre>
+
+<p>Atau bisa juga kita singkat seperti<span class="widont">&nbsp;</span>ini</p>
+<pre>ng build --prod -bh /apps/ -d /apps/
+</pre>
+
+<p>Setelah menggunakan perintah ini maka path yang di generate oleh Angular-<span class="caps">CLI</span> akan disesuaikan ke path<span class="widont">&nbsp;</span>ini.</p>
+<h3 id="set-ke-npm-script">Set ke npm<span class="widont">&nbsp;</span>script</h3>
+<p>Perintah-perintah diatas tentu akan membuat kita lupa kalau tidak kita buat shortcut untuk mempermudah pekerjaan kita, jadi kita bisa memindahkan perintah itu ke dalam <code>package.json</code> kita di bagian <code>script</code>, seperti contoh</p>
+<pre><span class="dquo">"</span>scripts": {
+    "dist": "ng build --prod --base-href /apps/ -d /apps/"
+  }
+</pre>
+
+<p>Dengan begini kita bisa dengan mudah memanggil perintah ini kembali, cukup dengan<span class="widont">&nbsp;</span>perintah</p>
+<pre>npm run dist
+</pre>
+
+<p>Dan taraaaa&#8230;</p>
+<p>Sekian tulisan dari saya, semoga<span class="widont">&nbsp;</span>bermafaat.</p>
+<p>Kode yang digunakan dalam tutorial ini diambil dari repository <a href="https://github.com/mazipan/ng2-starwars" target="_blank" rel="noopener noreferrer">https://github.com/mazipan/ng2-starwars</a> dan bisa dilihat demo nya di : <a href="http://mazipan.github.io/ng2-starwars/" target="_blank" rel="noopener noreferrer">http://mazipan.github.io/ng2-starwars/</a>.</p>
+<p>Silahkan dipelajari source code<span class="widont">&nbsp;</span>nya.</p>
+<p>Ditulis oleh Irfan<span class="widont">&nbsp;</span>Maulana.</p>
+<p>Salam.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Belajar Angular - Bagian 3 - Membuat Service - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Belajar Angular - Bagian 3 - Membuat Service</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><figure style="width: 750px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-3-mazipanneh.jpg" alt="Belajar Angular - Bagian 3 - Membuat Service" width="750" height="422" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 3 - Membuat Service</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 3 - Membuat Service</strong> - Service atau Provider dalam Angular sendiri sudah diperkenalkan sejak AngularJS v.1.x, dimana service menjadi bagian yang <code>Injectable</code> dari kode Angular sehingga pada prakteknya sering digunakan sebagai pembungkusan (Encapsulation) dari suatu logic. Angular sendiri sudah menggunakan depedency injection (<span class="caps">DI</span>) sejak AngularJS versi 1.x sehingga lebih mudah untuk meng-inject atau memasukkan service kedalam komponen yang ingin<span class="widont">&nbsp;</span>menggunakannya. </p>
+<p><span class="more"></span></p>
+<p>Tulisan ini merupakan serial pembahasan mengenai framework <strong>Angular</strong>, Anda mungkin ingin membaca tulisan lainnya berikut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project">Bagian 1 - Pengenalan dan Inisialisasi<span class="widont">&nbsp;</span>Project</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/05/belajar-angular-bagian-2-membuat-komponen/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-2-membuat-komponen">Bagian 2 - Membuat<span class="widont">&nbsp;</span>Komponen</a> </li>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-3-membuat-service/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-3-membuat-service">Bagian 3 - Membuat<span class="widont">&nbsp;</span>Service</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-4-membuat-route/" title="belajar-angular-bagian-4-membuat-route" target="_blank" rel="noopener noreferrer">Bagian 4 - Membuat<span class="widont">&nbsp;</span>Route</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter/" title="belajar-angular-bagian-5-membuat-custom-pipe-atau-filter" target="_blank" rel="noopener noreferrer">Bagian 5 - Membuat Custom Pipe atau<span class="widont">&nbsp;</span>Filter</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/07/belajar-angular-bagian-6-persiapan-file-production/" title="belajar-angular-bagian-6-persiapan-file-production" target="_blank" rel="noopener noreferrer">Bagian 6 - Persiapan File<span class="widont">&nbsp;</span>Production</a> </li>
+</ol>
+<p>Bila kita sudah belajar Angular v.1.x kita biasa melakukan injection service dengan cara kurang lebih seperti ini<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">var irfanCtrl = angular.module('irfan.basic.controller',[]);
+
+irfanCtrl.controller('irfan.ctrl', ['$scope', 'irfanShareObject', irfanCtrlFunc]);
+
+function irfanCtrlFunc($scope, irfanShareObject){
+  // no data
+}
+</pre>
+
+<p>Bisa dilihat kode diatas adalah bagaimana AngularJS 1.x melakukan depedency injection service <code>irfanShareObject</code> ke dalam controller, tidak perlu ada instance baru untuk tiap kali penggunaan service dalam controller, cukup mendefinisikan service yang akan digunakan dalam pembuatan<span class="widont">&nbsp;</span>controllernya. </p>
+<p>Untuk isi service nya pun, bisa mulai dari wrap logic sederhana sampai logic yang dirasa terlalu berat untuk langsung dibuat di controller sehingga developer memilih untuk membungkusnya dalam suatu service. Berikut contoh kode service dalam AngularJS 1.x<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">var irfanServices = angular.module('irfan.basic.service', []);
+irfanServices.factory('irfanShareObject', [irfanServicesFunction]);
+
+function irfanServicesFunction() {
+
+    var fullName= "";
+
+    return {
+        setFullName: function(firtname, lastname) {
+            if(typeof firtname !== 'undefined' && firtname !== '') {
+
+               fullName = firtname;
+            }
+            if(typeof lastname !== 'undefined' && lastname !== '') {
+
+               fullName += lastname;
+            }
+
+            return fullName;
+        },
+        getFullName: function() {
+            return fullName;
+        }
+    };
+}
+</pre>
+
+<p>Isinya logic sederhana untuk mencari fullname dari sebuah firstname dan<span class="widont">&nbsp;</span>lastname.</p>
+<p>Setelah sekilas kita #throwback ke AngularJS 1.x maka kita coba membuat service di Anglular versi 2 keatas, untuk studi kasus sendiri saya akan coba contohkan membuat service yang mem-wrap logic untuk <span class="caps">GET</span> data dari suatu public <span class="caps">API</span> untuk kemudian memformat sesuai dengan kebutuhan client. Berikut langkah-langkahnya<span class="widont">&nbsp;</span>:</p>
+<p>Kita akan menggunakan <span class="caps">API</span> dari Starwars <span class="caps">API</span> (<a href="https://swapi.co" target="_blank" rel="noopener noreferrer">https://swapi.co</a>), dimana saya akan mencontohkan <span class="caps">GET</span> data Film dari <span class="caps">API</span> tersebut. Url <span class="caps">API</span> dari list Film sendiri ada di <a href="https://swapi.co/api/films/" target="_blank" rel="noopener noreferrer">https://swapi.co/api/films/</a>. </p>
+<p>Langkah pertama sebelum memulai semua nya, saya akan menyiapkan beberapa class <code>Film</code> yang akan digunakan sebagai Object untuk menampung data hasil response dari <span class="caps">API</span> tersebut. Karena datanya terlalu banyak, dan saya capek untuk menulis semuanya maka saya hanya akan ambil beberapa data saja. Berikut contoh kode class <code>Film</code> :</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">export class Film {
+  constructor(
+    public title: string,
+    public episode_id: number,
+    public opening_crawl: string,
+    public director: string,
+    public producer: string,
+    public release_date: string,
+  ) { }
+}
+</pre>
+
+<p>Ya, seperti itulah penampakannya. Dengan typescript kita bisa mendefinisikan tipe data dari masing-masing properti <code>Film</code> yang akan kita<span class="widont">&nbsp;</span>ambil.</p>
+<p>Setelahnya saya akan membuat beberapa helper class yang akan saya butuhkan nanti (*ini tidak harus dipisah, tapi saya lebih senang menggunakan helper dibandingkan langsung menulis logic ditempat yang<span class="widont">&nbsp;</span>sama). </p>
+<p>Saya akan membuat helper <code>UrlCollection</code> yang isinya<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">export class UrlCollection {
+  public static readonly FILM = "https://swapi.co/api/films/"
+  public static readonly PEOPLE = "https://swapi.co/api/people/"
+  public static readonly PLANET = "https://swapi.co/api/planets/"
+  public static readonly SPECIES = "https://swapi.co/api/species/"
+  public static readonly STARSHIP = "https://swapi.co/api/starships/"
+  public static readonly VEHICLE = "https://swapi.co/api/vehicles/"
+}
+</pre>
+
+<p>Ini merupakan list url dari <span class="caps">API</span> yang akan di hit nanti, sebenarnya akan lebih baik jika menggunakan <code>enum / enumeration</code> untuk membuat class semacam ini. Namun karena pada saat menulis artikel ini saya belum pernah menggunakan <code>enum</code> di Angular maka saya cari yang cepat di kerjakan saja.<span class="widont">&nbsp;</span>🙂 </p>
+<p>Berikutnya saya akan membuat helper class <code>ObjectConverter</code> yang isinya<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">import { Film }  from '../Film/Film'
+
+export class ObjectConverter {
+
+  public convertResponseToFilm(r:any): Film{
+
+    let film = ({
+      title: r.title,
+      episode_id: r.episode_id,
+      opening_crawl: r.opening_crawl,
+      director: r.director,
+      producer: r.producer,
+      release_date: r.release_date,
+    });
+
+    return film
+  };
+
+}
+</pre>
+
+<p>Class ini saya gunakan untuk mem-casting data dari tipe <code>any</code> ke tipe <code>Film</code>, namun setelah saya baca-baca lagi ternyata Typescript mempunyai syntax yang lebih sederhana dibandingkan cara manual yang saya lakukan. Silahkan baca : <a href="http://acdcjunior.github.io/typescript-cast-object-to-other-type-or-instanceof.html" target="_blank" rel="noopener noreferrer">http://acdcjunior.github.io/typescript-cast-object-to-other-type-or-instanceof.html</a>. Karena pada saat saya membuat artikel ini saya belum sempat baca artiel diatas jadi sudahlah biarkan saja saya membodohi diri sendiri dengan kode diatas<span class="widont">&nbsp;</span>ya.</p>
+<p>Berikutnya kita akan membuat Service untuk meng-<span class="caps">GET</span> data, berikut kodenya<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">import { Injectable } from '@angular/core'
+import { Http, Response} from '@angular/http'
+import { Film } from './Film'
+import {Observable} from 'rxjs/Rx'
+
+// Import RxJs required methods
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch'
+
+import { UrlCollection } from '../Helpers/UrlCollection'
+import { ObjectConverter } from '../Helpers/ObjectConverter'
+
+@Injectable()
+export class FilmService {
+  // Resolve HTTP using the constructor
+  constructor (
+    private http: Http,
+  ) {}
+
+  getFilms() : Observable&lt;Film[]&gt; {
+    let objectConverter = new ObjectConverter()
+
+    function mapFilmResponse(response:Response): Film[]{
+
+      return response.json().results.map(objectConverter.convertResponseToFilm)
+    }
+
+    return this.http.get(UrlCollection.FILM)
+      .map(mapFilmResponse)
+      .catch((error:any) =&gt; Observable.throw(error.json().error || 'Server error'))
+
+  }
+
+}
+</pre>
+
+<p>Bisa dilihat kode diatas, pertama kita membutuhkan depedency <code>import { Injectable } from &#39;@angular/core&#39;</code>, ini merupakan salah satu syarat agar service kita bisa digunakan di component nantinya. Dengan menggunakan depedency ini kita bisa menambahkan decorator <code>@Injectable()</code> pada saat pembuatan class service<span class="widont">&nbsp;</span>ini. </p>
+<p>Kita juga menambahkan depedency <code>import { Http, Response} from &#39;@angular/http&#39;</code> untuk melakukan getting data dan mendapatkan balikan dalam bentuk Object Response. Oh iya, <code>http</code> ini mesti di definisikan sebagai <code>constructor</code> ya. </p>
+<p>Terakhir kita butuh bantuan dari RxJS yakni <code>import {Observable} from &#39;rxjs/Rx&#39;</code>, <code>import &#39;rxjs/add/operator/map&#39;</code> dan <code>import &#39;rxjs/add/operator/catch&#39;</code>. Tapi tenang saja karena by default semuanya sudah menjadi depedency wajib bagi Angular, jadi kita tidak perlu lagi menambahkan di list depedency di package.json<span class="widont">&nbsp;</span>kita. </p>
+<p>Untuk sisanya bisa coba dipahami kode<span class="widont">&nbsp;</span>diatas.</p>
+<p>Setelah membuat service ini kita perlu menambahkan file ini sebagai provider di file <code>app.module.ts</code>, berikut kurang lebih kodenya<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './Header/header.component';
+import { FilmListComponent } from './Film/film-list.component';
+
+
+import { FilmService } from './Film/film-list.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FilmListComponent 
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [
+    FilmService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+</pre>
+
+<p>Setelah ini kita akan buat contoh bagaimana memanggil file service ini di sebuah component. Kita membuat component <code>/Film/film-list.component</code> dengan kode kurang lebih seperti ini<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="js">import { Component, OnInit } from '@angular/core'
+
+import { FilmService } from './film-list.service'
+import { Film } from './Film'
+
+@Component({
+  moduleId: module.id,
+  selector: 'film-list',
+  templateUrl: './film-list.component.html'
+})
+export class FilmListComponent implements OnInit {
+
+  films: Film[]
+
+  constructor (
+    private filmService: FilmService
+  ){}
+
+  ngOnInit () {
+    this.loadDataFilms()
+  }
+
+  loadDataFilms () {
+    let self = this
+    self.filmService.getFilms()
+      .subscribe(
+        films =&gt; self.films = films, //Bind to view
+        err =&gt; {
+          console.log(err)
+        })
+  }
+
+  trackByEpisodId (index:number, film:Film) {
+    return film.episode_id
+  }
+}
+</pre>
+
+<p>Kita hanya perlu menambahkan <code>FilmService</code> sebagai constructor di component kita maka dengan begitu kita bisa menggunakan fungsi di dalam service tersebut. Seperti pada kode diatas kita bisa memanggil <code>filmService.getFilms()</code> dengan mudahnya. </p>
+<p>Saya juga menambahkan fungsi <code>trackByEpisodId(index:number, film:Film)</code> untuk digunakan di view template karena pada saat saya membuat contoh kode ini saya belum menemukan built-in <code>trackBy</code> seperti pada AngularJS<span class="widont">&nbsp;</span>v.1.x.</p>
+<p>Sedangkan isi html view template dari component ini sebagai berikut<span class="widont">&nbsp;</span>:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="html">&lt;h2&gt;Films&lt;/h2&gt;
+&lt;table class="table"&gt;
+    &lt;thead class="table__head"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+            &lt;th&gt;Episode&lt;/th&gt;
+            &lt;th&gt;Release Date&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody class="table__body"&gt;
+        &lt;tr *ngFor="let film of films; let i = index; trackBy:trackByEpisodId;"&gt;
+            &lt;td&gt;{{ i+1 }}&lt;/td&gt;
+            &lt;td&gt;{{ film.title }}&lt;/td&gt;
+            &lt;td&gt;{{ film.episode_id }}&lt;/td&gt;
+            &lt;td&gt;{{ film.release_date }}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<p>Kode yang digunakan dalam tutorial ini diambil dari repository <a href="https://github.com/mazipan/ng2-starwars" target="_blank" rel="noopener noreferrer">https://github.com/mazipan/ng2-starwars</a> dan bisa dilihat demo nya di : <a href="http://mazipan.github.io/ng2-starwars/" target="_blank" rel="noopener noreferrer">http://mazipan.github.io/ng2-starwars/</a>. </p>
+<p>Silahkan dipelajari source code<span class="widont">&nbsp;</span>nya.</p>
+<p>Demikian sekilas pembahasan awal mengenai framework Angular, semoga bermanfaat tulisan yang tidak seberapa<span class="widont">&nbsp;</span>ini. </p>
+<p>Ditulis oleh Irfan<span class="widont">&nbsp;</span>Maulana. </p>
+<p>Salam.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

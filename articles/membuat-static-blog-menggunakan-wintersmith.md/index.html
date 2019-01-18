@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Membuat Static Blog Menggunakan Wintersmith - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Membuat Static Blog Menggunakan Wintersmith</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/blogging/1/">blogging</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a><a href="https://mazipan.github.io/blogs/tag/wintersmith/1/">wintersmith</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><figure style="width: 664px" class="wp-caption aligncenter"><img src="http://wintersmith.io/images/wintersmith-og.png" alt="Wintersmith.io Logo" width="664" height="456" /><figcaption class="wp-caption-text"><span style="color: #808080;"><em>Wintersmith.io Logo</em></span></figcaption></figure> 
+
+<p><strong>Membuat Static Blog Menggunakan Wintersmith</strong> - Static blog adalah blog yang tidak memiliki data dinamis atau hanya terdiri dari sekumpulan file-file static seperti <span class="caps">HTML</span>, <span class="caps">CSS</span>, Javascript serta Images. Dan salah satu platform yang paling sering digunakan untuk membuat blog static ini adalah Jekyll. Kepopuleran Jekyll semakin menjadi-jadi setelah menjadi official static site generator yang diusung oleh Github Pages, yang artinya kita tidak perlu melakukan build file di lokal komputer kita baru kemudian commit ke repository namun dari Github Pages bisa langsung melakukan auto build ketika kode kita<span class="widont">&nbsp;</span>commit.</p>
+<p><span class="more"></span></p>
+<p>Namun pada tulisan kali ini kita tidak akan membahas Jekyll, tentu saja karena memang sudah terlalu populer dan berbagai tutorial bisa ditemukan dengan mudah bahkan banyak yang berbahasa Indonesia. Kali ini kita akan bahas static site generator lain yakni <a href="http://wintersmith.io" target="_blank" rel="noopener noreferrer"><strong>Wintersmith</strong></a>.</p>
+<p>Wintersmith seperti official website-nya menawarkan <em>Flexible, minimalistic, multi-platform static site generator built on top of node.js</em> memiliki beberapa keunggulan dibanding Jekyll menurut saya, diantaranya sebagai berikut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li><p>Menggunakan Engine NodeJs </p>
+</li>
+<li><p>Templating dengan <span class="caps">PUG</span>/Jade </p>
+</li>
+<li><p>Sudah Tersedia Banyak Plugin<span class="widont">&nbsp;</span>Standard</p>
+</li>
+</ol>
+<p>Yuk, cusss kita mulai saja belajar membuat Blog Static menggunakan Wintersmith. Silahkan disimak langkah-langkahnya berikut ini<span class="widont">&nbsp;</span>:</p>
+<p><strong>1. Instalasi Wintersmith</strong></p>
+<p>Wintersmith seperti yang dijelaskan diatas menggunakan engine NodeJS sehingga untuk memasangnya tinggal menggunakan <code>npm</code> saja.</p>
+<pre><code>npm install wintersmith -g</code></pre><p><strong>2. Membuat Project<span class="widont">&nbsp;</span>Baru</strong></p>
+<pre><code>wintersmith new [project_name]</code></pre><p>Setelahnya akan langsung digenerate hampir semua kebutuhan dasar dalam blog static termasuk dengan beberapa plugin dasar yang dibutuhkan, dan untuk menjalankan project ini Anda bisa menggunakan perintah<span class="widont">&nbsp;</span>:</p>
+<pre><code>cd [project_name]
+wintersmith preview</code></pre><p><strong>3. Build File<span class="widont">&nbsp;</span>Static</strong></p>
+<p>Dan untuk men-generate static file yang nanti bisa kita host dimanapun, termasuk <a href="http://mazipanneh.com/blog/2017/05/mengenal-github-pages-sebagai-static-hosting/" target="_blank" rel="noopener noreferrer">Github Pages </a>, kita bisa menggunakan perintah<span class="widont">&nbsp;</span>:</p>
+<pre><code>wintersmith build</code></pre><p>File static akan di generate ke dalam folder <code>build</code>, kita bisa copykan ke branch berbeda sebagai static blog, contoh yang direkomendasikan menggunakan branch <strong>gh-pages</strong>.</p>
+<p><strong>4. Memodifikasi Konfigurasi</strong></p>
+<p>Konfigurasi dasar dari wintersmith terdapat pada file <code>config.json</code>, disini terdapat setup dasar seperti title, url, serta plugin yang kita gunakan. Kali ini kita akan coba memodifikasi dan menambahkan beberapa keterangan di <code>config.json</code> dan berikut adalah contohnya, dimana kita menambahkan beberapa keterangan di <code>locals</code> sesuai dengan blog yang akan kita buat<span class="widont">&nbsp;</span>:</p>
+<pre><code>{
+  &quot;locals&quot;: {
+    &quot;url&quot;: &quot;https://ft-umj-4.github.io/story&quot;,
+    &quot;logoUrl&quot;: &quot;https://ft-umj-4.github.io/ft-umj-iv.jpg&quot;,
+    &quot;name&quot;: &quot;FT UMJ IV&quot;,
+    &quot;owner&quot;: &quot;GROUP FT UMJ IV&quot;,
+    &quot;description&quot;: &quot;Secuil cerita dan dokumentasi kegiatan dari group FT UMJ IV&quot;,
+    &quot;sitemap&quot;: &quot;sitemap.xml&quot;,
+    &quot;discuss_id&quot;: &quot;ft-umj-4-github-io&quot;
+  },
+  &quot;plugins&quot;: [
+    &quot;./plugins/paginator.coffee&quot;
+  ],
+  &quot;require&quot;: {
+    &quot;moment&quot;: &quot;moment&quot;,
+    &quot;_&quot;: &quot;underscore&quot;,
+    &quot;typogr&quot;: &quot;typogr&quot;
+  },
+  &quot;jade&quot;: {
+    &quot;pretty&quot;: true
+  },
+  &quot;markdown&quot;: {
+    &quot;smartLists&quot;: true,
+    &quot;smartypants&quot;: true
+  },
+  &quot;paginator&quot;: {
+    &quot;perPage&quot;: 3
+  }
+}</code></pre><p><strong>5. Menambahkan Plugin<span class="widont">&nbsp;</span>Baru</strong></p>
+<p>Wintersmith punya beberapa plugin yang mungkin akan kita butuhkan, daftar lengkapnya bisa dilihat di <a href="https://github.com/jnordberg/wintersmith/wiki/Plugins" target="_blank" rel="noopener noreferrer">wiki plugins</a><span class="widont">&nbsp;</span>mereka. </p>
+<p>Yang pertama perlu ditambahkan ketika ingin menggunakan plugin adalah depedency di dalam <code>package.json</code>, kemudian menginstall semua depedency dengan <code>npm install</code>, dan berikut contoh instalasi beberapa pluginyang saya gunakan juga<span class="widont">&nbsp;</span>:</p>
+<p><strong>5.a. Menambahkan wintersmith-sassify</strong></p>
+<p>wintersmith-sassify merupakan plugin yang digunakan ketika kita ingin menggunakan <span class="caps">SASS</span> pre-processor dibandingkan <span class="caps">CSS</span> biasa, kita menginstall dengan<span class="widont">&nbsp;</span>cara</p>
+<pre><code>npm install wintersmith-sassify</code></pre><p>Setelahnya akan ada depedency tambahan di <code>package.json</code> kita, selanjutnya kita akan menambahkan konfigurasi baru di <code>config.json</code> seperti berikut<span class="widont">&nbsp;</span>:</p>
+<pre><code>&quot;sassify&quot;: {
+    &quot;outputStyle&quot;: &quot;compressed&quot;,
+    &quot;sourceComments&quot;: false,
+    &quot;sourceMap&quot;: false
+}</code></pre><p>Sehingga <code>config.json</code> kita selengkapnya akan menjadi seperti ini<span class="widont">&nbsp;</span>:</p>
+<pre><code>{
+  &quot;locals&quot;: {
+    &quot;url&quot;: &quot;https://ft-umj-4.github.io/story&quot;,
+    &quot;logoUrl&quot;: &quot;https://ft-umj-4.github.io/ft-umj-iv.jpg&quot;,
+    &quot;name&quot;: &quot;FT UMJ IV&quot;,
+    &quot;owner&quot;: &quot;GROUP FT UMJ IV&quot;,
+    &quot;description&quot;: &quot;Secuil cerita dan dokumentasi kegiatan dari group FT UMJ IV&quot;,
+    &quot;sitemap&quot;: &quot;sitemap.xml&quot;,
+    &quot;discuss_id&quot;: &quot;ft-umj-4-github-io&quot;
+  },
+  &quot;plugins&quot;: [
+    &quot;./plugins/paginator.coffee&quot;,
+    &quot;wintersmith-sassify&quot;  
+  ],
+  &quot;require&quot;: {
+    &quot;moment&quot;: &quot;moment&quot;,
+    &quot;_&quot;: &quot;underscore&quot;,
+    &quot;typogr&quot;: &quot;typogr&quot;
+  },
+  &quot;jade&quot;: {
+    &quot;pretty&quot;: true
+  },
+  &quot;markdown&quot;: {
+    &quot;smartLists&quot;: true,
+    &quot;smartypants&quot;: true
+  },
+  &quot;paginator&quot;: {
+    &quot;perPage&quot;: 10
+  },
+  &quot;sassify&quot;: {
+    &quot;outputStyle&quot;: &quot;compressed&quot;,
+    &quot;sourceComments&quot;: false,
+    &quot;sourceMap&quot;: false
+  }
+}</code></pre><p><strong>5.b. Menambahkan wintersmith-tag</strong></p>
+<p>wintersmith-tag digunakan untuk menambahkan tag pada artikel yang kita post, instalasinya<span class="widont">&nbsp;</span>menggunakan</p>
+<pre><code>npm install wintersmith-tag</code></pre><p>Setelahnya kita akan mengubah Sehingga <code>config.json</code> kita seperti ini<span class="widont">&nbsp;</span>:</p>
+<pre><code>{
+  &quot;locals&quot;: {
+    &quot;url&quot;: &quot;https://ft-umj-4.github.io/story&quot;,
+    &quot;logoUrl&quot;: &quot;https://ft-umj-4.github.io/ft-umj-iv.jpg&quot;,
+    &quot;name&quot;: &quot;FT UMJ IV&quot;,
+    &quot;owner&quot;: &quot;GROUP FT UMJ IV&quot;,
+    &quot;description&quot;: &quot;Secuil cerita dan dokumentasi kegiatan dari group FT UMJ IV&quot;,
+    &quot;sitemap&quot;: &quot;sitemap.xml&quot;,
+    &quot;discuss_id&quot;: &quot;ft-umj-4-github-io&quot;
+  },
+  &quot;plugins&quot;: [
+    &quot;./plugins/paginator.coffee&quot;,
+    &quot;wintersmith-sassify&quot;,
+    &quot;wintersmith-tag&quot;     
+  ],
+  &quot;require&quot;: {
+    &quot;moment&quot;: &quot;moment&quot;,
+    &quot;_&quot;: &quot;underscore&quot;,
+    &quot;typogr&quot;: &quot;typogr&quot;
+  },
+  &quot;jade&quot;: {
+    &quot;pretty&quot;: true
+  },
+  &quot;markdown&quot;: {
+    &quot;smartLists&quot;: true,
+    &quot;smartypants&quot;: true
+  },
+  &quot;paginator&quot;: {
+    &quot;perPage&quot;: 10
+  },
+  &quot;tag&quot;: {
+    &quot;perPage&quot;: 10
+  },
+  &quot;sassify&quot;: {
+    &quot;outputStyle&quot;: &quot;compressed&quot;,
+    &quot;sourceComments&quot;: false,
+    &quot;sourceMap&quot;: false
+  }
+}</code></pre><p>Dan untuk menggunakannya, kita hanya perlu menambah tags ditiap atikel markdown yang kita buat, seperti contoh<span class="widont">&nbsp;</span>:</p>
+<pre><code>---
+title: Daftar Anggota FT UMJ IV
+author: ft-umj-iv
+date: 2009-12-12
+template: article.jade
+tags: people
+---</code></pre><p><strong>5.b. Menambahkan wintersmith-sitemap</strong></p>
+<p>wintersmith-sitemap digunakan untuk men-generate file <code>sitemap.xml</code> yang bisa kita submit ke webmaster search engine nantinya, untuk instalasinya kita juga harus menambahakan plugin lainnya yang juga menjadi depedency dari wintersmith-sitemap, seperti berikut<span class="widont">&nbsp;</span>:</p>
+<pre><code>npm install wintersmith-sitemap wintersmith-contents</code></pre><p>Setelahnya kita akan menambahkan di <code>config.json</code> pada bagian<span class="widont">&nbsp;</span>plugins</p>
+<pre><code>{
+  &quot;plugins&quot;: [
+    &quot;./plugins/paginator.coffee&quot;,
+    &quot;wintersmith-sassify&quot;,
+    &quot;wintersmith-tag&quot;,  
+    &quot;wintersmith-contents&quot;,
+    &quot;wintersmith-sitemap&quot;,
+    &quot;wintersmith-tag&quot;        
+  ]
+}</code></pre><p>Plugin ini akan menghasilkan file <code>sitemap.xml</code> pada saat kita<span class="widont">&nbsp;</span>build.</p>
+<p>Salah satu contoh blog static yang sudah live dibuat menggunakan wintersmith bisa dilihat di <a href="https://ft-umj-4.github.io/story/" target="_blank" rel="noopener noreferrer">https://ft-umj-4.github.io/story/</a> dimana kodenya juga bisa dilihat dan dipelajari secara gratis di github <a href="https://github.com/ft-umj-4/story" target="_blank" rel="noopener noreferrer">https://github.com/ft-umj-4/story</a>, atau lebih lengkap silahkan kunjungi showcase mereka <a href="https://github.com/jnordberg/wintersmith/wiki/Showcase" target="_blank" rel="noopener noreferrer">disini</a>.</p>
+<p>Demikian panduan membuat blog static menggunakan wintersmith dari<span class="widont">&nbsp;</span>saya.</p>
+<p>Semoga bermanfaat, </p>
+<p>Ditulis oleh Irfan Maulana di siang<span class="widont">&nbsp;</span>hari.</p>
+<p>Salam</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Langkah-langkah memasang i18n di Vue.js project - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Langkah-langkah memasang i18n di Vue.js project</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”500”]<img src="https://cdn-images-1.medium.com/max/800/1*CfsCXJtHf9hhwE65VATiOQ.png" alt="" width="500" height="412" /> i18n visualisasi (sumber : <a href="https://make.wordpress.org)%5B/caption%5D">https://make.wordpress.org)[/caption]</a></p>
+<p>Internationalization (i18n) dalam sebuah software berarti ketika software tersebut mendukung beberapa bahasa. Fitur ini tentu akan sangat membantu terutama bila software Anda memang ditargetkan pada lebih dari satu negara sehingga mengharuskan mendukung beberapa variasi<span class="widont">&nbsp;</span>bahasa.</p>
+<p>Di dalam project yang dibuat menggunakan Vue.js hal ini bisa dilakukan dengan mudah bahkan dalam hitungan menit kita sudah bisa menyelesaikan contoh sebuah aplikasi yang mendukung multi<span class="widont">&nbsp;</span>bahasa.</p>
+<p><span class="more"></span></p>
+<p>Berikut beberapa langkah untuk setup i18n di dalam Vue.js<span class="widont">&nbsp;</span>:</p>
+<p><strong>1. Install dependency</strong></p>
+<p>Kita akan menggunakan bantuan sebuah plugin yakni vue-i18n.
+Bila menggunakan<span class="widont">&nbsp;</span>npm:</p>
+<pre><code>npm install vue-i18n — save</code></pre>
+<p>atau bisa juga menggunakan yarn dengan<span class="widont">&nbsp;</span>perintah:</p>
+<pre><code>yarn add vue-i18n</code></pre>
+<p><strong>2. Setup file<span class="widont">&nbsp;</span>locale</strong></p>
+<p>File locale ini berupa Json file yang berisi terjemahan dari berbagai kata yang akan digunakan dalam aplikasi kita. Misalnya saja kita ingin mendukung bahasa Indonesia dan bahasa Inggris dalam aplikasi kita, maka kita akan membuat dua file locale yakni id.json dan<span class="widont">&nbsp;</span>en.json.</p>
+<p>Contoh file ini bisa dilihat di<span class="widont">&nbsp;</span>:</p>
+<ol>
+     <li><a href="https://github.com/mazipan/chucknorris/blob/master/src/i18n/id.json" target="_blank" rel="noopener">id.json</a></li>
+     <li><a href="https://github.com/mazipan/chucknorris/blob/master/src/i18n/en.json" target="_blank" rel="noopener">en.json</a></li>
+</ol>
+<strong>3. Setup plugin</strong>
+
+<p>Untuk menggunakan plugin tersebut kita bisa dengan mudah mendefinisikan bahasa yang akan kita pakai beserta file locale yang telah kita buat sebelumnya. Berikut adalah contoh setup plugin tersebut<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*ISmEFYkGcPsyTeF22XCwRg.png" />
+
+<p>Seperti terlihat, kita meng-import dua file json locale kita kemudian mendefinisikan default <span class="caps">EN</span> di dalam object VueI18n di dalam property locale, dan mendefinisikan bahasa lain yang tersedia dalam property<span class="widont">&nbsp;</span>messages.</p>
+<p><strong>4. Menyisipkan kedalam Vue<span class="widont">&nbsp;</span>Instance</strong></p>
+<p>Setelah membuat file diatas, kita kan menyisipkan setup file tadi ke dalam Vue Instance kita yang biasanya terdapat dalam file main.js. Berikut contoh kodenya<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*6ACofjVF00WuvWO2bPCVjw.png" />
+
+<p>Bisa dilihat ketika kita membuat <i>new Vue({})</i>, kita menyisipkan file setup i18n yang kita buat<span class="widont">&nbsp;</span>sebelumnya.</p>
+<p><strong>5. Menggunakan di <span class="caps">HTML</span><span class="widont">&nbsp;</span>Template</strong></p>
+<p>Setelah langkah diatas dilakukan, maka kita bisa dengan mudah digunakan di html template kita dengan sintaks {{ $t(‘key’) }} dimana key adalah key yang terdapat pada file Json locale kita. Berikut adalah potongan kode penggunaan plugin vue-i18n di dalam <span class="caps">HTML</span> template<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*SvD85sxkikZdv_PYT_n-8g.png" />
+
+<p>Terlihat di gambar diatas kita membuat beberapa terjemahan dengan cara menggunakan sintaks : {{$t(‘tab.search’)}} dan juga {{$t(‘sidebar.about’)}}. Dengan kode ini berarti kita telah mendefinisikan sebuah key-value di dalam file json kita seperti contoh berikut<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*h9BI7UxMHnI64EHZM6H5Zw.png" />
+
+<p><strong>6. Mengganti bahasa</strong></p>
+<p>Untuk mengganti bahsa kita hanya cukup mengganti locale dari instace plugin vue-i18n yang bisa diakses dengan this.$i18n di dalam masing-masing komponen kita. Berikut contoh kodenya<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*RH3GGyD9rZeNG7Li2xd9DA.png" />
+
+<p>Semua kode yang saya bagikan adalah potongan kode dalam project ChuckNorris yang bisa dilihat di : <a href="https://github.com/mazipan/chucknorris/" target="_blank" rel="noopener">https://github.com/mazipan/chucknorris/</a></p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*mbx2wtZZ3UdD4X8bessyyQ.png" />
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*VgS8pLwGSeu4lgj5jTzNnQ.png" />
+
+<p>Bila ingin belajar lebih lanjut mengenai berbagai penggunaan vue-i18n ini Anda bisa langsung cek dokumentasinya di : <a href="https://kazupon.github.io/vue-i18n/en/" target="_blank" rel="noopener">https://kazupon.github.io/vue-i18n/en/</a>.</p>
+<p>&nbsp;</p>
+<p>Tulisan ini juga telah dipublikasikan di Medium: <a href="https://medium.com/vuejs-id/mudahnya-setup-internationalisasi-bahasa-di-vue-js-2b7d00ef3c1" target="_blank" rel="noopener">https://medium.com/vuejs-id/mudahnya-setup-internationalisasi-bahasa-di-vue-js-2b7d00ef3c1</a></p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

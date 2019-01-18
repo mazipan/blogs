@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Pengetahuan dasar untuk mempercepat loading sebuah website - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Pengetahuan dasar untuk mempercepat loading sebuah website</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/web%20performance/1/">web performance</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Berbagai pengetahuan dasar yang bisa kita pelajari dan optimalkan dalam memuat halaman<span class="widont">&nbsp;</span>website.</p>
+<p>[caption id=”” align=”aligncenter” width=”1600”]<img src="https://cdn-images-1.medium.com/max/1600/1*FDEUVDcdwVIPLl0tQZD9Cg.png" alt="Pengetahuan dasar untuk mempercepat loading sebuah website" width="1600" height="1111" /> Image source: <a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/reference%5B/caption%5D">https://developers.google.com/web/tools/chrome-devtools/network-performance/reference[/caption]</a></p>
+<p>
+Pernahkah kita merasa frustasi dengan bagaimana browser memuat website yang sudah kita buat dengan susah payah? Pernahkah kita merasa sudah melakukan berbagai optimasi di website kita namun hasilnya tetap saja tidak memuaskan? Nah, untuk mengetahui apakah hal yang sudah kita lakukan berada pada jalan yang benar maka pada tulisan ini kita akan sama-sama belajar memahami bagaimana browser memuat sebuah halaman website serta berbagai hal yang bisa kita optimasi dari website kita untuk memperbaiki performa rendering website kita di<span class="widont">&nbsp;</span>browser.
+</p>
+
+<p><span class="more"></span></p>
+<p>
+Ada banyak hal tentunya dan juga ada banyak pendapat mengenai apa saja hal yang sebaiknya dan harus kita lakukan untuk memperbaiki performa website kita saat dimuat oleh browser. Kita akan coba pecahkan kedalam beberapa bagian agar lebih mudah bagi kita bersama memahami poin per<span class="widont">&nbsp;</span>poinnya.
+</p>
+
+<h3>Browser</h3>
+
+<p>
+Sebelum melakukan berbagai hal optimasi, kita perlu terlebih dahulu memahami bagaimana dasar-dasar browser bekerja agar nantinya lebih mudah bagi kita untuk mengaitkan pekerjaan yang akan dan telah kita<span class="widont">&nbsp;</span>lakukan.
+</p>
+
+<p>
+Browser sendiri adalah alat yang digunakan pengguna untuk melihat website kita. Bila browser adalah milik pengguna, artinya kita sebagai penyedia website akan mengirimkan berbagai file dan assets kepada pengguna melalui network mereka. Dari sini kita mengetahui bahwa pengguna satu dan pengguna lain kemungkinan akan memiliki pengalaman yang berbeda dalam memuat website kita. Kesemuanya tergantung dari kondisi pengguna itu sendiri, mulai dari kondisi network pengguna, device yang digunakan oleh pengguna, sampai browser vendor dan versi yang digunakan oleh pengguna. Berbagai hal tersebut akan secara langsung mempengaruhi pengalaman pengguna dalam memuat website<span class="widont">&nbsp;</span>kita.
+</p>
+
+<p>
+Selebihnya peran kita adalah memastikan bahwa semua file yang dibutuhkan oleh pengguna yang ingin melihat website kita dalam kondisi tersedia. Jadi kita harus bisa memastikan bahwa baik dalam keadaan low traffic ataupun high traffic pengguna kita tetap bisa mendapatkan file yang dibutuhkan. Karena bila kita sudah tidak bisa menyediakan, maka sebaik apapun kondisi pengguna tersebut tetap saja tidak akan bisa memuat halaman<span class="widont">&nbsp;</span>kita.
+</p>
+
+<h3><span class="caps">HTML</span></h3>
+
+<p>
+<span class="caps">HTML</span> merupakan bagian utama dari sebuah website. Saya sering menyebut kalau <span class="caps">HTML</span> ini ibarat kerangka di tubuh manusia, sesuatu yang membangun tubuh itu sendiri. <span class="caps">HTML</span> merupakan representasi struktur dari website yang kita buat. Semakin rumit dan kompleks website yang kita buat akan berimbas langsung pada struktur <span class="caps">HTML</span> dan berakibat pada ukuran file yang harus kita kirimkan ke pengguna.
+<br/>
+Beberapa hal yang bisa kita optimalkan terhadap <span class="caps">HTML</span> antara<span class="widont">&nbsp;</span>lain:
+</p>
+
+<ol>
+    <li>
+<h5>Compress dan optimize</h5>
+<p>
+Ketika membuat <span class="caps">HTML</span> tentu kita akan membuat kode kita agar mudah dibaca oleh developer lain dan kita akan menambahkan banyak white space agar kode kita lebih rapi. White space ini tidak dibutuhkan ketika kita mengirimkan <span class="caps">HTML</span> ke browser, membuang hal yang tidak perlu artinya kita dalam proses memperkecil file yang dihasilkan.
+
+<p>Meskipun tidak semua penghilangan bagian yang tidak dibutuhkan itu selalu terlihat efeknya secara masif terhadap ukuran file, namun prakteknya merupakan hal yang baik untuk dilakukan. Seperti halnya saya yang selalu membenci bila ada developer yang meng-comment code dibandingkan menghapusnya ketika sudah tidak<span class="widont">&nbsp;</span>digunakan.</p>
+</p>
+</li>
+    <li>
+<h5>Memangkas waktu pembuatan</h5>
+<p>
+Bila kita masih menggunakan <span class="caps">SSR</span> dimana kode <span class="caps">HTML</span> kita harus dibuat di server dengan data yang dinamis pada saat itu juga, maka kita harus memastikan waktu untuk membuat <span class="caps">HTML</span> tersebut bisa dipangkas sebisa mungkin. Gunakan cache baik pada data dinamis yang dibutuhkan ataupun pada <span class="caps">HTML</span> yang dihasilkan bila memang<span class="widont">&nbsp;</span>diperlukan.
+</p>
+</li>
+    <li>
+<h5>Utamakan konten above the<span class="widont">&nbsp;</span>fold</h5>
+<p>
+Pengguna tidak akan melihat keseluruhan halaman website kita pada saat pertama kali halaman tersebut dimuat, melainkan hanya bagian teratas sebatas tinggi layar. Karena itu kita wajib memprioritaskan konten-konten yang berada pada wilayah tangkapan ini, sedangkan konten yang berada dibawahnya bisa dimuat belakangan. Hal ini termasuk juga dengan konten yang membutuhkan aksi dari pengguna untuk ditampilkan seperti komponen popup<span class="widont">&nbsp;</span>modal.
+</p>
+<p>
+<img src="https://cdn-images-1.medium.com/max/1600/1*cQO2xW4_EBCTAwVOC2hkdQ.png" alt="" />
+</p>
+</li>
+
+</ol>
+
+
+
+<h3><span class="caps">CSS</span></h3>
+
+<p>
+<span class="caps">CSS</span> merupakan bagian yang tidak terpisahkan dari sebuah website. <span class="caps">CSS</span> sendiri bisa dimuat paling tidak dengan 3 cara yakni inline style, internal style, dan external style. Masing-masing cara yang kita gunakan memiliki kelebihan dan kekurangannya sendiri, penggunaannya tergantung pada kebutuhan kita.
+
+<p>Inline style tidak akan menambah jumlah roundtrip network kita namun susah untuk digunakan ulang dan akan menambah ukuran <span class="caps">HTML</span> kita. Internal style bisa digunakan ulang selama berada di halaman tersebut dan tidak akan menambah jumlah request namun juga akan menambah ukuran <span class="caps">HTML</span> kita. External style bisa digunakan ulang dengan mudah dan tidak akan menambah ukuran <span class="caps">HTML</span> yang kita kirim namun akan menambah jumlah request di network<span class="widont">&nbsp;</span>kita.</p>
+<p>Paling tidak berikut adalah beberapa cara yang bisa kita lakukan terhadap <span class="caps">CSS</span><span class="widont">&nbsp;</span>kita:</p>
+</p>
+
+<ol>
+
+<li>
+<h5>Minify dan merge</h5>
+<p>
+Seperti <span class="caps">HTML</span>, <span class="caps">CSS</span> pun akan membawa banyak white space yang tidak diperlukan di lingkungan production yang bisa kita hilangkan. Pengoptimalan <span class="caps">CSS</span> juga bisa dilakukan dengan menyatukan berbagai class atau selector lain di <span class="caps">CSS</span> yang memiliki rule yang sama. Penggunaan berbagai shorthand juga diperlukan untuk memberikan hasil file yang lebih ramping.
+
+<p>Artikel berikut akan membantu kalian agar lebih bijak dalam menulis <span class="caps">CSS</span> dan bisa menghasilkan file yang lebih bersahabat dengan<span class="widont">&nbsp;</span>browser:</p>
+<p><a href="https://www.smashingmagazine.com/2008/08/7-principles-of-clean-and-optimized-css-code/" rel="noopener" target="_blank">https://www.smashingmagazine.com/2008/08/7-principles-of-clean-and-optimized-css-code/</a></p>
+</p>
+</li>
+
+<li>
+<h5>Kurangi jumlah file</h5>
+<p>
+Satu prinsip yang harus diketahui adalah bahwa semakin banyak kita memuat file maka semakin banyak waktu yang dibutuhkan untuk memuat website kita. Jadi bila kita bisa menyatukan file yang akan kita muat (selama memiliki ukuran yang masuk akal) maka menyatukannya adalah hal yang sebaiknya<span class="widont">&nbsp;</span>dilakukan.
+</p>
+</li>
+
+<li>
+<h5>Kurangi unused style</h5>
+<p>
+Faktanya sebagian besar website memuat file <span class="caps">CSS</span> dengan isi yang sebenarnya hanya digunakan sebagian kecil dari keseluruhan isi yang ada. Menghilangkan style di <span class="caps">CSS</span> yang tidak digunakan oleh suatu halaman website akan sangat membantu kita dalam mengurangi ukuran file <span class="caps">CSS</span> yang akan kita kirimkan ke browser pengguna.
+
+<p>Sedikit trik tambahan, kita bisa melihat coverage dari unused <span class="caps">CSS</span> dari suatu halaman website melalui menu coverage yang terdapat pada console drawer di<span class="widont">&nbsp;</span>ChromeDevTools.</p>
+</p>
+
+<p>
+<img src="https://cdn-images-1.medium.com/max/1600/1*puZwisn4BDLxgv4pl8UFSQ.png" alt="" />
+</p>
+</li>
+
+<li>
+<h5>Utamakan critical <span class="caps">CSS</span></h5>
+<p>
+Critical <span class="caps">CSS</span> adalah sekumpulan style <span class="caps">CSS</span> yang keberadaannya dirasa sangat penting bagi pengguna pada masa-masa awal halaman tersebut dimuat sehingga sangat tidak disarankan untuk menunda dalam pemuatan style semacam ini. Perlu diketahui bahwa critical <span class="caps">CSS</span> harus sekecil mungkin dan menghasilkan tampilan yang minimal tidak menggangu bagi pengguna dan memenuhi berbagai tampilan minimal yang harus pengguna lihat pertama kali.
+
+<p>Beberapa pengembang web memutuskan untuk meletakan critical <span class="caps">CSS</span> ini ke dalam internal style di dalam <span class="caps">HTML</span> dan di dalam tag head meraka. 
+Artikel berikut ini membantu kita memahami apa itu critical <span class="caps">CSS</span> dan bagaimana cara mengindentifikasi style mana yang<span class="widont">&nbsp;</span>critical:</p>
+<p><a href="https://www.smashingmagazine.com/2015/08/understanding-critical-css/" rel="noopener" target="_blank">https://www.smashingmagazine.com/2015/08/understanding-critical-css/</a></p>
+</p>
+</li>
+
+</ol>
+
+
+
+<h3>JavaScript</h3>
+
+<p>
+JavaScript merupakan penggerak dari berbagai website jaman sekarang, perannya kini kian vital seiring berkembangnya kemampuan dari bahasanya sendiri. Sayangnya JavaScript masih menjadi momok sendiri bagi browser, selain karena biasanya memiliki ukuran file yang mendominasi bagian dari website kita, juga karena dibutuhkan proses parsing maupun compile agar bisa dipahami oleh browser itu sendiri. Proses parsing ini sendiri bisa berbeda-beda setiap device dan browsernya, seperti terlihat pada gambar<span class="widont">&nbsp;</span>berikut:
+</p>
+
+<img src="https://cdn-images-1.medium.com/max/1600/1*G2FeUByS7GC2ncNilHi1pQ.png" alt="" />
+
+<p>
+Untuk memahami lebih lanjut mengenai proses bagaimana JavaScript dimuat dalam suatu browser, silahkan baca artikel dari Addy Osmani pada tautan berikut:
+
+<p><a href="https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e" rel="noopener" target="_blank">https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e</a></p>
+</p>
+
+<p>Beberapa hal yang bisa lakukan dengan JavaScript<span class="widont">&nbsp;</span>diantaranya:</p>
+<ol>
+
+<li>
+<h5>Kurangi ukuran file</h5>
+<p>
+<blockquote>Semakin sedikit kode maka semakin sedikit yang harus di compile/parse, semakin sedikit yang harus di transfer lewat network, dan semakin sedikit juga yang harus di decompress. (diterjemahkan dari @junwatu dari<span class="widont">&nbsp;</span>https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)</blockquote>
+</p>
+
+<p>
+Dengan kemampuan JavaScript yang sekarang bisa modular dan bisa menambahkan berbagai dependencies ke dalam projek kita dengan lebih mudah seringkali justru di-abuse oleh banyak pengembang web. Mereka tidak merasa ikut bertanggung jawab ketika hasil akhir dari file JavaScript yang harus dimuat menjadi terlalu besar. Setiap keputusan dalam menambahkan kode atau bahkan pustaka luar buatan orang lain akan secara langsung berakibat pada ukuran file kita, menjadi lebih bijak sebagai pengembang web adalah cara terbaik untuk mengurangi hal seperti ini terulang kembali. Selain kita juga bisa memasang berbagai gate termasuk ukuran file pada saat melakukan build pada projek<span class="widont">&nbsp;</span>kita.
+</p>
+</li>
+
+
+<li>
+<h5>Code Splitting</h5>
+<p>
+Untuk beberapa website yang memilih menggunakan Single Page Application, memisahkan script berdasarkan halaman yang dikunjungi adalah hal yang mutlak harus dilakukan karena ini bisa mengurangi jumlah kode yang tidak digunakan pada halaman<span class="widont">&nbsp;</span>tersebut.
+</p>
+</li>
+
+
+<li>
+<h5>Uglify dan optimize</h5>
+<p>
+Pastikan kita melakukan uglify dan juga optimize pada kode kita dan membuang berbagai dead code yang mungkin ada pada kode kita. Untuk melakukan ini biasanya menggunakan tools yang sudah tersedia seperti<span class="widont">&nbsp;</span>UglifyJS.
+</p>
+</li>
+
+<li>
+<h5>Async dan Defer</h5>
+<p>
+Directive async pada script eksternal bisa membuat request suatu script dilakukan secara bersamaan dengan script yang lain. Hal ini bisa mengurangi waktu muat karena beberapa script dieksekusi atau diminta dalam waktu yang hampir sama. Sayangnya ketika menggunakan directive ini kita jadi tidak bisa mengetahui urutan kapan selesai satu script dieksekusi atau diminta.
+
+<p>Seringkali kita harus menambahkan berbagai third party script kedalam website kita seperti analytics, berbagai tracker, maupun remarkerting/retargeting script. Hal ini tentu saja akan memperlambat waktu muat website kita, dan salah satu trik yang bisa kita lakukan adalah men-defer script kita yang artinya menunda script ini di-request ataupun dieksekusi sampai halaman terkait selesai di<span class="widont">&nbsp;</span>parsing.</p>
+<p>Berbeda dengan async yang tidak memperdulikan urutan, defer akan tetap dieksekusi berdasarkan urutan dari script yang kita tulis di<span class="widont">&nbsp;</span>kode.</p>
+<p><a href="https://bitsofco.de/async-vs-defer/" rel="noopener" target="_blank">https://bitsofco.de/async-vs-defer/</a></p>
+</p>
+</li>
+
+
+</ol>
+
+
+
+<h3><span class="caps">IMAGE</span></h3>
+
+<ol>
+
+<li>
+<h5>Kompresi kualitas</h5>
+<p>
+Pastikan melakukan kompresi terhadap gambar-gambar yang akan dimuat di website kita, tidak perlu menggunakan kualitas yang sangat tajam karena akan menghasilkan ukuran gambar yang besar pula. Sudah banyak online tools gratis yang bisa kita gunakan untuk melakukan kompresi gambar seperti melalui website https://tinypng.com/ dan https://tinyjpg.com/. Kita juga bisa meletakan proses kompresi ini kedalam build proses kita seperti salah satunya menggunakan<span class="widont">&nbsp;</span>https://github.com/tcoopman/image-webpack-loader.
+</p>
+</li>
+
+
+<li>
+<h5>Kurangi jumlah request</h5>
+<p>
+Mengurangi jumlah file gambar yang harus dimuat adalah hal utama selain melakukan optimasi pada file gambar itu sendiri. Untuk melakukan hal ini kita bisa melakukan beberapa trik seperti<span class="widont">&nbsp;</span>berikut:
+</p>
+
+<ul>
+
+  <li>
+   <h6>Lazy load<h6>
+   <p>
+Gambar yang tidak sedang dilihat oleh pengguna tidaklah boleh kita muat pada saat pertama kali memuat website kita, gambar tersebut hanya boleh dimuat ketika pengguna memang sedang atau akan melihat gambar tersebut.
+
+<p>Cara paling mainstream untuk menerapkan lazy load gambar adalah dengan mendeteksi scroll yang dilakukan oleh pengguna di website kita. Kabar baiknya lagi, belakangan kita malah dimudahkan untuk memuat gambar secara lazy dengan adanya<span class="widont">&nbsp;</span>IntersectionObserver.</p>
+</p>
+  </li>
+
+
+  <li>
+   <h6>Inline <span class="caps">SVG</span> kecil<h6>
+   <p>
+<span class="caps">SVG</span> merupakan gambar yang dibangun dari berbagai path yang saling dihubungkan. <span class="caps">SVG</span> memiliki keunggulan yang bisa diperbesar tanpa mengalami pecah pada pixelnya. <span class="caps">SVG</span> seringkali digunakan untuk berbagai icon dalam website. Untuk memuat file ini sendiri paling mudah adalah dengan membuat tag <code><img src="path/file.svg"/></code> namun cara ini tentu akan menambah jumlah request pada network kita karena akan dimuat layaknya gambar pada umumnya. Cara lain adalah dengan meyalin tag markup yang ada di dalam file <span class="caps">SVG</span> tersebut dan menempatkannya langsung didalam <span class="caps">HTML</span> kita atau biasa dikenal dengan inline <span class="caps">SVG</span>. Cara ini bisa mengurangi jumlah request yang harus dilakukan namun akan menambah ukuran dari <span class="caps">HTML</span> kita.
+
+<p>Selain itu kita bisa juga melakukan optimasi pada file <span class="caps">SVG</span> menggunakan <span class="caps">SVGO</span> yang telah dibuatkan juga versi websitenya di <a href="https://jakearchibald.github.io/svgomg/">https://jakearchibald.github.io/svgomg/</a>.</p>
+</p>
+  </li>
+
+
+  <li>
+   <h6>Gunakan Sprite<h6>
+   <p>
+Sprite digunakan untuk memuat banyak gambar dalam sekali request network sehingga tidak diperlukan banyak request berulang pada prosesnya.
+
+<p><a href="https://css-tricks.com/css-sprites/" rel="noopener" target="_blank">https://css-tricks.com/css-sprites/</a></p>
+</p>
+  </li>
+
+</ul>
+
+
+</li>
+
+
+<li>
+<h5>Utamakan ekstensi progressive</h5>
+<p>
+Utamakan untuk menggunakan tipe gambar yang lebih baik seperti webp karena memiliki ukuran yang lebih kecil tanpa menurunkan kualitas masif.
+
+<p>Artikel berikut bisa jadi panduan kita dalam menyajikan dan mengoptimalkan gambar bagi website<span class="widont">&nbsp;</span>kita:</p>
+<p><a href="https://images.guide/" rel="noopener" target="_blank">https://images.guide/</a></p>
+</p>
+</li>
+
+</ol>
+
+
+<h3>Lainnya</h3>
+
+<ol>
+
+<li>
+<h5> Kompresi </h5>
+<p>Pastikan semua file yang akan kita kirimkan ke browser dalam keadaan terkompresi dengan baik. Kompresi yang paling sering digunakan oleh pengembang adalah GZip yang bisa dengan mudah di set melalui webserver semacam Apache atau Nginx.
+
+<p>Artikel berikut akan membantu kita dalam mengaktifkan kompresi untuk website<span class="widont">&nbsp;</span>kita:</p>
+<p><a href="https://developers.google.com/speed/docs/insights/EnableCompression" rel="noopener" target="_blank">https://developers.google.com/speed/docs/insights/EnableCompression</a></p>
+</p>
+</li>
+
+
+<li>
+<h5> Preload, prefetch dan<span class="widont">&nbsp;</span>dns-prefetch </h5>
+<p>
+Preload bisa digunakan untuk mendahulukan berbagai resources yang kita yakini akan dipakai di halaman web tersebut seperti font, <span class="caps">CSS</span> maupun JavaScript dibandingkan resources yang lain. Hanya gunakan preload bila resources tersebut benar-benar digunakan karena cara ini akan memberikan perintah ke browser untuk menetapkan resources sebagai high priority dalam urutan request yang akan dilakukan.
+
+<p>Berikut contoh menggunakan preload untuk memuat file<span class="widont">&nbsp;</span><span class="caps">CSS</span>:</p>
+<pre><code>
+<link rel="preload" href="path/file.css" as="style">
+</code></pre>
+
+<p>Prefecth hampir sama dengan preload hanya saja memiliki prioritas dibawah preload. Gunakan prefetch untuk memuat berbagai resource yang kita yakini akan digunakan pada navigasi berikutnya setelah halaman<span class="widont">&nbsp;</span>terkait.</p>
+<p>Artikel berikut akan membantu kita memahami preload dan<span class="widont">&nbsp;</span>prefetch:</p>
+<p><a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf" rel="noopener" target="_blank">https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf</a></p>
+</p>
+
+<p>
+Dns-prefetch akan menjalankan <span class="caps">DNS</span> lookup untuk domain eksternal yang akan kita gunakan pada halaman website tersebut. Dns-prefetch ini akan membawa bandwith yang sangat kecil namun latency yang cukup tinggi, karenanya hanya gunakan cara ini untuk domain eksternal yang memang benar-benar kita akan panggil pada halaman tersebut.
+
+<pre><code>
+<!-- Prefetch DNS for external assets -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+</code></pre>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control" rel="noopener" target="_blank">https://developer.mozilla.org/en-<span class="caps">US</span>/docs/Web/<span class="caps">HTTP</span>/Headers/X-<span class="caps">DNS</span>-Prefetch-Control</a></p>
+</p>
+</li>
+
+
+<li>
+<h5> Browser Cache </h5>
+<p>
+Browser pada dasarnya secara default telah melakukan cache pada semua resources yang dia telah request agar pada request berikutnya tidak perlu meminta resource yang sama kembali. Namun kita diharuskan untuk menyetel max-age atau E-tag di header setiap resource yang diminta agar browser bisa memahami kapan waktu yang tepat untuk meminta ulang resource tersebut. Hal ini sudah merupakan hal wajib yang harus dikerjakan oleh para pengembang<span class="widont">&nbsp;</span>web.
+</p>
+
+<p>
+Bicara soal cache, hal yang paling menyulitkan adalah menentukan kapan waktu yang tepat untuk dilakukan evict terhadap cache tersebut. Pengembang web harus tau kapan waktu yang tepat untuk melakukan evict atau memaksa browser meminta resource terbaru. Cara yang sering diterapkan oleh para pengembang web adalah dengan memberikan signature/hash/finger print pada nama file dari resource yang diminta. Sehingga bila dilakukan deployment file terbaru maka signature/hash/finger print tersebut akan berubah dan kita tidak perlu memusingkan lagi untuk meng-evict cache sebelumnya.
+
+<p>Artikel berikut membantu kita memahami bagaimana untuk memaksa browser melakukan cache kepada file<span class="widont">&nbsp;</span>kita:</p>
+<p><a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching" rel="noopener" target="_blank">https://developers.google.com/speed/docs/insights/LeverageBrowserCaching</a></p>
+</p>
+</li>
+
+
+<li>
+<h5> <span class="caps">HTTP</span>/2 </h5>
+<p>
+<span class="caps">HTTP</span>/2 merupakan generasi berikutnya dari <span class="caps">HTTP</span>/1 yang banyak digunakan oleh sebagian besar website. Bila di <span class="caps">HTTP</span>/1 kita susah untuk melakukan banyak round-trip request dalam waktu yang hampir bersamaan, di <span class="caps">HTTP</span>/2 ini kita bisa melakukan beberapa request dalam waktu yang hampir bersamaan sehingga latency bisa dikurangi.
+
+<p>Untuk memahami <span class="caps">HTTP</span>/2 silahkan baca artikel berikut<span class="widont">&nbsp;</span>ini:</p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/http2/" rel="noopener" target="_blank">https://developers.google.com/web/fundamentals/performance/http2/</a></p>
+</p>
+</li>
+
+</ol>
+
+<p>
+Dan terakhir, silahkan tonton video menarik Addy Osmani mengenai bahasan kita kali ini. Jangan lupa aktifkan subtitles kalau yang kurang baik pendengarannya kaya saya ini.
+
+<p><a href="https://youtu.be/_srJ7eHS3IM" rel="noopener" target="_blank">https://youtu.be/_srJ7eHS3IM</a></p>
+</p>
+
+<p>
+Artikel ini sebelumnya telah dipublikasikan di Medium: <a href="https://medium.com/wwwid/berbagai-best-practice-dalam-memuat-halaman-website-20def6652adf" rel="noopener" target="_blank">https://medium.com/wwwid/berbagai-best-practice-dalam-memuat-halaman-website-20def6652adf</a>
+</p></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

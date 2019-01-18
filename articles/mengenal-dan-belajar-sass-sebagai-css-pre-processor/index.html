@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Mengenal dan Belajar SASS Sebagai CSS Pre-Processor - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Mengenal dan Belajar SASS Sebagai CSS Pre-Processor</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><img class="aligncenter" src="http://wiseheartdesign.com/images/articles/sass-lang.png" alt="Mengenal dan Belajar SASS Sebagai CSS Pre-Processor" />
+
+<p><strong>Mengenal <span class="caps">SASS</span></strong>, <strong>Belajar <span class="caps">SASS</span></strong> - Sudah tau <strong><span class="caps">SASS</span></strong> ? Yap hari ini kita akan belajar dan mengenal <span class="caps">SASS</span> sebagai salah satu vendor <span class="caps">CSS</span> Pre-processor yang tersedia di pasaran. Artikel ini ditujukan untuk yang sudah paham dengan <span class="caps">CSS</span>, bila Anda merasa masih terlalu awam dengan <span class="caps">CSS</span> mungkin <a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">artikel ini</a> akan membantu Anda memahami<span class="widont">&nbsp;</span><span class="caps">CSS</span>.</p>
+<p>Pre-processor sendiri merupakan extend dari <span class="caps">CSS</span>, dimana ketika kita ngoding <span class="caps">CSS</span> kita biasa berkutat dengan bahasa yang sudah harus matang dan tidak boleh ada proses lagi bagi browser untuk memahami nya, ini yang membuat kita tidak bisa menanamkan <em>logic</em> seperti perulangan, peng-kondisian, ataupun pemakaian kembali kode yang ada. Dari sinilah lahir berbagai pre-processor untuk <span class="caps">CSS</span>, termasuk <span class="caps">SASS</span> itu<span class="widont">&nbsp;</span>sendiri.</p>
+<p><span class="more"></span></p>
+<p>Jadi dengan <span class="caps">SASS</span> kita bisa melakukan banyak hal yang sebelumnya tidak mungkin dilakukan oleh <span class="caps">CSS</span> dengan hasil akhir yang sama yakni file dengan ekstensi <span class="caps">CSS</span>. Tentunya pre-processor semacam <span class="caps">SASS</span> ini sudah menjadi kebutuhan umum bagi project yang lumayan besar, dikerjakan banyak orang, dan memiliki tingkat kompleksitas tinggi terutama di kode <span class="caps">CSS</span> nya. Jadi ayo belajar mengenai <span class="caps">SASS</span><span class="widont">&nbsp;</span>!</p>
+<p><span class="caps">SASS</span> merupakan pre-processor yang dikembangkan diatas Ruby sebagai <em>Engine</em> nya, yang berarti kita juga butuh Ruby untuk menjalankannya atau sekedar ingin belajar dan mencobanya. Syukurlah sekarang ini sudah dikembangkan library untuk <em>porting</em> ke berbagai bahasa termasuk NodeJS yang memang favorit bagi banyak <em>Frontend<span class="widont">&nbsp;</span>Developer</em>.</p>
+<p>Saya pernah menulis di codepolitan mengenai instalasi minimal untuk <span class="caps">SASS</span> di NodeJS menggunakan Gulp sebagai compiler runner nya, Anda bisa baca <a href="https://www.codepolitan.com/setup-sass-dengan-nodejs-dan-gulp-58e1e72eb3ded">disini</a>, Saya juga pernah menulis <a href="https://mazipanneh.com/blog/download-ebook-programming/">Ebook membuat Framework <span class="caps">CSS</span> sendiri</a> yang berisi juga langkah-langkah untuk setup <span class="caps">SASS</span> di NodeJS menggunakan Grunt, Anda bisa baca jika belum mengetahui kedua hal<span class="widont">&nbsp;</span>tersebut.</p>
+<p><span class="caps">SASS</span> memiliki 2 jenis syntax yakni <span class="caps">SASS</span> native dan <span class="caps">SCSS</span> syntax, Saya sendiri rekomendasi menggunakan <span class="caps">SCSS</span> syntax karena lebih mudah untuk dipelajari kita juga hanya akan membahas syntax <span class="caps">SCSS</span> di tulisan kali<span class="widont">&nbsp;</span>ini.</p>
+<p><strong>Variabel</strong></p>
+<p>Pertama kita akan bahas mengenai penggunaan variabel dalam <span class="caps">SASS</span>, yang memiliki fungsi seperti variabel dalam bahasa pemrograman lain, bisa digunakan berulang dan oleh fungsi-fungsi lain. Variable pada <span class="caps">SASS</span> ditandai dengan <strong>$</strong> sebagai prefixnya, berikut contoh penggunaan variabel dalam <span class="caps">SASS</span><span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/0114631c2bec4e15a2f50743fd5f6d59.json">
+</div>
+
+<p><strong>Nesting</strong></p>
+<p>Seringkali di <span class="caps">CSS</span> kita harus berulang-ulang menulis selector yang sama dan di dengan <span class="caps">SASS</span> kita tidak perlu melakukannya, contoh saja bila biasanya kita di <span class="caps">CSS</span> harus menuliskan<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/05e0c60250f4699a5651f10a82e46666.json">
+</div>
+
+<p>Maka di <span class="caps">SASS</span> kita dipermudah dengan cukup mengetikkan<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/a4bd0e2c50bc2a11340e6098fefbe422.json">
+</div>
+
+<p>Selain itu kita bisa juga menambahkan tanda <strong>&amp;</strong> yang berarti kita ingin menyertakan parent nya sebagai prefix di output nya nanti, seperti contoh berikut<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/ca8f21dc452082e19c82f3e600bca20e.json">
+</div>
+
+<p><strong>Import</strong></p>
+<p>Salah satu keunggulan <span class="caps">SASS</span> dibandingkan <span class="caps">CSS</span> biasa adalah bahwa <span class="caps">SASS</span> bisa memecah satu file <span class="caps">CSS</span> kedalam beberapa file <span class="caps">SASS</span> kecil yang bisa tetap di compile jadi satu file <span class="caps">CSS</span>, ini sangat berguna untuk tetap menjaga kode kita mudah dibaca dengan mengurangi line of code dalam satu file. Kita bisa menggunakan fitur <strong>@import</strong> dari <span class="caps">SASS</span> ini. Kita bisa memberi nama file <span class="caps">SASS</span> dengan diawali underscore (_) yang berarti file tersebut tidak akan di produksi menjadi file <span class="caps">CSS</span> melainkan hanya digunakan sebagai modul yang nantinya akan di import oleh file<span class="widont">&nbsp;</span>lain.</p>
+<p><strong>Mixin</strong></p>
+<p>Sebagai developer seringkali kita tidak ingin mengetik hal yang sama berulang kali, mixin salah satu yang mengakomodir keinginan kita tersebut. Dengan mixin kita seperti membuat satu fungsi yang nantinya akan kita pakai di tempat lain. Berikut adalah contoh mixin yang bisa dilihat di gist dibawah<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/9a58bd1a8bda0a8a5b4bb2daf2a5ddb8.json">
+</div>
+
+<p>Dan berikut adalah gist untuk contoh penggunaan mixin tersebut<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/1d89fdcae5d021382de10a550c46d437.json">
+</div>
+
+<p><strong>Extend</strong></p>
+<p>Seperti pada <span class="caps">OOP</span> extend juga digunakan untuk mewarisi apa yang dipunyai oleh parent yang di extend sehingga tidak perlu lagi mengetik hal yang sama. Berikut contoh penggunaan @extend ini<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/a5afb2c80b9979af316d855ad9222b1e.json">
+</div>
+
+<p><strong>Operator</strong></p>
+<p><span class="caps">SASS</span> bisa melakukan berbagai perhitungan matematis untuk membantu kita, seperti dalam contoh kode berikut dimana saya melakukan perhitungan width class column<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/a03e39916e1aaa6d8fe7d456a5d63313.json">
+</div>
+
+<p><strong>Kondisional</strong></p>
+<p><span class="caps">SASS</span> bisa melakukan kondisional berdasarkan variabel yang di assign, contoh sederhananya seperti kode berikut<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/70787b375f2156086b041af1b88840ef.json">
+</div>
+
+<p><strong>Perulangan</strong></p>
+<p>Untuk melakukan perulangan <span class="caps">SASS</span> bisa menggunakan for maupun while, berikut contoh kode looping menggunakan @for<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/a03e39916e1aaa6d8fe7d456a5d63313.json">
+</div>
+
+<p>Sedangkan contoh menggunakan @while bisa dilihat disini<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/7fb031dec1395802f516a71245ca4d34.json">
+</div>
+
+<p><span class="caps">SASS</span> bisa juga melakukan perulangan menggunakan @each, yang ini silahkan baca di <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">official website</a> nya<span class="widont">&nbsp;</span>ya.</p>
+<p>Demikian penjelasan singkat dari saya mengenai <span class="caps">SASS</span> sebagai <span class="caps">CSS</span><span class="widont">&nbsp;</span>Pre-processor.</p>
+<p>Saya juga pernah membuat presentasi mengenai pengenalan <span class="caps">SASS</span> ini, silahkan dilihat <a href="https://www.slideshare.net/IrfanMaulana21/bliblidotcom-sass-introduction">disini</a> atau <a href="https://speakerdeck.com/mazipan/sass-css-preprocesoor-introduction">disini</a>. Baca juga artikel saya lainnya mengenai <span class="caps">CSS</span>, <span class="caps">SASS</span> dan hak terkait <a href="https://mazipanneh.com/blog/tag/css/">disini</a>.</p>
+<p>Download Ebook Programming <a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
+<p>Semoga bermanfaat bagi yang baru belajar mengenai <span class="caps">SASS</span><span class="widont">&nbsp;</span>ya.</p>
+<p>Ditulis oleh Irfan Maulana di jam istirahat<span class="widont">&nbsp;</span>kerja.</p>
+<p>Salam.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

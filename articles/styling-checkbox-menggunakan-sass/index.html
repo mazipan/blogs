@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Styling checkbox menggunakan SASS - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Styling checkbox menggunakan SASS</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><img width="469" height="313" alt="Styling checkbox menggunakan SASS" src="http://www.telerik.com/clientsfiles/a4289618-7f81-403e-977c-60d07326b9a5_checkbox.png?sfvrsn=0" title="" class="aligncenter size-custom" />
+
+<p><strong>Membuat Checkbox dengan <span class="caps">SASS</span></strong> - Bila pada tulisan sebelumnya&nbsp;<a href="https://mazipanneh.com/blog/2017/03/memberi-style-css-sederhana-pada-radio-button/">disini</a>&nbsp;kita sudah&nbsp;bahas mengenai sedikit eksperimen kita dalam memberikan Style pada komponen input radio, maka kali ini kita akan coba ber-eksperimen lagi dengan komponen lainnya dan saya memilih komponen input dengan type checbox atau kita sebut saja sebagai<span class="widont">&nbsp;</span>checkbox.&nbsp;</p>
+<p>Bosan ? semestinya sih kalau lagi dalam tahap belajar tidak boleh bosan ya, karena learning by doing masih jadi cara yang paling baik buat belajar koding. Jadi ya, sabar ya dan silahkan disimak langkah-langkahnya sebagai berikut<span class="widont">&nbsp;</span>:</p>
+<p>Pertama, kita akan siapkan seperti biasa <span class="caps">HTML</span> dasar yang nantinya akan kita beri style. Sederhana saja cuma definisikan input dengan <em>type=”checkbox”_, kita buat saja 3 varian seperti sebelumnya dengan 1 kita buat sebagai input yang _disable</em> atau tidak dapat dipilih oleh pengguna. Berikut kurang lebih kode <span class="caps">HTML</span> yang kita buat<span class="widont">&nbsp;</span>:</p>
+<p><span class="more"></span></p>
+<div class="gist-oembed" data-gist="mazipan/bb27779c9ec0774359a94312d8afc806.json">
+</div>
+
+<p>Bila Anda merasa kurang bisa memahami kode <span class="caps">HTML</span> tersebut, maka silahkan baca artikel&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">Perjalanan menjadi Frontend Developer bagi pemula Seri-1 Mengenal <span class="caps">HTML</span></a>&nbsp;terlebih dahulu ya&nbsp;:-).</p>
+<p>Sebelum saya teruskan, pastikan sudah baca artikel ini&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">Perjalanan Menjadi Frontend Developer Bagi Pemula – Seri 2 – Mengenal <span class="caps">CSS</span></a>&nbsp;karena kita akan bahas beberapa istilah dalam <span class="caps">CSS</span> yang &nbsp;akan terdengar asing bagi yang belum<span class="widont">&nbsp;</span>paham.</p>
+<p>Setelah membuat <span class="caps">HTML</span>, kita akan membuat class <strong>.checkbox</strong> yang akan kita beri style menggunakan <span class="caps">SASS</span>, kita akan memberi style pada label kemudian <em>:before</em> dan <em>:after</em> dari label tersebut. <em>:before</em> akan kita gunakan sebagai kotak sebelum checkbox tersebut dipilih, dan <em>:after</em> akan kita gunakan sebagai tanda bahwa checkbox tersebut dalam keadaan terpilih oleh pengguna. Karena kita akan inisialisasi dalam keadaan state yang belum di definisikan maka kita buat saja <em>:after</em> dalam keadaan tidak terlebih dahulu, dalam hal ini kita set <em>width:0</em> dan _height:0_, berikut kurang lebih kode yang telah kita buat untuk membuat checbox yang berada dalam keadaaan tidak terpilih sama sekali<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/e849ef381c0ade0244c3c93a80a794df.json">
+</div>
+
+<p>Setelahnya kita akan mendefinisikan saat checkbox yang kita buat dalam keadaan terpilih yang artinya kita mesti membuat <em>:after</em> dari label kita memiliki warna background seperti variable <em>$theme</em> yang sudah kita buat dan juga memiliki tanda <em>tick-mark</em> atau <em>contreng</em> yang menunjukkan bahwa sedang terpilih. Kita bisa saja menggunakan image sebaga <em>background-image</em> untuk membuat <em>tick-mark</em> tersebut, tapi saya lebih memilih membuat manual menggunakan <span class="caps">SASS</span> dengan memodifikasi <em>border</em> dan _rotate_, berikut kurang lebih kode yang kita buat untuk membuat checkbox dalam keadaan terpilih<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/90d1aa07bda87ac435108820644b2209.json">
+</div>
+
+<p>Terakhir kita akan buat satu <em>state</em> lagi yakni ketika checkbox tersebut dalam keadaan <em>disable</em> atau tidak dapat dipilih oleh pengguna, karena secara <span class="caps">UI</span> pengguna juga mesti sadar bahwa satu input memang dalam keadaan yang tidak dapat dia pilih. Untuk ini kita akan memberi background-color abu-abu agar terkesan <em>greyscale</em> dan memberikan <em>border</em> abu-abu dengan <em>pallete</em> 1 tingkat lebih gelap diatasnya. berikut kurang lebih kode yang kita buat<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/7e5d072ab3112461de40b0ebd0db00ad.json">
+</div>
+
+<p>Pada akhirnya checkbox kita ini akan menghasilkan tampilan seperti gambar berikut<span class="widont">&nbsp;</span>:</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*jnGnWowxbghHD_DZSOuVaQ.png" alt=""></p>
+<p>Berikut adalah kode <span class="caps">SASS</span> yang telah kita gabungkan kedalam satu file, kurang lebih seperti berikut ini<span class="widont">&nbsp;</span>:</p>
+<div class="gist-oembed" data-gist="mazipan/7d62010ec91a4d443e04da85aaaa46a8.json">
+</div>
+
+<p>Demikian panduan sederhana dalam memberikan style pada checkbox yang dipadukan dengan kekuatan <span class="caps">SASS</span>, bila Anda ingin kesulitan memahami syntax <span class="caps">SASS</span> diatas mungkin Anda perlu membaca artikel&nbsp;<a href="https://mazipanneh.com/blog/2017/04/mengenal-dan-belajar-sass-sebagai-css-pre-processor/">Mengenal dan Belajar <span class="caps">SASS</span> Sebagai <span class="caps">CSS</span> Pre-Processor</a>&nbsp;terlebih dahulu. Anda&nbsp;juga bisa melihat Live preview dari kode diatas&nbsp;<a href="http://codepen.io/mazipan/pen/yMrpXK">disini</a>. Artikel ini juga telah di publikasikan di medium&nbsp;<a href="https://medium.com/@mazipanneh/styling-checkbox-dengan-sass-f111a09ca321">disini</a>.</p>
+<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
+<p>Semoga bermanfaat bagi mereka yang masih belajar ya<span class="widont">&nbsp;</span>:-).</p>
+<p>Salam.</p>
+<p>Ditulis oleh Irfan Maulana di siang hari jam makan siang saat<span class="widont">&nbsp;</span>itu.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

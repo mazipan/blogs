@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>ChuckNorris — Vue.js Chuck Norris Jokes Generator - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>ChuckNorris — Vue.js Chuck Norris Jokes Generator</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*ZsB-bLjXU-356wZGkxVYlg.jpeg" alt="" width="800" height="498" /> <em>Chuck Norris (sumber : <a href="http://www.healthfitnessrevolution.com">http://www.healthfitnessrevolution.com</a>)</em>[/caption]</p>
+<p>Kali ini kita akan bereksperimen dengan Vue.js untuk membuat hal-hal yang lucu agar tidak bosan dengan kode yang setiap hari kita tulis. Melihat dari daftar public <span class="caps">API</span> yang dibuat om @toddmotto di <a href="https://github.com/toddmotto/public-apis" target="_blank" rel="noopener">github</a>, maka terbersit untuk membuat satu interface dari <span class="caps">API</span> yang disediakan disana. Pilihan akhirnya jatuh pada <span class="caps">API</span> dari <a href="https://api.chucknorris.io/">https://api.chucknorris.io/</a>.</p>
+<p><span class="more"></span></p>
+<p>Jangan bilang Anda tidak kenal Chuck Norris, baca dulu <a href="https://en.m.wikipedia.org/wiki/Chuck_Norris" target="_blank" rel="noopener">disini</a> ya mengenai Chuck Norris<span class="widont">&nbsp;</span>ini.</p>
+<p>Sebelum membuat web client nya kita akan analisa terlebih dahulu mengenai ketersediaan dan spesifikasi yang ada di dokumentasi <span class="caps">API</span> yang bersangkutan. Dari dokumentasi yang ada, setidaknya ada 4 jenis <span class="caps">API</span> yang mereka sediakan yakni<span class="widont">&nbsp;</span>:</p>
+<ol>
+     <li>Random Jokes :<span class="widont">&nbsp;</span>https://api.chucknorris.io/jokes/random</li>
+     <li>Category : https://api.chucknorris.io/jokes/categories</li>
+     <li>Random By Category :<span class="widont">&nbsp;</span>https://api.chucknorris.io/jokes/random?category={category}</li>
+     <li>Search : https://api.chucknorris.io/jokes/search?query={query}</li>
+</ol>
+Setelah mengetahui ketersediaan <span class="caps">API</span>, maka kita akan sedikit berkelakar mengenai halaman apa saja yang ingin kita buat. Berdasarkan <span class="caps">API</span> yang ada maka saya kira-kira kita akan membuat beberapa halaman berikut :
+<ol>
+     <li>Homepage</li>
+     <li>Daftar kategori</li>
+     <li>Random jokes di masing-masing<span class="widont">&nbsp;</span>kategori</li>
+     <li>Search</li>
+</ol>
+Menggunakan Vue.js tentu yang paling mudah adalah karena telah tersedia Vue-<span class="caps">CLI</span> yang bisa dengan mudah untuk membuat skeleton project awal, tentu kita akan pilih untuk menggunakan tools keren ini. Selain itu kita akan menggunakan template webpack dari Vue-<span class="caps">CLI</span> agar mudah di modifikasi bila dibutuhkan. Anda bisa membaca mengenai cara menggunakan Vue-<span class="caps">CLI</span> ini di halaman resminya <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">disini</a> atau bisa juga di blog saya <a href="https://mazipanneh.com/blog/2017/07/memulai-vue-js-dengan-vue-cli-dan-webpack/" target="_blank" rel="noopener">disini</a>.
+
+<p>Setelah selesai generate skeleton, berikutnya adalah membuat kerangka tampilan. Seperti kita tahu di Vue.js kita bisa menggunakan Vue-Router untuk melakukan frontend routing sehingga tidak perlu semua layout kita refresh melainkan hanya bagian konten saja yang perlu diubah ketika melakukan perubahan routing. Untuk ini kita akan memecah layout utama menjadi beberapa bagian berikut<span class="widont">&nbsp;</span>:</p>
+<ul>
+     <li>Header</li>
+     <li>Sidebar</li>
+     <li>Tab Navigasi</li>
+     <li>Konten</li>
+</ul>
+Tentu selain konten, akan kita letakkan saja di App.vue, yang bisa dilihat kodenya <a href="https://github.com/mazipan/chucknorris/blob/master/src/App.vue" target="_blank" rel="noopener">disini</a>.
+
+<p>Setelah membuat layout utama di App.vue, kita akan membuat beberapa halaman yang sudah kita sepekati diawal. Masing-masing page akan direfleksikan dengan satu file .vue yang berisi konten masing-masing dan akan kita letakkan semuanya di folder pages agar mudah tracking nya. Semua file di halaman pages bisa dilihat <a href="https://github.com/mazipan/chucknorris/tree/master/src/pages" target="_blank" rel="noopener">disini</a>. Karena beberapa pages yang kita buat masih sederhana dan tidak terlalu kompleks maka saya memutuskan untuk tidak memisah bagian di dalamnya menjadi komponen yang lebih<span class="widont">&nbsp;</span>kecil.</p>
+<p>Beberapa komponen yang kita pisahkan akan kita letakkan di folder <a href="https://github.com/mazipan/chucknorris/tree/master/src/components" target="_blank" rel="noopener">components</a>, seperti file App.vue yang merupakan layout utama akan menjadi terlalu besar bila tidak kita pecah ke dalam komponen-komponen yang lebih kecil. Beberapa yang kita pecah adalah seperti <a href="https://github.com/mazipan/chucknorris/blob/master/src/components/Sidebar.vue" target="_blank" rel="nofollow noopener" data-href="https://github.com/mazipan/chucknorris/blob/master/src/components/Sidebar.vue">Sidebar</a>, <a href="https://github.com/mazipan/chucknorris/blob/master/src/components/HeaderSection.vue" target="_blank" rel="nofollow noopener" data-href="https://github.com/mazipan/chucknorris/blob/master/src/components/HeaderSection.vue">Header</a>, <a href="https://github.com/mazipan/chucknorris/blob/master/src/components/TabSection.vue" target="_blank" rel="nofollow noopener" data-href="https://github.com/mazipan/chucknorris/blob/master/src/components/TabSection.vue">Tab Navigasi</a>, dan <a href="https://github.com/mazipan/chucknorris/blob/master/src/components/SocialSharingSection.vue" target="_blank" rel="nofollow noopener" data-href="https://github.com/mazipan/chucknorris/blob/master/src/components/SocialSharingSection.vue">Sosial<span class="widont">&nbsp;</span>Sharing</a>.</p>
+<p>Untuk melakukan routing kita akan menggunakan Vue-Router yang merupakan library resmi dari Vue.js. Kita akan mengarahkan url yang kita inginkan untuk memuat file .vue yang telah kita buat di folder pages tadi. Semua konfigurasi dari routing yang kita lakukan bisa dilihat di folder router, dimana ada file index.js yang merupakan file routing<span class="widont">&nbsp;</span>kita.</p>
+<p>Menggunakan <span class="caps">API</span> berarti kita membutuhkan http-client library untuk melakukan pemanggilan endpoint yang tersedia. Disini kita akan menggunakan Vue-Resource sebagai library pembantu kita. Mengenai cara penggunaan Vue-Resource bisa dilihat langsung di halaman resmi mereka, namun secara prinsip dan syntax tidak jauh berbeda dengan beberapa http-client library lain yang tersedia di pasaran. Kita akan menjadikan satu file untuk melakukan pemanggilan <span class="caps">API</span> endpoint ini dan akan kita letakkan di folder api. Semua kode megenai pemanggilan <span class="caps">API</span> ini bisa dilihat di file<span class="widont">&nbsp;</span>index.js.</p>
+<p>Membuat satu aplikasi utuh terkadang akan banyak menggunakan state yang makin banyak tentunya akan makin susah di manage, maka dari itu kita kan menambahkan Vuex sebagai pengatur state-state kita. Mengenai cara menggunakan dan berbagai hal dasar mengenai Vuex silahkan dibaca di halam resmi mereka. Kita menyiapkan satu file store.js yang kita letakkan di folder store sebagai pengatur state yang memanfaatkan<span class="widont">&nbsp;</span>Vuex.</p>
+<p>Berikut sedikit screenshot hasil dari project yang telah kita buat<span class="widont">&nbsp;</span>:</p>
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*r93ReTs2PEhnf16fKuPtKw.png" />
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*MAuMb-UCB4gK2Wz4uprIHA.png" />
+<img class="aligncenter" src="https://cdn-images-1.medium.com/max/800/1*QaNZswhBbs0qJUoyuTTp1A.png" />
+
+<p>Kode project ini telah diunggah ke Github dan bisa dipelajari untuk kepentingan pembelajaran bersama, silahkan di cek di tautan berikut : <a href="https://github.com/mazipan/chucknorris" target="_blank" rel="noopener">https://github.com/mazipan/chucknorris</a></p>
+<p>Demikian sharing project sederhana yang saya buat, semoga<span class="widont">&nbsp;</span>bermanfaat.</p>
+<p>Tulisan ini telah dipublikasikan juga di Medium: <a href="https://medium.com/vuejs-id/chucknorris-vue-js-chuck-norris-jokes-generator-30eff39b6862" target="_blank" rel="noopener">https://medium.com/vuejs-id/chucknorris-vue-js-chuck-norris-jokes-generator-30eff39b6862</a></p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

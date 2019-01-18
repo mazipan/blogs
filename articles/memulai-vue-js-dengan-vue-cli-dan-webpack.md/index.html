@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Memulai Vue.js dengan Vue-CLI dan Webpack - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Memulai Vue.js dengan Vue-CLI dan Webpack</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p><img src="https://coligo.io/vuejs-the-basics/cover-850x416.jpg" alt="Vue.js"></p>
+<p><strong>Memulai Vue.js dengan Vue-<span class="caps">CLI</span> dan Webpack</strong> - Vue.js merupakan salah satu pilihan framework javascript yang terdapat di pasar saat ini dan salah satu yang belakangan mendapatkan perhatian lumayan dari para javascript developer. Vue.js banyak dibilang sebagai framework yang berhasil mengadopsi kehebatan React dan Angular dalam satu wadah yang tepat. Memang jika kita belajar Vue.js terutama di versi 2 akan mendapatkan rasa seperti React yang bercampur dengan Angular. Vue.js datang belakangan, hal itu menjadi wajar kenapa Vue.js bisa dibilang sukses belajar dari para pendahulunya. Menggabungkan <em>strong point</em> dari beberapa framework untuk bisa berdiri sendiri menggunakan paradigma yang<span class="widont">&nbsp;</span>diusungnya.</p>
+<p><span class="more"></span></p>
+<p>Untuk memulai project Vue.js sebenarnya sangat mudah, karena Vue.js bisa langsung jalan di browser seperti yang dilakukan sejak versi 1.x cukup dengan menambahkan tag <code>&lt;/script&gt;</code> dan kode Vue.js sudah bisa dipakai di browser Anda seperti terlihat di dokumentasi nya disini : <a href="https://vuejs.org/v2/guide/#Getting-Started" target="_blank" rel="noopener">https://vuejs.org/v2/guide/#Getting-Started</a>. Namun dengan menggunakan cara ini, maka kita tidak dapat menggunakan banyak hal menarik dalam proses development kita seperti _css preprocessor_, file dengan ekstensi <code>.vue</code>, <span class="caps">ES6</span> syntax serta banyak hal lain lagi yang membutuhkan kompilasi sebelum<span class="widont">&nbsp;</span>dijalankan.</p>
+<p>Seperti halnya framework lain yang menghadirkan <em>generator skeleton</em> bagi yang ingin memulai belajar tanpa harus pusing setup maka Vue.js juga hadir dengan hal tersebut. Mereka punya Vue-<span class="caps">CLI</span> sebagai <em>generator</em> dari struktur project mereka. Vue-<span class="caps">CLI</span> menurut saya sendiri salah satu <em>generator</em> yang palling fleksibel diantara para pesaingnya. Vue-<span class="caps">CLI</span> punya banyak pilihan <em>template</em> yang bisa kita pilih untuk di _generate_, mulai dari webpack yang simple, webpack yang kompleks, browserify simple sampai yang kompleks, <span class="caps">PWA</span>, sampai yang sangat sederhana dengan hanya satu file html. Semua file hasil dari Vue-<span class="caps">CLI</span> pun sangat terlihat alami tanpa adanya campur tangan sebuah _generator_, jadi sangat mudah buat kita untuk memodifikasi berbagai konfigurasi yang ada didalamnya sesuai dengan kebutuhan<span class="widont">&nbsp;</span>kita.</p>
+<p>Yang akan kita coba bahas disini adalah generate Vue-CLi untuk template webpack, kenapa webpack ? karena dependency ini salah satu yang paling populer dan paling baik dokumentasinya sehingga mudah untuk di modifikasi kedepannya. Ada dua pilihan yakni webpack simple dan webpack, kita akan mencoba menggunakan template webpack pada tutorial kali<span class="widont">&nbsp;</span>ini.</p>
+<p>Pertama pastikan Anda meng-<em>install</em> Vue-<span class="caps">CLI</span> dengan cara : <code>npm install -g vue-cli</code></p>
+<p>Dan perintah dasar untuk melakukan <em>generate</em> dengan Vue-<span class="caps">CLI</span> adalah dengan : <code>vue init template_name project_name</code></p>
+<p>Dan spesifik untuk men-<em>generate</em> sebuah webpack setup untuk Vue.js bisa dengan cara : <code>vue init webpack project_name</code></p>
+<p>Dalam kasus normal hal ini harusnya akan berjalan dengan baik, namun ada kalanya proses ini gagal dan biasanya penyebabnya ada di Proxy dalam jaringan yang tidak mengijinkan untuk mengunduh template yang ada di<span class="widont">&nbsp;</span>github.</p>
+<p>Salah satu solusi mudahnya adalah dengan mengunduh template yang ada di github ke dalam lokal komputer Anda untuk dilakukan <em>generate</em> secara<span class="widont">&nbsp;</span>lokal.</p>
+<p>File template sendiri bisa ditemukan di<span class="widont">&nbsp;</span>:</p>
+<ul>
+<li><a href="https://github.com/vuejs-templates/webpack">webpack</a></li>
+<li><a href="https://github.com/vuejs-templates/webpack-simple">webpack-simple</a></li>
+<li><a href="https://github.com/vuejs-templates/browserify">browserify</a></li>
+<li><a href="https://github.com/vuejs-templates/browserify-simple">browserify-simple</a></li>
+<li><a href="https://github.com/vuejs-templates/pwa">pwa</a></li>
+<li><a href="https://github.com/vuejs-templates/simple">simple</a></li>
+</ul>
+<p>Setelah mendownload file di lokal komputer Anda, bisa gunakan perintah berikut untuk melakukan <em>generate</em> <em>skeleton</em><span class="widont">&nbsp;</span>:</p>
+<pre>vue init path_to_lokal_template project_name</pre>
+
+<p>Setelah menjalankan perintah ini akan ada beberapa pertanyaan seputar konfigurasi yang ingin di generate seperti akan menggunakan Vue-Router atau tidak, akan menggunakan ESLint atau tidak, ingin men-<em>generate</em> <em>skeleton</em> untuk <em>unit test</em> dan <em>end-2-end test</em> atau<span class="widont">&nbsp;</span>tidak.</p>
+<p>Berikut adalah controh <em>screenshoot</em> ketika melakukan <em>generate skeleton</em> menggunakan Vue-<span class="caps">CLI</span> webpack template<span class="widont">&nbsp;</span>:</p>
+<p><img src="https://mazipan.github.io/wp-contents/images/vue-cli-mazipanneh.PNG" alt="Vue-CLI Lokal"></p>
+<p>Vue-<span class="caps">CLI</span> juga akan melakukan generate shortcut script yang biasa kita jalankan dengan <em>npm run task</em> seperti contoh berikut<span class="widont">&nbsp;</span>:</p>
+<pre class=""><span class="dquo">"</span>dev": "node build/dev-server.js",
+"build": "node build/build.js",
+"unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+"e2e": "node test/e2e/runner.js",
+"test": "npm run unit && npm run e2e",
+"lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+</pre>
+
+<p>Jadi setelah project kita berhasil ter-<em>generate</em> dan telah meng-<em>install</em> <em>dependency</em> dengan <code>npm install</code> maupun <code>yarn install</code> maka kita bisa menjalankan project tersebut dengan perintah <code>npm run dev</code> dan bila ingin men-compile file untuk production kita bisa menjalankan <code>npm run build</code> sedangkan untuk test ada <code>npm run unit</code> dan lain-lain.</p>
+<p>Demikian sedikit tutorial dasar mengenai penggunaan dasar Vue-<span class="caps">CLI</span>. Semua dokumentasi dan <em>issue</em> telah ada di Github resminya di <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">https://github.com/vuejs/vue-cli</a>, silahkan dipelajari lebih lanjut jika ingin yang lebih kompleks<span class="widont">&nbsp;</span>lagi.</p>
+<p id="b6b7" class="graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--p">
+  Bila ada pertanyaan ataupun diskusi langsung kepada penulis, Anda bisa menghubungi lewat beberapa sosial media berikut<span class="widont">&nbsp;</span>:
+</p>
+
+<ul class="postList">
+  <li id="9738" class="graf graf--li graf-after--p">
+    Facebook : <a class="markup--anchor markup--li-anchor" href="https://medium.com/r/?url=https%3A%2F%2Ffacebook.com%2Fmazipanneh" target="_blank" rel="nofollow noopener nofollow" data-href="https://medium.com/r/?url=https%3A%2F%2Ffacebook.com%2Fmazipanneh">https://facebook.com/mazipanneh</a>
+  </li>
+  <li id="9f16" class="graf graf--li graf-after--li">
+    Twitter : <a class="markup--anchor markup--li-anchor" href="https://medium.com/r/?url=https%3A%2F%2Ftwitter.com%2FMaz_Ipan" target="_blank" rel="nofollow noopener" data-href="https://medium.com/r/?url=https%3A%2F%2Ftwitter.com%2FMaz_Ipan">https://twitter.com/Maz_Ipan</a>
+  </li>
+  <li id="50e1" class="graf graf--li graf-after--li">
+    Slideshare : <a class="markup--anchor markup--li-anchor" href="https://medium.com/r/?url=https%3A%2F%2Fwww.slideshare.net%2FIrfanMaulana21" target="_blank" rel="nofollow noopener" data-href="https://medium.com/r/?url=https%3A%2F%2Fwww.slideshare.net%2FIrfanMaulana21">https://www.slideshare.net/IrfanMaulana21</a>
+  </li>
+  <li id="b1a8" class="graf graf--li graf-after--li">
+    Github : <a class="markup--anchor markup--li-anchor" href="https://medium.com/r/?url=https%3A%2F%2Fgithub.com%2Fmazipan" target="_blank" rel="nofollow noopener" data-href="https://medium.com/r/?url=https%3A%2F%2Fgithub.com%2Fmazipan">https://github.com/mazipan</a>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+<p>Terima kasih,</p>
+<p>Irfan Maulana</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

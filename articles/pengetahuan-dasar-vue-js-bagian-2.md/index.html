@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Pengetahuan Dasar Vue.js — Bagian 2 - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Pengetahuan Dasar Vue.js — Bagian 2</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><section class="section section--body section--first"> 
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p id="73d9" class="graf graf--p graf-after--figure">
+      <strong>Pengetahuan Dasar Vue.js (<a href="https://mazipanneh.com/blog/">mazipanneh.com</a>)</strong> - Artikel ini merupakan seri lanjutan dari artikel yang sebelumnya sudah di publikasikan, baca semua seri Pengetahuan Dasar Vue.js<span class="widont">&nbsp;</span>:
+    </p>
+
+<pre><code>&lt;ol class=&quot;postList&quot;&gt;
+  &lt;li id=&quot;7d0b&quot; class=&quot;graf graf--li graf-after--p&quot;&gt;
+    &lt;a class=&quot;markup--anchor markup--li-anchor&quot; href=&quot;https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-1/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-href=&quot;https://medium.com/vuejs-id/pengetahuan-dasar-vue-js-bagian-1-88d02d57f859&quot;&gt;Pengetahuan Dasar Vue.js — Bagian 1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li id=&quot;2e00&quot; class=&quot;graf graf--li graf-after--li&quot;&gt;
+    &lt;strong&gt;Pengetahuan Dasar Vue.js — Bagian 2(Anda disini)&lt;/strong&gt;
+  &lt;/li&gt;
+  &lt;li id=&quot;09b6&quot; class=&quot;graf graf--li graf-after--li graf--trailing&quot;&gt;
+    &lt;a class=&quot;markup--anchor markup--li-anchor&quot; href=&quot;https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-3/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-href=&quot;https://medium.com/vuejs-id/pengetahuan-dasar-vue-js-bagian-3-cc5de5213eb2&quot;&gt;Pengetahuan Dasar Vue.js — Bagian 3&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;&lt;figure style=&quot;width: 720px&quot; class=&quot;wp-caption alignnone&quot;&gt;
+
+&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*w8B5xZW-IST7Agn2g7kSdA.jpeg&quot; alt=&quot;&quot; width=&quot;720&quot; height=&quot;365&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*w8B5xZW-IST7Agn2g7kSdA.jpeg&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Vue.js Illustrasi (sumber : https://fullstackfeed.com)&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p&gt;
+  &amp;nbsp;
+&lt;/p&gt;</code></pre>  </div>
+
+<p><span class="more"></span></p>
+</div></section> <section class="section section--body"> 
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p id="36ca" class="graf graf--p graf--leading">
+      Kali ini kita akan melanjutkan dengan membahas hal dasar lainnya dalam Vue.js, silahkan siapkan kopi dan simak artikel berikut<span class="widont">&nbsp;</span>:
+    </p>
+
+<pre><code>&lt;h4 id=&quot;0ae1&quot; class=&quot;graf graf--h4 graf-after--p&quot;&gt;
+  1. Mengenal File .vue
+&lt;/h4&gt;
+
+&lt;p id=&quot;d66b&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  Vue.js mengenalkan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;single file component &lt;/em&gt;dimana kita bisa membuat satu file berekstensi .vue yang berisi html template, javascript function dan style layout. Sistem seperti ini terinspirasi dari JSX yang diadopsi di lingkungan React. File ini sangat memudahkan kita dalam mengatur struktur folder dalam suatu proyek karena tidak perlu lagi &lt;em class=&quot;markup--em markup--p-em&quot;&gt;foldering &lt;/em&gt;untuk memisahkan antar komponen.
+&lt;/p&gt;&lt;figure id=&quot;df23&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*kXUoUokfkaSv0n2VuwCyLQ.png&quot; data-width=&quot;1246&quot; data-height=&quot;1370&quot; data-action=&quot;zoom&quot; data-action-value=&quot;1*kXUoUokfkaSv0n2VuwCyLQ.png&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;p&gt;
+      &amp;nbsp;
+    &lt;/p&gt;&lt;figure style=&quot;width: 720px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
+
+    &lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*kXUoUokfkaSv0n2VuwCyLQ.png&quot; alt=&quot;&quot; width=&quot;720&quot; height=&quot;791&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*kXUoUokfkaSv0n2VuwCyLQ.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Gambaran .vue file. Sumber (https://vuejs.org)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;adcc&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  Menggunakan file .vue juga sangat-sangat mudah. Seperti terlihat pada gambar di atas dimana kita bisa mendeklarasikan tiga tag untuk memisahkan masing-masing bagian yakni &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;template &lt;/em&gt;&lt;/strong&gt;untuk html template, &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;script &lt;/em&gt;&lt;/strong&gt;untuk menyisipkan kode javascript, dan &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;style &lt;/em&gt;&lt;/strong&gt;untuk menyisipkan kode css maupun pre-processor nya.
+&lt;/p&gt;
+
+&lt;p id=&quot;b83d&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Di dalam tag &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;template &lt;/em&gt;&lt;/strong&gt;kita bisa menyisipkan kode layaknya html biasa tanpa ada sedikitpun yang berbeda begitu pula di dalam tag &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;script &lt;/em&gt;&lt;/strong&gt;maupun &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;style&lt;/em&gt;&lt;/strong&gt;. Sedikit fitur dalam tag &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;style &lt;/em&gt;&lt;/strong&gt;kita bisa menambahkan &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;scoped &lt;/em&gt;&lt;/strong&gt;bila ingin menggunakan style yang di-isolasi dalam suatu komponen. kita juga bisa dengan mudah menambahkan &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;lang=scss &lt;/em&gt;&lt;/strong&gt;bila ingin menggunakan SASS misalnya. File .vue ini tentu saja tidak bisa dibaca oleh browser, oleh karenanya jangan lupa untuk menambahkan Loader di webpack bila ingin menggunakan file .vue ini yang hebatnya lagi sudah di generate oleh Vue-CLI bila kita menggunakan scaffolding official Vue.js ini.
+&lt;/p&gt;
+
+&lt;h4 id=&quot;5bb6&quot; class=&quot;graf graf--h4 graf-after--p&quot;&gt;
+  2. Life Cycle Vue.js Component
+&lt;/h4&gt;
+
+&lt;p id=&quot;6af1&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  Vue.js memiliki berbagai hook yang bisa kita gunakan sesuai dengan state di dalam life cycle nya, misalkan created adalah hook yang akan di eksekusi ketika sebuah komponen berhasil diinisialisasi. Masalahnya adalah kita tidak boleh sembarangan mengunakan hook ini, mesti paling tidak harus tahu hook yang tersedia dan posisinya dalam. Karena bila salah menggunakan hook maka sangat mungkin kode yang kita buat tidak menghasilkan hal yang seharusnya. Untuk lebih memahami masing-masing hook ini mari sama-sama kita lihat gambar dibawah ini :
+&lt;/p&gt;&lt;figure id=&quot;363f&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*HT2uZUmdWYRt-_qqfarpYw.png&quot; data-width=&quot;1200&quot; data-height=&quot;3039&quot; data-action=&quot;zoom&quot; data-action-value=&quot;1*HT2uZUmdWYRt-_qqfarpYw.png&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;p&gt;
+      &amp;nbsp;
+    &lt;/p&gt;&lt;figure style=&quot;width: 720px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
+
+    &lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*HT2uZUmdWYRt-_qqfarpYw.png&quot; alt=&quot;&quot; width=&quot;720&quot; height=&quot;1823&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*HT2uZUmdWYRt-_qqfarpYw.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Vue.js 2 Life Cycle Diagram. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;h4 id=&quot;e6c2&quot; class=&quot;graf graf--h4 graf-after--figure&quot;&gt;
+  3. Data, Methods dan Props
+&lt;/h4&gt;
+
+&lt;p id=&quot;8d72&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  Ketika belajar Vue.js kita akan sering bergelut dengan data, methods dan juga props. Ketiganya merupakan hal dasar yang perlu kita ketahui kegunaannya masing-masing.
+&lt;/p&gt;
+
+&lt;p id=&quot;5b14&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  &amp;#x1f449; &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;Data&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;8051&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Data di dalam Vue.js merupakan sekumpulan variabel yang digunakan oleh html template dan dapat dimanipulasi dan dimanfaatkan oleh internal komponen masing-masing dan tidak dapat diakses oleh komponen lainnya. Jadi sebuah variabel di dalam suatu komponen Vue.js hanya akan berpengaruh terhadap komponen itu sendiri.
+&lt;/p&gt;
+
+&lt;p id=&quot;e6df&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Data sendiri bisa didefinisikan menggunakan syntax seperti yang terlihat pada gambar berikut :
+&lt;/p&gt;&lt;figure id=&quot;761f&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*uETZUVp3OXr-bTujzBzn7Q.png&quot; data-width=&quot;583&quot; data-height=&quot;320&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;p&gt;
+      &amp;nbsp;
+    &lt;/p&gt;&lt;figure style=&quot;width: 583px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
+
+    &lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*uETZUVp3OXr-bTujzBzn7Q.png&quot; alt=&quot;&quot; width=&quot;583&quot; height=&quot;320&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*uETZUVp3OXr-bTujzBzn7Q.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Data dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;6a65&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  &amp;#x1f449; &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;Methods&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;3a10&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Methods merupakan opsi dalam Vue.js yang berupa object berisi function-function. Function ini sendiri akan memiliki berbagai tujuan yang berbeda-beda dan bervariasi baik memanipulasi data ataupun melakukan sebuah logika bisnis sebuah aplikasi. Function di dalam methods juga bisa jadi sebuah Event yang bisa dipanggil dengan mudah di bagian html template dari komponen yang bersangkutan. Function bisa merupakan sebuah pure function yang me-return suatu nilai maupun berupa void function yang tidak mengembalikan nilai apapun.
+&lt;/p&gt;
+
+&lt;p id=&quot;2f3e&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Pembuatan methods bisa dilihat dalam gambar berikut :
+&lt;/p&gt;&lt;figure id=&quot;b7e2&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*lljpQonCxoURO1bXgl99fg.png&quot; data-width=&quot;584&quot; data-height=&quot;230&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;p&gt;
+      &amp;nbsp;
+    &lt;/p&gt;&lt;figure style=&quot;width: 584px&quot; class=&quot;wp-caption alignnone&quot;&gt;
+
+    &lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*lljpQonCxoURO1bXgl99fg.png&quot; alt=&quot;&quot; width=&quot;584&quot; height=&quot;230&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*lljpQonCxoURO1bXgl99fg.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Methods dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;5f03&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  &amp;#x1f449; &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;Props&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;d0d2&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Props merupakan parameter yang bisa dilempar oleh sebuah komponen kepada komponen lainnya. Props merupakan satu dari beberapa jalan untuk mendistribusikan data dari satu komponen ke komponen lainnya. Jadi Props di suatu komponen akan memiliki nilai yang sama dengan nilai dari data yang dilemparkan oleh komponen parent nya.
+&lt;/p&gt;
+
+&lt;p id=&quot;198b&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Gambar dibawah merupakan contoh pembuatan Props dengan beberapa variasinya, sebagai berikut :
+&lt;/p&gt;&lt;figure id=&quot;5a67&quot; class=&quot;graf graf--figure graf-after--p graf--trailing&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*FQp8RmMGnDlxbw16gSp-rA.png&quot; data-width=&quot;586&quot; data-height=&quot;424&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;p&gt;
+      &amp;nbsp;
+    &lt;/p&gt;&lt;figure style=&quot;width: 586px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
+
+    &lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*FQp8RmMGnDlxbw16gSp-rA.png&quot; alt=&quot;&quot; width=&quot;586&quot; height=&quot;424&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*FQp8RmMGnDlxbw16gSp-rA.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Props dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt;</code></pre>  </div>
+</div></section> <section class="section section--body section--last"> 
+
+<div class="section-divider">
+  <hr class="section-divider" />
+</div>
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p id="3ee0" class="graf graf--p graf--leading">
+      Demikian sedikit penjelasan tentang beberapa hal dasar di<span class="widont">&nbsp;</span>Vue.js.
+    </p>
+
+<pre><code>&lt;h4 id=&quot;22a3&quot; class=&quot;graf graf--h4 graf-after--p&quot;&gt;
+  Lanjut di Bagian 3 ya !!! Stay tuned dan follow blog ini &amp;#x1f605;
+&lt;/h4&gt;
+
+&lt;p id=&quot;ed57&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  Terima kasih dan semoga bermanfaat penjelasan singkatnya.
+&lt;/p&gt;</code></pre>  </div>
+</div></section></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>mazipanneh.com
+    <title>Irfan Maulana
     </title>
-    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana Personal Blog">
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
   </head>
@@ -14,8 +14,8 @@
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
-          <h1><a href="https://mazipan.github.io/blogs">mazipanneh.com</a></h1>
-          <p class="description">Irfan Maulana Personal Blog</p>
+          <h1><a href="https://mazipan.github.io/blogs">Irfan Maulana</a></h1>
+          <p class="description">Irfan Maulana's Personal Blog</p>
         </div>
       </div>
     </header>
@@ -23,419 +23,157 @@
       <div class="content-wrap">
         <article class="article intro">
           <header>
-            <p class="date"><span>20. May 2017</span></p>
-            <h2><a href="https://mazipan.github.io/blogs/articles/membuat-popup-modal-sederhana/">Membuat Popup Modal Sederhana</a></h2>
+            <p class="date"><span>05. October 2018</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/lelucon-dari-sebuah-javascript-frontend-framework.md/">Lelucon dari sebuah JavaScript Frontend Framework</a></h2>
           </header>
-          <section class="content"><p><img src="https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/316_modal/final.png" alt="Membuat Popup Modal Sederhana"></p>
-<p><strong>Membuat Popup Modal Sederhana</strong> &#8211; Popup Modal adalah jendela sembul yang muncul di sebuah aplikasi baik dengan disengaja ataupun sekarang ini banyak pula yang tanpa dilakukan perintah oleh User namun tiba-tiba muncul Popup Modal tersebut. Dalam sebuah aplikasi ataupun halaman website Popup Modal seringkali digunakan ketika kita ingin memberikan informasi ataupun meminta User melakukan sesuatu namun kita tidak ingin User kita meninggalkan halaman yang sedang dikunjunginya sekarang. Salah satu praktek yang seringkali digunakan adalah untuk membuat form Log-in Register, dimana biasanya menggunakan Popup Modal Sebagai penampung<span class="widont">&nbsp;</span>nya.</p>
-<p>Tentu ada banyak alternatif diluar sana untuk membuat sebuah Popup Modal, dari yang sederhana, yang mainstream, sampai yang kompleks secara fungsi maupun tampilan. Salah satu yang sering kalian gunakan mungkin Bootstrap Modal, ya karena memang framework ini salah satu yang paling mainstream di kalangan web developer. Namun kali ini kita akan coba belajar bagaimana membuat sebuah Popup Modal Sederhana dengan cara yang semoga juga masih mudah untuk kalian ikuti dan pelajari. Bukan berarti <a href="https://mazipanneh.com/blog/2017/05/sisi-gelap-bootstrap-css/?nonamp=1" target="_blank">Saya tidak suka Bootstrap</a>, saya hanya suka untuk membuat sesuatu lebih sederhana, Kita semua tau lah Bootstrap keren dan mudah<span class="widont">&nbsp;</span>digunakan. </p>
-<p>Oke, kita mulai saja Membuat Popup Modal Sederhana nya, silahkan ikuti<span class="widont">&nbsp;</span>ya&#8230;</p>
-<p>Pertama kita coba buat <code>block</code> untuk modal nya, kode ini saya coba ikuti dari bagaimana Bootstrap membuat modal nya namun coba disederhanakan dan pastinya dibuat lebih <span class="caps">BEM</span> biar lebih nyaman di hati, berikut contoh kodenya<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;div id=&quot;modalPlain&quot; class=&quot;modal&quot; role=&quot;modal&quot;&gt;
-  &lt;div class=&quot;modal__content&quot;&gt;
-    &lt;div class=&quot;modal__header&quot;&gt;
-      &lt;span class=&quot;modal__close&quot;&gt;&amp;times;&lt;/span&gt;
-      &lt;h2&gt;Modal Header&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal__body&quot;&gt;
-      &lt;p&gt;Some text in the Modal Body&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal__footer&quot;&gt;
-      &lt;h3&gt;Modal Footer&lt;/h3&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre><p>Masih terlihat mudah kan ? kita belum beri <span class="caps">CSS</span> pada <code>block</code> tersebut, tapi mudahnya saya coba jelaskan kita membuat <code>div</code> dengan id yang didefinisikan tambah class <code>modal</code> sebagai parent nya, lantas dibawahnya ada class <code>modal__content</code> yang merupakan penampung dari konten modal kita, dibawahnya ada 3 bagian yakni header, body dan footer yang biasanya ada di setiap Popup Modal terutama<span class="widont">&nbsp;</span>Bootstrap. </p>
-<p>Setelah membuat block <code>modal</code> diatas, waktunya memberikan sentuhan style pada block tersebut agar lebih cantik. Seperti biasa saya prefer menggunakan <span class="caps">SCSS</span> syntax, bagi yang masih bingung bisa baca <a href="https://mazipanneh.com/blog/2017/04/mengenal-dan-belajar-sass-sebagai-css-pre-processor/?nonamp=1" target="_blank">Pengenalan <span class="caps">SASS</span></a> terlebih dahulu. Berikut contoh potongan kodenya<span class="widont">&nbsp;</span>: </p>
-<pre><code>.modal
-{
-    display: none; 
-    position: fixed; 
-    z-index: 999; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4);   
+          <section class="content"><p>Membicarakan JavaScript framework yang bagi saya tidak lebih dari sekedar<span class="widont">&nbsp;</span>lelucon.</p>
+<p>[caption id=”” align=”aligncenter” width=”1100”]<img src="https://cdn-images-1.medium.com/max/1600/1*Q2t-jgIzVx_w1Cyy1YlbNw.png" alt="Lelucon dari sebuah JavaScript Frontend Framework" width="1100" height="650" /> Gambar dari:<span class="widont">&nbsp;</span>ericheikes.com[/caption]</p>
+<p>
+Front-End developer jaman sekarang sepertinya terpecah ke beberapa kubu begantung pada framework yang mereka gunakan pada projek mereka. Perbedaan kubu ini diperparah dengan saling menghujat (paling tidak menjelekkan) antara satu sama lain. Tidak jarang kita mendengar para pengguna React (oke, saya tau kalian gak mau menyebut ini framework) misalnya, mengatakan Vue inilah Vue itulah, pun sebaliknya dari berbagai pihak lain yang sepertinya tidak ada bosannya membahas topik yang sama diberbagai kesempatan.
 
-    &amp;__header{        
-        padding: 2px 16px;      
-    }
+<p>Saya pribadi sebenarnya selalu berusaha menghindari perdebatan seperti ini. Tulisan kali inipun saya buat bukan untuk menjatuhkan satu atau banyak pihak lain namun untuk berusaha menyampaikan pandangan dan pendapat saya mengenai hal seperti<span class="widont">&nbsp;</span>ini.</p>
+</p>
 
-    &amp;__content {
-        position: relative;
-        background-color: $white;
-        margin: 15% auto;
-        padding: 0;
-        width: 80%;
-
-        box-shadow : 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); 
-
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s;
-
-    } 
-
-    &amp;__body {
-        padding: 2px 16px;
-    }
-
-    &amp;__footer {
-        padding: 2px 16px;
-    }
-
-    &amp;__close {
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        color: $grey;
-        cursor: pointer;
-        text-decoration: none;
-
-        &amp;:hover, &amp;:focus {
-            text-decoration: none;
-        }
-    }
-}
-
-@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0} 
-    to {top: 0; opacity: 1}
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}</code></pre><p>Dengan kode <span class="caps">SASS</span> diatas mungkin kita tidak bisa melihat hasilnya, karena sudah ada rule <code>display: none;</code> di class <code>.modal</code>, maka untuk mengetesnya tinggal coba dihapus terlebih dahulu rule tersebut. Pastikan tampilan Popup Modal sudah sesuai dengan yang kalian<span class="widont">&nbsp;</span>harapkan. </p>
-<p>Oh iya kode <span class="caps">SASS</span> tersebut sudah menggunakan variabel colors punya saya jadi mungkin akan error di tempat Anda, jadi silahkan ganti variabel $white dan $grey dengan hex yang sebenarnya atau gampangnya ganti dengan warna solid white dan grey<span class="widont">&nbsp;</span>saja. </p>
-<p>Sampai langkah kedua, kita sebenarnya udah berhasil membuat Popup Modal kita dengan cepat. Langkah selanjutnya yang perlu dipikirkan adalah switch rule di dalam class <code>.modal</code> yang tadinya <code>display: none;</code> menjadi <code>display: block;</code>. Perlu dipikirkan juga bagaimana cara trigger agar membuka modal<span class="widont">&nbsp;</span>ini.</p>
-<p>Belajar dari Bootstrap, biasanya untuk mentrigger Modal di Bootstrap Kita bisa menggunakan kode<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModalLong&quot;&gt;
-  Launch demo modal
-&lt;/button&gt;</code></pre><p>Bila dilihat, mereka menambahkan attribute <code>data-toggle=&quot;modal&quot;</code> serta <code>data-target=&quot;modal_id_target&quot;</code>, kita bisa buat mirip seperti ini, namun dengan cara yang berbeda. Berikut contoh kode nya<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;button class=&quot;button button--blue&quot; data-show=&quot;modal&quot; data-target=&quot;modalPlain&quot;&gt;
-  Open Modal 
-&lt;/button&gt;
-&lt;/p&gt; </code></pre><p>Dan terakhir yang akan kita buat adalah Javascript function yang akan men-switch class modal agar bisa hide/show dengan lancar serta mencari modal mana yang seharusnya ditampilkan ketika di trigger dari suatu<span class="widont">&nbsp;</span>element.</p>
-<p>Berikut contoh kode sederhana nya<span class="widont">&nbsp;</span>:</p>
-<pre><code>var triggerBtn = $(&#39;[data-show=modal]&#39;).click(function(event){
-        var modalId = $(this).attr(&#39;data-target&#39;);        
-        $(&#39;#&#39; + modalId).show();
-    });
-
-    $(&#39;.modal__close&#39;).click(function(event){        
-        $(this).parents(&#39;.modal&#39;).hide();
-    });
-
-    $(window).click(function(event){
-        if (event.target.className === &#39;modal&#39;) {
-            $(event.target).hide();
-        }
-    });</code></pre><p>Setelahnya kita juga perlu menambahkan fungsi sederhana untuk hide/show lewat Javascript, karena siapa tau ada yang ingin trigger tanpa lewat definisi di elemen tersebut kan. Berikut kode sederhananya<span class="widont">&nbsp;</span>:</p>
-<pre><code>function modalShow(modalId){
-    $(&#39;#&#39; + modalId).show();
-}
-
-function modalHide(modalId){
-    $(&#39;#&#39; + modalId).hide();
-}</code></pre><p>Sayangnya fungsi yang kita buat masih jQuery dependent, tapi bila ada masukan mungkin bisa dicoba cara yang lebih sederhana menggunakan VanillaJS saja. Ini saya buat menggunakan jQuery karena saya terlalu malas.<span class="widont">&nbsp;</span>&#x1f647;&#x1f647;&#x1f647; </p>
-<p>Semua kode dalam artikel kali ini saya ambil dari framework kesayangan saya <a href="https://github.com/mazipan/bem-kit" target="_blank"><span class="caps">BEM</span>-Kit</a>. Anda bisa melihat cheatsheet mengenai modal pada <a href="https://github.com/mazipan/bem-kit/wiki/Cheatsheets#modal" target="_blank">halaman ini</a>, kalau penasaran dengan hasilnya bisa juga dilihat dari halaman demo <a href="https://mazipan.github.io/bem-kit/demo/#modal" target="_blank">disini</a>.</p>
-<p>Demikian sharing Sederhana mengenai membuat Popup Modal Sederhana. Semoga bermanfaat<span class="widont">&nbsp;</span>ya. </p>
-<p>Ditulis oleh Irfan Maulana sambil nemenin anak<span class="widont">&nbsp;</span>tidur.</p>
-<p>Salam.</p>
-
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/lelucon-dari-sebuah-javascript-frontend-framework.md/">more</a></p>
           </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a>
+          </div>
         </article>
         <article class="article intro">
           <header>
-            <p class="date"><span>13. March 2017</span></p>
-            <h2><a href="https://mazipan.github.io/blogs/articles/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 2 - Mengenal CSS</a></h2>
+            <p class="date"><span>06. June 2018</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/panduan-memberikan-versi-pada-aplikasi-atau-library-kita.md/">Panduan memberikan versi pada aplikasi/library kita</a></h2>
           </header>
-          <section class="content"><img class="aligncenter" src="https://4.bp.blogspot.com/-bSC70QFZkuI/Vuww_pDfYWI/AAAAAAAAG9E/qyILtW2DIQQNAL6perYoxoMsU1bYnMSFQ/s640/css-introduction.png" alt="Mengenal CSS" />
-
-<p><strong>Mengenal <span class="caps">CSS</span></strong> &#8211; Setelah seri 1 <a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">membahas <span class="caps">HTML</span></a>, pada seri kedua kali ini saya akan membahas mengenai <span class="caps">CSS</span><span class="widont">&nbsp;</span>dasar.</p>
-<p>Sekali lagi saya mengingatkan bahwa tulisan ini adalah rangkaian untuk memberikan pengetahuan dasar bagi mereka yang pemula yang ingin belajar dan mengetahui dasar untuk menjadi Frontend<span class="widont">&nbsp;</span>Developer.</p>
-<p>Berikut bahasan mengenai <span class="caps">CSS</span>, silahkan<span class="widont">&nbsp;</span>disimak.</p>
-<p>&nbsp;</p>
-<p><strong>Apa itu <span class="caps">CSS</span><span class="widont">&nbsp;</span>?</strong></p>
-<p><span class="caps">CSS</span> merupakan kependekan dari <em>Cascading Style Sheet</em>. Beberapa orang menyebut <span class="caps">CSS</span> merupakan kosmetik dari sebuah halaman web namun pada penerapannya <span class="caps">CSS</span> seringkali mempunyai peran yang lebih vital dari hanya sebuah kosmetik. <span class="caps">CSS</span> memberikan layout, posisi, eksistensi dan variasi pada sebuah elemen <span class="caps">HTML</span>, <span class="caps">CSS</span> juga menentukan bagaimana satu elemen <span class="caps">HTML</span> ditampilkan disebuah website. <span class="caps">CSS</span> menghapuskan penggunaan <span class="caps">HTML</span> attribute sebagai style formatting dan memindahkan ke dalam<span class="widont">&nbsp;</span><span class="caps">CSS</span>.</p>
-<p>&nbsp;</p>
-<p><strong>Bagaimana memulai <span class="caps">CSS</span><span class="widont">&nbsp;</span>?</strong></p>
-<p><span class="caps">CSS</span> datang bersamaan dengan <span class="caps">HTML</span><span class="widont">&nbsp;</span>tag</p>
-<pre>&lt;style&gt;
-    body{something}
-&lt;/style&gt;&nbsp;
-</pre>
-
-<p>di dalam <em>head</em> block dari sebuah <span class="caps">HTML</span>, saya biasa menyebut <span class="caps">CSS</span> seperti ini sebagai <strong>internal<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
-<p><span class="caps">CSS</span> juga bisa datang bersamaan dengan <span class="caps">HTML</span> elemen dengan langsung menambahkan<span class="widont">&nbsp;</span>attribut</p>
-<pre>&lt;div style="..."&nbsp;&gt;&lt;/div&gt;
-</pre>
-
-<p>pada elemen tersebut, saya sendiri menyebut <span class="caps">CSS</span> seperti ini sebagai <strong>inline<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
-<p>Selain itu <span class="caps">CSS</span> juga bisa di definikan di file tersendiri yang artinya terpisah dari file <span class="caps">HTML</span> nya yakni menggunakan file dengan ekstensi .css. Untuk memanggilnya sendiri menggunakan tag <em>link</em> didalam head block juga, namun dengan pendefinisian url path dari file tersebut,<span class="widont">&nbsp;</span>misal</p>
-<pre>&lt;link rel="stylesheet" type="text/css" href="pathFileCSS" /&gt;&nbsp;
-</pre>
-
-<p><span class="caps">CSS</span> seperti ini saya sebut sebagai <strong>eksternal<span class="widont">&nbsp;</span><span class="caps">CSS</span></strong>.</p>
-<p><span class="caps">CSS</span> memiliki urutan prioritas tersendiri bila ada hal yang sama didefinisikan namun dengan tipe <span class="caps">CSS</span> yang berbeda-beda, berikut adalah urutan prioritas tersebut<span class="widont">&nbsp;</span>:</p>
-<ol>
-<li>Inline <span class="caps">CSS</span> langsung pada attribute<span class="widont">&nbsp;</span><span class="caps">HTML</span>.</li>
-<li>Internal <span class="caps">CSS</span> dan kemudian Eksternal <span class="caps">CSS</span> yang terdefinikan di<span class="widont">&nbsp;</span>head.</li>
-<li>User Agent <span class="caps">CSS</span> atau <span class="caps">CSS</span> standard bawaan dari masing-masing<span class="widont">&nbsp;</span>browser.</li>
-</ol>
-<p>&nbsp;</p>
-<p><strong><span class="caps">CSS</span> Syntax</strong></p>
-<p>Syntax css ditulis menggunakan key-value dengan colon atau titik dua (:) sebagai pembatas antara key dan value ini, sementara untuk pembatas antara rule menggunakan semicolon atau titik koma<span class="widont">&nbsp;</span>(;).</p>
-<p>Misal :</p>
-<pre>font-size: 14px;
-color: red;
-</pre>
-
-<p>Jika menggunakan internal maupun eksternal <span class="caps">CSS</span> maka masing-masing rule dibuka dan tutup menggunakab curly bracket ({}), misal<span class="widont">&nbsp;</span>:</p>
-<pre>.font-red{
-    font-size: 14px;
-    color: red;
-}
-.font-blue{
-    font-size: 14px;
-    color: blue;
-}
-</pre>
-
-<p>&nbsp;</p>
-<p><strong><span class="caps">CSS</span> Selector Dasar</strong></p>
-<p><span class="caps">CSS</span> Selector digunakan untuk mencari element <span class="caps">HTML</span> yang akan diberikan style. <span class="caps">CSS</span> akan memberikan style kepada elemen <span class="caps">HTML</span> yang didefinisikan di dalam selector seperti berdasarkan attribut id, class atau yang lainnya. Selector <span class="caps">ID</span> digunakan untuk mencari elemen yang unik yang memiliki attribute <span class="caps">ID</span> seperti yang dituliskan dan hanya satu di suatu halaman web. Selector <span class="caps">ID</span> ditulis menggunakan awalan tagar (#) kemudian nama <span class="caps">ID</span> dari elemen tersebut, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>#font-red{
-    font-size: 14px;
-    color: red;
-}
-</pre>
-
-<p>Selector class akan memberikan style kepada semua elemen <span class="caps">HTML</span> yang memiliki attribute class dengan nilai seperti yang tersebut. Class ini tidak unik seperti <span class="caps">ID</span> dan tujuannya memang agar bisa digunakan berulang-ulang. Selector class ini ditulis dengan awalan titik (.), contoh<span class="widont">&nbsp;</span>:</p>
-<pre>.font-red{
-    font-size: 14px;
-    color: red;
-}
-</pre>
-
-<p>Kita bisa juga menggunakan selector langsung berupa element <span class="caps">HTML</span> nya yang mana akan berefek ke semua elemen yang di definisikan, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>input{
-    font-size: 14px;
-    color: red;
-}
-a{
-    color: blue;
-}
-</pre>
-
-<p>&nbsp;</p>
-<p><strong><span class="caps">CSS</span> Selector Kombinasi</strong></p>
-<p>Selector bisa juga dikombinasikan lebih dari satu, tujuannya biasanya untuk lebih mendetailkan pencarian suatu elemen. Selector kombinasi ini bisa dibagi menjadi dua berdasarkan<span class="widont">&nbsp;</span>funsinya.</p>
-<ol>
-<li>Bersarang (Nested)</li>
-</ol>
-<p>Digunakan untuk mencari anak dari suatu elemen <span class="caps">HTML</span> berdasarkan parent nya, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>.class1 p{
-    color: red;
-}
-.class1 &gt; p{
-    color: blue;
-}
-</pre>
-
-<p>Kita bisa menggunakan spasi maupun tanda panah kekanan (&gt;), dimana spasi akan mengambil semua anak dari parent nya sedangkan tanda &gt; hanya akan mengambil anak yang tepat berada dibawah<span class="widont">&nbsp;</span>parentnya.</p>
-<ol start="2">
-<li>Bersebelahan (Sibling)</li>
-</ol>
-<p>Untuk mencari sibling dari suatu elemen kita bisa menggunakan tanda (+) maupun tanda (<del>), dimana tanda (+) akan mencari yang tepat dan terdekat berada di sebelah (bukan sebagai anaknya) suatu elemen sedangkan tanda (</del>) akan mencari semua yang ada disebelah elemen tersebut, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>.class1 + p{
-    color: red;
-}
-.class1 ~ p{
-    color: blue;
-}
-</pre>
-
-<p>&nbsp;</p>
-<p><strong><span class="caps">CSS</span> Selector Lanjutan</strong></p>
-<p>Kita bisa juga memilih suatu elemen yang mengandung suatu kata, misal<span class="widont">&nbsp;</span>:</p>
-<pre>[class*="bli-"]{
-    color: red;
-}
-</pre>
-
-<p>Yang artinya kita ingin mendapatkan semua elemen yang mempunyai class dengan awalan<span class="widont">&nbsp;</span>bli-.</p>
-<p>Lebih lanjut soal selector <span class="caps">CSS</span> bisa dibaca <a href="https://www.w3schools.com/cssref/css_selectors.asp">disini</a></p>
-<p>**</p>
-<p>** </p>
-<p><strong>Pseudo Class</strong></p>
-<p>Digunakan untuk mendefinisikan beberapa spesial state dari suatu elemen <span class="caps">HTML</span> seperti ketika di hover, ketika aktif, ketika di disable dan state lainnya. Syntaxnya menggunakan titik dua (:) setelah selectornya, misal<span class="widont">&nbsp;</span>:</p>
-<pre>.link:hover{
-    color: red;
-}
-.link:focus{
-    color: red;
-}
-.link:active{
-    color: red;
-}
-
-</pre>
-
-<p>**</p>
-<p>** </p>
-<p><strong>Pseudo Element</strong></p>
-<p>Digunakan untuk memberikan style pada suatu bagian tertentu di dalam element <span class="caps">HTML</span>. Syntaxnya menggunakan dua kali titik dua (::) setelah selectornya, misal<span class="widont">&nbsp;</span>:</p>
-<pre>.link::before{
-    color: red;
-}
-.link::after{
-    color: red;
-}
-ul li::last-child{
-    color: red;
-}
-
-</pre>
-
-<p>**</p>
-<p>** </p>
-<p><strong>Menggabungkan Rule</strong></p>
-<p>Kita bisa menggabungkan beberapa rule yang memiliki spesifikasi sama kedalam satu inisialisasi. Syntaxnya menggunakan koma (,), misal<span class="widont">&nbsp;</span>:</p>
-<pre>.link, a, .ref{
-    color: red;
-}
-
-</pre>
-
-<p>**</p>
-<p>** </p>
-<p><strong>Catatan tambahan</strong></p>
-<p>Materi ini juga pernah saya bawakan di beberapa forum, berikut sumber materi nya<span class="widont">&nbsp;</span>:</p>
-<p>Slide presentasi :&nbsp;<a href="https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part2-the-cosmetic">disini</a></p>
-<p>Contoh kode :&nbsp;<a href="https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-2">disini</a></p>
-<p>Halaman demo :&nbsp;<a href="https://mazipan.github.io/journey-to-the-frontend-world/part-2/index.html">disini</a></p>
-<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
-
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”630”]<img src="https://nhsconnect.github.io/gpconnect/images/design/semantic-versioning.png" alt="Illustrasi versioning" width="630" height="282" /> <em>Sumber gambar: nhsconnect.github.io</em>[/caption]</p>
+<p>Saya yakin semua programmer sudah paham apa itu versionning? kenapa kita harus membuat versi untuk aplikasi atau library kita? Kita tidak akan membahas hal-hal tersebut lagi, namun pada tulisan kali ini saya akan membahas bagaimana cara memberikan versi yang baik pada aplikasi/library<span class="widont">&nbsp;</span>kita.</p>
+<p>Jika kalian pernah perhatikan, versioning yang paling sering dan umum digunakan adalah menggunakan tiga digit angka dengan separator titik seperti 0.0.1 atau 0.0.2 yang masing-masing memiliki arti dan maksud yang<span class="widont">&nbsp;</span>berbeda-beda.</p>
+<p>Kalau kita sudah mengetahui ciri dari versi yang akan kita gunakan, pertanyaan berikutnya adalah kapan kita menaikkan angka pertama, kedua dan ketiga pada versi tersebut? Hal ini yang akan kita bahas pada tulisan kali<span class="widont">&nbsp;</span>ini.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/panduan-memberikan-versi-pada-aplikasi-atau-library-kita.md/">more</a></p>
           </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
         </article>
         <article class="article intro">
           <header>
-            <p class="date"><span>12. March 2017</span></p>
-            <h2><a href="https://mazipan.github.io/blogs/articles/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">Perjalanan Menjadi Frontend Developer Bagi Pemula - Seri 1 - Mengenal HTML</a></h2>
+            <p class="date"><span>05. June 2018</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/mengenal-intersection-observer.md/">Mengenal Intersection Observer</a></h2>
           </header>
-          <section class="content"><img class="aligncenter" src="https://d3rj1gznkm47xj.cloudfront.net/6c91737b-715e-4c59-aad0-b947bb097907.png" alt="Mengenal HTML" />
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*l6gAMRWLX_rg6JV79fPVPw.jpeg" alt="" width="800" height="450" /> <em>An Intersection. Image Source: <a href="https://searchengineland.com/">https://searchengineland.com/</a></em>[/caption]</p>
+<p>Dari developer.google update bulan april 2016 <a href="https://developers.google.com/web/updates/2016/04/intersectionobserver" target="_blank" rel="noopener">disini</a>, Intersection Observer pertama kali di release ke user di chrome versi 51. Lalu sebenarnya apa sih Intersection Observer ini? Lantas apa juga hal yang membuatnya menjadi menarik untuk kamu coba? Berikut akan kita bahas berbagai hal mengenai Intersection<span class="widont">&nbsp;</span>Observer.</p>
+<h3><strong>&#x1f4d2; Apa itu Intersection<span class="widont">&nbsp;</span>Observer?</strong></h3>
+Intersection Observer (IntersectionObserver) merupakan sebuah interface dari <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" target="_blank" rel="noopener">Intersection Observer <span class="caps">API</span></a> yang menyediakan cara asynchronous untuk memantau (observe) perubahan intersection dari elemen target terhadap viewport maupun elemen ancestor.
 
-<p><strong>Mengenal <span class="caps">HTML</span></strong> &#8211; Web developer kini bisa dipisahkan ke dalam 2 spesialisasi yakni Backend dan Frontend developer. Dalam post ini kita akan membahas beberapa pengetahuan dasar untuk menjadi Frontend<span class="widont">&nbsp;</span>developer.&nbsp;</p>
-<p>Pada postingan pertama saya akan membahas pengetahuan dasar mengenai <span class="caps">HTML</span>, kenapa dimulai dari <span class="caps">HTML</span> ? Tentu saja karena <span class="caps">HTML</span> menjadi dasar bagi semua web developer dan saya ingin membahas dari hal yang mendasar karena memang target dari post ini adalah mereka yang benar-benar pemula dan ingin belajar mengenai web development terutama di sisi<span class="widont">&nbsp;</span>Frontend.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Apa itu <span class="caps">HTML</span><span class="widont">&nbsp;</span>?</strong></p>
-<p><span class="caps">HTML</span> atau Hypertext Markup Language merupakan kerangka dari halaman website, suatu kode yang membangun sebuah tampilan website. Saya memberikan ilustrasi bahwa membuat kode <span class="caps">HTML</span> sama seperti saat kita bermain game _Tetris&nbsp;_dimana kita diharuskan meletakkan satu blok ke dalam tempat yang sesuai, bila di anggap bahwa website itu adalah sebuah rumah maka <span class="caps">HTML</span> adalah batu bata yang menyusun dan menegakkan rumah<span class="widont">&nbsp;</span>tersebut.</p>
-<p>**</p>
-<p>** </p>
-<!--more-->
-
-<p><strong><span class="caps">HTML</span> Dasar</strong></p>
-<p><span class="caps">HTML</span> mempunyai inisialisasi deklarasi di baris paling<span class="widont">&nbsp;</span>awal&nbsp;</p>
-<pre>&lt;!DOCTYPE html&gt;</pre>
-
-<p>Setiap element <span class="caps">HTML</span> diawali dengan tag pembuka dan diakhiri dengan tag<span class="widont">&nbsp;</span>penutup.</p>
-<p>Kita bisa memulai kode <span class="caps">HTML</span> di dalam<span class="widont">&nbsp;</span>tag</p>
-<pre>&lt;html&gt;&lt;/html&gt;</pre>
-
-<p>Di bawah html tag ada tag <em>head</em> yang berisi informasi mengenai identitas suatu website seperti title, icon,<span class="widont">&nbsp;</span>metatag.</p>
-<p>Di dalam tag <em>head</em> kita juga bisa manambahkan sumber daya eksternal yang dibutuhkan untuk di load diawal seperti <span class="caps">CSS</span> ataupun kritikal<span class="widont">&nbsp;</span>Javascript.</p>
-<p>Setelah tag head baru akan ada tag _body_, di dalam tag body inilah kita akan menulis komponen <span class="caps">HTML</span> kita yang<span class="widont">&nbsp;</span>sebenarnya.</p>
-<p>Sebelum tag penutup <em>body</em> biasanya digunakan untuk meload script baik internal maupun<span class="widont">&nbsp;</span>eksternal.</p>
-<p>**</p>
-<p>** </p>
-<p><strong><span class="caps">HTML</span> Element</strong></p>
-<p><span class="caps">HTML</span> Element merupakan semua yang dimulai tag pembuka dan diakhiri dengan tag<span class="widont">&nbsp;</span>penutup.</p>
-<p><span class="caps">HTML</span> Element bisa dibuat bersarang (nested), yang artinya suatu elemen menjadi anak (child) dari elemen lainnya, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>&lt;div&gt;
-&nbsp; &nbsp; I am parent
-&nbsp; &nbsp; &lt;div&gt;I am child&lt;/div&gt;
-&lt;/div&gt;</pre>
-
-<p>**</p>
-<p>** </p>
-<p><strong><span class="caps">HTML</span> Attribute</strong></p>
-<p><span class="caps">HTML</span> Attribute merupakan informasi tambahan pada sebuah <span class="caps">HTML</span><span class="widont">&nbsp;</span>Element.</p>
-<p>Di deklarasikan pada tag pembuka dari sebuah <span class="caps">HTML</span><span class="widont">&nbsp;</span>Element.</p>
-<p><span class="caps">HTML</span> Element biasanya berupa key-value, contoh<span class="widont">&nbsp;</span>:</p>
-<pre>&lt;div id="sayaSebuahAttribute"&nbsp;
-class="sayaJugaAttibute"&nbsp;
-data-target="iniJugaLoh"&gt;
-&lt;/div&gt;</pre>
-
-<p>**</p>
-<p>** </p>
-<p><strong>Heading dan Text</strong></p>
-<p>Tag heading yang biasa digunakan untuk title dan subtitle adalah h1, h2, &#8230; h6. Penggunaan heading dapat membantu <span class="caps">SEO</span> karena memudahkan search engine untuk mengidentifikasi halaman website Anda. Heading akan membuat satu block yang artinya elemen setelahnya akan berada di baris baru bukan<span class="widont">&nbsp;</span>disampingnya.</p>
-<p>Untuk text sendiri kita bisa menggunakan tag  <em>p</em> yang mewakili sebuah paragraf baru ataupun <em>span</em> yang merupakan text biasa. Pada text juga terdapat beberapa tahun yang bisa digunakan untuk formating seperti _strong, b, i, em, small_, dan<span class="widont">&nbsp;</span>lainnya.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Block</strong></p>
-<p>Block adalah elemen <span class="caps">HTML</span> yang sering kali digunakan sebagai wadah bagi elemen-elemen lain. Sifat dasar block ini sendiri akan membuat satu baris baru dari elemen terakhir<span class="widont">&nbsp;</span>diatasnya.</p>
-<p>Block yang paling umum digunakan adalah tag <em>div</em>. Selain itu ada beberapa tag block yang merepresentasikan posisinya seperti&nbsp;<em>header, main, footer, aside, nav, article, section,</em> dan<span class="widont">&nbsp;</span>lain-lain.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Table</strong></p>
-<p>Table digunakan untuk menampilkan data atau bisa juga untuk mengorganisir beberapa elemen dengan lebih mudah dan teratur. Seperti namanya table ditandai dengan tag <em><table></table></em>.&nbsp;</p>
-<p>Di dalam table ada sebuah wadah&nbsp;<em>thead</em> yang merupakan wadah bagi header sebuah tabel dan juga <em>tbody</em> yang merupakan wadah bagi isi konten dari tabel<span class="widont">&nbsp;</span>tersebut.</p>
-<p>Baris pada sebuah table ditandai dengan tag <em><tr></em> sedangkan untuk kolom digunakan tag <em><td></em> kecuali jika kolom tersebut ada di dalam header maka bisa digunakan tag <em><th>._&nbsp;Kita bisa juga menggabungkan beberapa baris atau kolom dengan menambahkan attribute _rowspan</em> atau <em>colspan</em> di element yang akan<span class="widont">&nbsp;</span>digabungkan.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>List</strong></p>
-<p>List merupakan elemen yang digunakan untuk menyajikan data atau elemen secara berurutan kebawah. Untuk membuat liat kita bisa menggunakan block <ul>&nbsp;</ul> atau <ol>&nbsp;</ol> dimana <em>ol</em> biasa dikenal dengan ordered list atau liat yang berurutan dan <em>ul</em> sebaliknya. Untuk item dibawah nya kita bisa menggunakan tag <li>&nbsp;</li>.</p>
-<p>Yang perlu di garis bawahi adalah bahwa kita bisa menggunakan list tidak selalu untuk hal yg disusun berurutan secara horizontal namun bisa juga hal lainnya, namun kita sering menggunakan listrik ketika harus bermain dengan siblings nya pada akhirnya, seperti saat pembuatan menu atau<span class="widont">&nbsp;</span>navigasi.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Form</strong></p>
-<p>Form merupakan kumpulan dari beberapa inputan yang akan dikirimkan/diproses secara<span class="widont">&nbsp;</span>bersamaan.</p>
-<p>Menggunakan tag <form>&nbsp;</form> sebagai deklarasi nya dan terdapat block <fieldset>&nbsp;</fieldset> sebagai wadah bagi beberapa inputan yang akan disatukan kedalam satu kelompok<span class="widont">&nbsp;</span>tampilan.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Input</strong></p>
-<p>Input merupakan elemen yang bisa menerima isian dari pengguna. Terdapat banyak variasi dari input element ini yang masing-masing nya memiliki kegunaan dan tampilan yang berbeda sesuai dengan spesifikasi<span class="widont">&nbsp;</span>nya.</p>
-<p>Beberapa bisa dibedakan dengan menjelaskan attribute <em>type</em> pada input element ini. Attribute type yang tersedia antara lain : <em>text, password, number, tel, email, date, range, radio, checkbox</em> dan<span class="widont">&nbsp;</span>lain-lain.</p>
-<p>Inputan dengan tipe <em>radio</em> digunakan ketika pengguna hanya bisa memilih satu dari pilihan yang disediakan, jika pengguna bisa memilih lebih dari satu maka gunakan tipe <em>checkbox</em>.</p>
-<p>Anda bisa menggunakan <em>select</em> dan <em>option</em> jika pilihan yang disediakan terlalu banyak untuk<span class="widont">&nbsp;</span>ditampilkan.</p>
-<p>Inputan dengan tipe <em>submit</em> akan mengirimkan semua data yang ada dalam form ketika<span class="widont">&nbsp;</span>ditekan.</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Latihan</strong></p>
-<p>Percuma membaca seharian bila belum mencoba sendiri, ayo mulai buat layout sederhana kalian<span class="widont">&nbsp;</span>sendiri.</p>
-<p>Saya sendiri akan membuat satu tampilan <span class="caps">CRUD</span> dari sebuah Contact yang berisi nama, email, gender dan alamat. Selamat berkreasi&#8230;<span class="widont">&nbsp;</span>&#x1f4aa;&#x1f4aa;&#x1f4aa;</p>
-<p>**</p>
-<p>** </p>
-<p><strong>Bahan Bacaan</strong></p>
-<p>Baca lebih lengkap disini :&nbsp;<a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></p>
-<p>**</p>
-<p>** </p>
-<p><strong>Catatan tambahan</strong></p>
-<p>Materi ini juga pernah saya bawakan di beberapa forum, berikut sumber materi nya<span class="widont">&nbsp;</span>:</p>
-<p>Slide presentasi :&nbsp;<a href="https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part1-the-skeleton">https://www.slideshare.net/IrfanMaulana21/journey-to-the-front-end-world-part1-the-skeleton</a></p>
-<p>Contoh kode :&nbsp;<a href="https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-1">https://github.com/mazipan/journey-to-the-frontend-world/tree/master/part-1</a></p>
-<p>Halaman demo :&nbsp;<a href="https://mazipan.github.io/journey-to-the-frontend-world/part-1/index.html">https://mazipan.github.io/journey-to-the-frontend-world/part-1/index.html</a></p>
-<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
-<p>Jangan lupa nantikan seri selanjutnya ya<span class="widont">&nbsp;</span>&#x1f609;&#x1f609;&#x1f609;</p>
-<p>Ditulis di malam hari setelah menonton bola kala<span class="widont">&nbsp;</span>itu.</p>
-<p>Terima Kasih,</p>
-<p>Salam.</p>
-
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/mengenal-intersection-observer.md/">more</a></p>
           </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/web%20performance/1/">web performance</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>04. June 2018</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/belajar-mengenai-amp.md/">Belajar mengenai &amp;#x26a1;AMP</a></h2>
+          </header>
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”678”]<img src="https://cdn-images-1.medium.com/max/800/1*r2D-2y3hpUUpoe_ZeL-fFA.png" alt="Flash Illustration" width="678" height="381" /> <em>The Flash. Image source: <a href="https://nerdhaunt.com">https://nerdhaunt.com</a></em>[/caption]</p>
+
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/belajar-mengenai-amp.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/amp/1/">amp</a><a href="https://mazipan.github.io/blogs/tag/web%20performance/1/">web performance</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>01. March 2018</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/15-programmer-javascript-keren-asal-indonesia/">15 programmer JavaScript keren asal Indonesia</a></h2>
+          </header>
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”700”]<img src="https://static.cdn-cdpl.com/700x350/998b78e349061b4971c0a2b0e8d6be41/aa.png" alt="" width="700" height="350" /> Sumber gambar:<span class="widont">&nbsp;</span>codepolitan.com[/caption]</p>
+<div style="border-left: 2px solid #fa5742; padding-left: 1em;">
+<p class="crayon-selected" style="text-align: left;"><i>Disclaimer: artikel ini dibuat berdasarkan opini pribadi, tidak ada maksud untuk meng-endorse atau menjatuhkan siapapun. Adapun bila banyak teman-teman keren lain yang tidak bisa disebutkan dikarenakan memang terbatasnya media ini. Semoga<span class="widont">&nbsp;</span>berkenan.</i></p>
+
+</div>
+Pasti sudah pada tahu JavaScript kan ? Salah satu bahasa pemrograman yang (baca: katanya) lagi <i>hype</i> beberapa waktu belakangan ini. Pada artikel kali ini kita akan sebutkan beberapa programmer JavaScript lokal keren yang bisa kita ikuti baik sosial medianya ataupun kalau sempat bertemu bisa langsung coba menyapa dan ngobrol dengan mereka-mereka ini. Kenapa saya rekomendasikan untuk mengikuti sosial media mereka ? Karena menurut saya beberapa dari mereka memang rajin untuk berbagi banyak informasi menarik baik perkembangan JavaScript terkini, tulisan-tulisan, maupun project-project yang sedang mereka kerjakan yang seringkali menarik dan layak untuk kita pelajari.
+
+<p>Berikut daftar mereka yang tidak saya urutkan berdasarkan apapun, jadi jangan berekspektasi bahwa yang lebih atas berarti lebih keren daripada yang ada di daftar bawahnya. Semuanya keren-keren, berikut<span class="widont">&nbsp;</span>daftarnya:</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/15-programmer-javascript-keren-asal-indonesia/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>13. August 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/tips-kolaborasi-back-end-x-front-end-untuk-meningkatkan-produktivitas.md/">Tips kolaborasi Back-end x Front-end untuk Meningkatkan Produktivitas</a></h2>
+          </header>
+          <section class="content"><p><strong>Tips kolaborasi Back-end x Front-end untuk Meningkatkan Produktivitas</strong> - <em>Back-end programmer</em> adalah sebutan bagi para <em>programmer</em> yang bergelut dengan berbagai logika penyajian data dari basis data maupun third party vendor sampai menghasilkan format data yang diinginkan yang biasanya dalam bentuk akhir xml ataupun json data. <em>Front-end programmer</em> sendiri merupakan sebutan bagi para <em>programmer</em> yang memiliki peranan untuk menyajikan visualisasi dari data yang diberikan oleh <em>Back-end<span class="widont">&nbsp;</span>programmer</em>.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/tips-kolaborasi-back-end-x-front-end-untuk-meningkatkan-produktivitas.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a><a href="https://mazipan.github.io/blogs/tag/story-telling/1/">story-telling</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>10. August 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/jurus-jitu-pencitraan-buat-para-programmer.md/">Jurus Jitu Pencitraan buat Para Programmer</a></h2>
+          </header>
+          <section class="content"><p><strong>Jurus Jitu Pencitraan buat Para Programmer</strong> <em>- Programmer, Developer, Software Engineer _atau istilah lain yang punya artian hampir sama beberapa waktu belakangan memang menjadi salah satu profesi yang _hype</em> sekali. Hal ini juga sejalan dengan sangat berkembangnya startup yang bergerak di bidang <em>hiring</em> karyawan atau <em>head hunter</em> yang beberapa diantaranya bahkan berani men-spesialisasikan diri mereka dalam untuk membantu mencarikan karyawan khusus di bidang <span class="caps">IT</span> seperti contohnya adalah beberapa profesi yang saya sebut di<span class="widont">&nbsp;</span>depan.</p>
+<p>Dengan semakin dikenalnya profesi tersebut berarti juga akan meningkatkan minat banyak orang lain untuk ikut atau sekedar ikut-ikutan terjun dan belajar untuk menekuni profesi tersebut. Meskipun diakui bahwa tidak gampang untuk serius menekuni profesi di bidang seperti <span class="caps">IT</span> namun dengan semakin tingginya minat di bidang <span class="caps">IT</span> maka secara kasar kita bisa bilang bahwa persaingan untuk mendapatkan satu pekerjaan juga semakin tinggi. Dan dengan semakin tingginya persaingan maka kita juga perlu mempersiapkan beberapa hal agar tidak tenggelam oleh banyaknya kompetitor yang siap menikung Anda kapan<span class="widont">&nbsp;</span>saja.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/jurus-jitu-pencitraan-buat-para-programmer.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/programmer/1/">programmer</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a><a href="https://mazipan.github.io/blogs/tag/story-telling/1/">story-telling</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>13. July 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-6-persiapan-file-production.md/">Belajar Angular - Bagian 6 - Persiapan File Production</a></h2>
+          </header>
+          <section class="content"><figure style="width: 825px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-6-mazipanneh.jpg" alt="Belajar Angular - Bagian 6 - Persiapan File Production" width="825" height="35" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 6 - Persiapan File Production</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 6 - Persiapan File Production</strong> - Development Angular dengan bantuan Angular-<span class="caps">CLI</span> memang sangat dimudahkan baik dari mulai pembuatan project awal, penambahan berbagai komponen sampai pada pembuatan file production yang nantinya akan kita deploy atau<span class="widont">&nbsp;</span>host.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-6-persiapan-file-production.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>10. June 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter.md/">Belajar Angular - Bagian 5 - Membuat Custom Pipe atau Filter</a></h2>
+          </header>
+          <section class="content"><figure style="width: 825px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-5-mazipanneh.jpg" alt="Belajar Angular - Bagian 5 - Membuat Custom Pipe atau Filter" width="825" height="35" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 5 - Membuat Custom Pipe atau Filter</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 5 - Membuat Custom Pipe atau Filter</strong> - Angular dari semasa masih versi satu sudah menyediakan fitur keren ini, di AngularJS kita kenal dengan nama <strong>Filter</strong> sedangkan di Angular kini dikenal dengan sebutan <strong>Pipe</strong>. pipe/Filter ini sendiri merupakan fitur yang memungkinkan kita untuk men-transform atau mengubah maupun mem-format suatu data secara real-time. Pipe/Filter ini tidak berubah dari versi sebelumnya dari sisi sintax penggunaannya tetap ditandai dengan adanya pipe symbol (|) diikuti nama filter/pipe nya, contoh <code>{{ dateNow | date }}</code>.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>09. June 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-4-membuat-route.md/">Belajar Angular - Bagian 4 - Membuat Route</a></h2>
+          </header>
+          <section class="content"><figure style="width: 825px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-4-mazipanneh.jpg" alt="Belajar Angular - Bagian 4 - Membuat Route" width="825" height="35" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 4 - Membuat Route</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 4 - Membuat Route</strong> - Kita akan membahas mengenai cara membuat Routing menggunakan framework <strong>Angular</strong>. Routing di frontend javascript framework memang seperti sudah menjadi feature yang diwajibkan ada jaman sekarang, <strong>Angular</strong> dalam hal ini seperti biasa yang tidak mengikuti cara framework modern lain dalam menghadirkan Routing nya yang memilih dipisah dari framework utamanya, <strong>Angular</strong> justru selalu hadir dengan paket lengkap termasuk dengan built-in Routing didalamnya. Pada versi 2.x sendiri <strong>Angular</strong> memisahkan repository untuk Routing sehingga Anda akan melihat depedency <code>@angular/router</code> pada <code>package.json</code>, namun bedanya bahwa Router pada Angular di maintain secara official oleh team mereka dan selalu release sebaga satu kesatuan framework bersamaan dengan core<span class="widont">&nbsp;</span>nya.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/belajar-angular-bagian-4-membuat-route.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+          </div>
         </article>
       </div>
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="https://mazipan.github.io/blogs/archives/">&laquo; Archives</a>
+        <div class="nav"><a href="https://mazipan.github.io/blogs/archives/">&laquo; Archives</a><a href="https://mazipan.github.io/blogs/tag/programming/2/">Next Page &raquo;</a>
         </div>
         <section class="copy">
           <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>

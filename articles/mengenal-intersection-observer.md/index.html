@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Mengenal Intersection Observer - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Mengenal Intersection Observer</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/web%20performance/1/">web performance</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*l6gAMRWLX_rg6JV79fPVPw.jpeg" alt="" width="800" height="450" /> <em>An Intersection. Image Source: <a href="https://searchengineland.com/">https://searchengineland.com/</a></em>[/caption]</p>
+<p>Dari developer.google update bulan april 2016 <a href="https://developers.google.com/web/updates/2016/04/intersectionobserver" target="_blank" rel="noopener">disini</a>, Intersection Observer pertama kali di release ke user di chrome versi 51. Lalu sebenarnya apa sih Intersection Observer ini? Lantas apa juga hal yang membuatnya menjadi menarik untuk kamu coba? Berikut akan kita bahas berbagai hal mengenai Intersection<span class="widont">&nbsp;</span>Observer.</p>
+<h3><strong>&#x1f4d2; Apa itu Intersection<span class="widont">&nbsp;</span>Observer?</strong></h3>
+Intersection Observer (IntersectionObserver) merupakan sebuah interface dari <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" target="_blank" rel="noopener">Intersection Observer <span class="caps">API</span></a> yang menyediakan cara asynchronous untuk memantau (observe) perubahan intersection dari elemen target terhadap viewport maupun elemen ancestor.
+
+<p><span class="more"></span></p>
+<p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*oVcjwADgDy4zQPHgnuajIw.png" alt="" width="800" height="568" /> <em>Image Source: <a href="https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/">https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/</a></em>[/caption]</p>
+<h3><strong>&#x1f36d; Contoh kasus penggunaan Intersection<span class="widont">&nbsp;</span>Observer</strong></h3>
+Berikut beberapa contoh kasus dimana kehadiran Intersection Observer menjadi penting dan menarik:
+
+<p><strong>&#x1f304; Lazy Loading</strong></p>
+<p>Konsep lazy loading pada dasarnya adalah menampilkan konten hanya ketika konten tersebut benar-benar dibutuhkan dan dilihat oleh pengguna. Implementasi paling sering dari lazy loading ini adalah pada proses untuk memuat gambar pada sebuah website, namun sebenarnya bisa juga digunakan untuk memuat konten lain baik text paragraph maupun block<span class="widont">&nbsp;</span>div.</p>
+<p>Seperti kita tahu bersama-sama, ukuran dan banyaknya file yang kita kirim ke pengguna merupakan hal yang penting dalam memuat sebuah website. Oleh karena itu lazy loading sangat membantu memastikan kita memuat konten yang tepat pada saat yang tepat pula. Jangan sampai kita memaksa pengguna untuk memuat atau mengunduh hal yang tidak pernah dia lihat sama<span class="widont">&nbsp;</span>sekali.</p>
+<p>Sebelum ada Intersection Observer kita biasa membuat lazy loading dengan cara attach event ketika pengguna melakukan scroll dan memanggil getBoundingClientRect() untuk mengecek apakah elemen yang kita maksud sudah masuk ke dalam layar yang dilihat oleh<span class="widont">&nbsp;</span>pengguna.</p>
+<p>Implementasi Intersection Observer untuk membuat lazy loading gambar maupun video telah dijelaskan secara rinci dengan berbagai contoh kode yang jelas pula di artikel <a href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/" target="_blank" rel="noopener">Lazy Loading Images and Video</a> dari<span class="widont">&nbsp;</span>developer.google.com.</p>
+<p><strong>&#x1f503; Infinite Scroll</strong></p>
+<p><a href="https://www.google.co.id/search?q=infinite+scroll" target="_blank" rel="noopener">Infinite Scroll</a> paling cocok digunakan pada mobile web, dimana pengguna tidak perlu menekan tombol apapun untuk memuat halaman/konten berikutnya namun cukup dengan scroll dan nanti ditentukan apakah sudah waktunya memuat konten berikutnya atau belum. Bila kamu masih gamang dengan istilah infinite scroll, maka coba saja kunjungi halaman utama dari Instagram (<a href="http://www.instagram.com/">http://www.instagram.com/</a>). Kita bisa browsing unggahan terbaru dari teman-teman kita di Instagram dengan mudah tanpa sekalipun harus menekan halaman selanjutnya atau apapun itu, cukup scroll terus sampai bawah dan akan dimuat halaman berikutnya secara<span class="widont">&nbsp;</span>otomatis.</p>
+<p>Tanpa Intersection Observer implemetasi infinite scroll kurang lebih akan sama dengan lazy loading namun biasanya akan lebih advance karena beberapa implementasinya memiliki logika yang lebih kompleks dimana dilakukan penambahan konten yang akan dilihat dan penghapusan terhadap konten yang sudah tidak dilihat lagi oleh<span class="widont">&nbsp;</span>pengguna.</p>
+<p><strong>&#x1f4ca; Reporting /<span class="widont">&nbsp;</span>Tracking</strong></p>
+<p>Pernahkah terpikir untuk men-track kebiasaan pengguna ketika mengunjungi website kamu? Misalnya pengguna melakukan scroll di halaman katalog produk kemudian berhenti ketika melihat sebuah produk pada titik ini bisa dimungkinkan pengguna memiliki ketertarikan lebih terhadap produk tersebut. Kalau kita bisa collect data dari kebiasaan pengguna dalam melakukan scroll di website kita maka bisa dibuatkan pula recommendation system dengan sumber data yang lebih banyak dan bisa menghasilkan personalisasi yang lebih<span class="widont">&nbsp;</span>baik.</p>
+<p>Tracking ataupun reporting bisa membantu kita dalam membuat keputusan produk mana yang harusnya ada diatas, dan produk mana yang bisa diletakan di posisi yang lebih bawah dari katalog kita. Dan menggunakan Intersection Observer tentunya hal ini menjadi lebih mudah dilakukan dan lebih visible untuk di<span class="widont">&nbsp;</span>deliver.</p>
+<p><strong>&#x1f526; Others Task</strong></p>
+<p>Banyak hal dan pekerjaan lain yang menjadi lebih mudah dengan adanya Intersection Observer, seperti penentuan kapan suatu task akan dieksekusi dan kapan tidak perlu dieksekusi, penentuan kapan suatu animasi perlu ditampilkan dan kapan tidak perlu ditampilkan kepada pengguna dan banyak<span class="widont">&nbsp;</span>lagi.</p>
+<p>Kekuatan utama pada Intersection Observer adalah bisa memberikan kita visibility yang lebih kapan waktu yang tepat untuk melakukan suatu hal dan ini tentu saja bisa diimplementasikan ke berbagai hal tergantung pada kebutuhan dan tujuan<span class="widont">&nbsp;</span>masing-masing.</p>
+<h3><strong>&#x1f30f; Browser Support</strong></h3>
+Sampai pada artikel ini dipublikasikan, dukungan untuk Intersection Observer memang belum merata ke semua browser. Anda bisa mengecek dukungan browser terhadap Intersection Observer di website caniuse.com (<a href="https://caniuse.com/#feat=intersectionobserver" target="_blank" rel="noopener">https://caniuse.com/#feat=intersectionobserver</a>).
+
+<p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*-E84Qj-QgHhqL-WvAX4y7A.png" alt="" width="800" height="405" /> <em><a href="https://caniuse.com/#feat=intersectionobserver">https://caniuse.com/#feat=intersectionobserver</a> (16 April 2018)</em>[/caption]</p>
+<p>Meski begitu kamu tetap bisa menggunakan Intersection Observer dengan menambahkan <a href="https://github.com/w3c/IntersectionObserver/tree/master/polyfill" target="_blank" rel="noopener"><strong>polyfill</strong></a> untuk beberapa browser yang memang belum mendukung fitur ini secara<span class="widont">&nbsp;</span>native.</p>
+<p>Tulisan ini juga telah dipublikasikan di Medium : <a href="https://medium.com/mazipan-mind/intersection-observer-sebuah-pengantar-f996cf8ab27b" target="_blank" rel="noopener">https://medium.com/mazipan-mind/intersection-observer-sebuah-pengantar-f996cf8ab27b</a></p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

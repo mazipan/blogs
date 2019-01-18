@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Belajar Angular - Bagian 1 - Pengenalan dan Inisialisasi Project - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Belajar Angular - Bagian 1 - Pengenalan dan Inisialisasi Project</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><figure style="width: 750px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-1-mazipanneh.jpg" alt="Belajar Angular - Bagian 1 - Pengenalan dan Inisialisasi Project" width="750" height="422" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 1 - Pengenalan dan Inisialisasi Project</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 1 - Pengenalan dan Inisialisasi Project</strong> - Angular merupakan versi upgrade dari AngularJS yang sebelumnya kita kenal. Ya, jika sebelumnya kita menggunakan AngularJS v.1.x maka di versi 2 keatas kita akan menyebut framework yang didukung Google ini dengan nama Angular (*tanpa embel-embel <span class="caps">JS</span> dibelakangnya). Jadi jelas juga kalau artikel kali ini kita akan membahas mengenai Angular versi 2 keatas. Pada saat artikel ini ditulis, Angular sendiri sudah mencapai versi 4.2.0.beta dan bisa Anda lihat di <a href="https://github.com/angular/angular/releases" target="_blank" rel="noopener noreferrer">release page</a> mereka. Kenapa saya sebut versi 2 ke atas ? Karena memang versi 2 adalah versi awal dimana Angular meluncurkan framework ini dengan mengusung perubahan total dari yang sebelumnya versi satu, mengenai versi Angular sendiri memang akan selalu bertambah secara rutin karena memang code nya yang open-source sehingga perbaikan dan penambahan fitur bisa lebih cepat. Bahkan meskipun sekarang sudah mencapai versi 4, Anda tidak perlu khawatir karena pada dasarnya masih sama dengan versi 2 dengan berbagai optimisasi dan<span class="widont">&nbsp;</span>perbaikan.</p>
+<p><span class="more"></span></p>
+<p>Tulisan ini merupakan serial pembahasan mengenai framework <strong>Angular</strong>, Anda mungkin ingin membaca tulisan lainnya berikut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project">Bagian 1 - Pengenalan dan Inisialisasi<span class="widont">&nbsp;</span>Project</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/05/belajar-angular-bagian-2-membuat-komponen/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-2-membuat-komponen">Bagian 2 - Membuat<span class="widont">&nbsp;</span>Komponen</a> </li>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-3-membuat-service/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-3-membuat-service">Bagian 3 - Membuat<span class="widont">&nbsp;</span>Service</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-4-membuat-route/" title="belajar-angular-bagian-4-membuat-route" target="_blank" rel="noopener noreferrer">Bagian 4 - Membuat<span class="widont">&nbsp;</span>Route</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter/" title="belajar-angular-bagian-5-membuat-custom-pipe-atau-filter" target="_blank" rel="noopener noreferrer">Bagian 5 - Membuat Custom Pipe atau<span class="widont">&nbsp;</span>Filter</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/07/belajar-angular-bagian-6-persiapan-file-production/" title="belajar-angular-bagian-6-persiapan-file-production" target="_blank" rel="noopener noreferrer">Bagian 6 - Persiapan File<span class="widont">&nbsp;</span>Production</a> </li>
+</ol>
+<p><strong>Library Utama Angular</strong></p>
+<p>Pada versi 2 ini, Angular tidak datang sendirian seperti sebelumnya dimana Angular selalu berusaha jadi framework yang super power, apa lo mau gw ada. Angular juga terbilang pintar memilih pendukungnya, karena beberapa yang akan saya sebutkan memang masih memiliki masa depan yang cerah secerah matahari di bukit tabies. Angular mengusung <a href="https://www.typescriptlang.org" target="_blank" rel="noopener noreferrer">Typescript</a> besutan Microsoft sebagai official language dibandingkan menggunakan javascript native, tentu saja dengan harapan bisa lebih scale dengan dukungan type safe dan berbagai kelebihan lain yang ditawarkan oleh Typescript ini. Selain itu Angular juga menggandeng <a href="http://reactivex.io/rxjs/" target="_blank" rel="noopener noreferrer">RxJS</a> besutan ReactiveX untuk mendukung reactive programming menggunakan Observable Dan juga berbagai kelebihan yang dimilikinya. Tentu performa yang lebih baik dan kemudahan penanganan asynchronous stack diharapkan bisa lebih bisa ditangani oleh RxJS<span class="widont">&nbsp;</span>ini.</p>
+<p><strong>Angular-<span class="caps">CLI</span></strong></p>
+<p>Menggunakan Typescript serta kebutuhan lainnya tentu membuat kita kesulitan untuk memulai project Angular karena terlalu banyak yang mesti di setup terlebih dahulu seperti webpack dan plugin pendukungnya, melihat hal ini Angular membuat <a href="https://github.com/angular/angular-cli" target="_blank" rel="noopener noreferrer">Angular-<span class="caps">CLI</span></a>, seperti halnya React yang punya create-react-app, Ember dengan Ember-<span class="caps">CLI</span> serta VueJs dengan Vue-<span class="caps">CLI</span> nya. Angular-<span class="caps">CLI</span> dibuat untuk memudahkan kita dalam membuat project Angular untuk pertama kali, dimana kebutuhan dasar seperti run developement, unit test, end to end test, sampai production bundling kesemuanya sudah disediakan sehingga kita tidak perlu repot-repot lagi setup webpack configuration dan bisa langsung fokus mulai belajar menggunakan framework satu<span class="widont">&nbsp;</span>ini. </p>
+<p>Untuk instalasi Angular-<span class="caps">CLI</span> sendiri bisa dengan<span class="widont">&nbsp;</span>:</p>
+<pre><code>npm install -g @angular/cli</code></pre><p>Bila pemasangan berhasil, Anda seharusnya bisa mengecek versi dari Angular-<span class="caps">CLI</span> tersebut dengan cara<span class="widont">&nbsp;</span>:</p>
+<pre><code>ng --version</code></pre><p><strong>Inisialisasi Project dengan<span class="widont">&nbsp;</span>Angular-<span class="caps">CLI</span></strong></p>
+<p>Seperti disebut sebelumnya bahwa kita bisa dengan mudah membuat project Angular dengan bantuan Angular-<span class="caps">CLI</span> ini, Anda bisa membuat inisialisasi project Angular dengan perintah<span class="widont">&nbsp;</span>:</p>
+<pre><code>ng new project_name</code></pre><p>Ya, cukup dengan perintah itu maka Angular <span class="caps">CLI</span> akan membuatkan kita folder project baru kita beserta semua setup basicnya. Proses generate ini mungkin akan berjalan lumayan lama karena setelah mengenerate folder, Angular-<span class="caps">CLI</span> akan menjalankan <code>npm install</code> di dalam folder tersebut yang berarti mendownload semua depedency yang dibutuhkan dan telah dijelaskan di dalam <code>package.json</code> nya. Karena saya lebih senang menggunakan perinta <code>yarn install</code> dibanding npm jadi saya biasanya men-skip ketika proses install via npm sedang berjalan dan manual install lewat yarn agar tidak terlalu<span class="widont">&nbsp;</span>lama. </p>
+<p>Selesai proses pemasangan serta download semua depedency, maka project Angular kita sudah bisa langsung dijalankan. Kita bisa masuk ke folder project dengan cara <code>cd project_name</code>, kemudian jalankan project menggunakan perintah : <code>ng serve</code> Dan bila semua lancar tanpa hambatan maka project secara default akan dijalankan di browser pada<span class="widont">&nbsp;</span>alamat </p>
+<p><code>http://localhost:4200/</code></p>
+<p>Demikian sekilas pembahasan awal mengenai framework Angular, semoga bermanfaat tulisan yang tidak seberapa<span class="widont">&nbsp;</span>ini. </p>
+<p>Ditulis oleh Irfan Maulana sambil nungguin anaknya<span class="widont">&nbsp;</span>tidur. </p>
+<p>Salam.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

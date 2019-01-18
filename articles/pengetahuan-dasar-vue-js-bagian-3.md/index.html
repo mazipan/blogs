@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Pengetahuan Dasar Vue.js — Bagian 3 - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Pengetahuan Dasar Vue.js — Bagian 3</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><section class="section section--body section--first"> 
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p id="326e" class="graf graf--p graf-after--figure">
+      <strong>Pengetahuan Dasar Vue.js (<a href="https://mazipanneh.com/blog/">mazipanneh.com</a>)</strong> - Artikel ini merupakan seri lanjutan dari artikel yang sebelumnya sudah di publikasikan, baca semua seri Pengetahuan Dasar Vue.js<span class="widont">&nbsp;</span>:
+    </p>
+
+<pre><code>&lt;ul&gt;
+  &lt;li id=&quot;7d0b&quot; class=&quot;graf graf--li graf-after--p&quot;&gt;
+    &lt;a class=&quot;markup--anchor markup--li-anchor&quot; href=&quot;https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-1/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-href=&quot;https://medium.com/vuejs-id/pengetahuan-dasar-vue-js-bagian-1-88d02d57f859&quot;&gt;Pengetahuan Dasar Vue.js — Bagian 1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li id=&quot;2e00&quot; class=&quot;graf graf--li graf-after--li&quot;&gt;
+    &lt;a class=&quot;markup--anchor markup--li-anchor&quot; href=&quot;https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-2/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-href=&quot;https://medium.com/vuejs-id/pengetahuan-dasar-vue-js-bagian-2-3616af1461d8&quot;&gt;Pengetahuan Dasar Vue.js — Bagian 2&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li id=&quot;09b6&quot; class=&quot;graf graf--li graf-after--li graf--trailing&quot;&gt;
+    Pengetahuan Dasar Vue.js — Bagian 3 &lt;strong class=&quot;markup--strong markup--li-strong&quot;&gt;(Anda disini)&lt;/strong&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>  </div>
+</div></section> <section class="section section--body"> 
+
+<p><span class="more"></span></p>
+<div class="section-divider">
+  <figure style="width: 720px" class="wp-caption aligncenter"><img class="progressiveMedia-image js-progressiveMedia-image" src="https://cdn-images-1.medium.com/max/720/1*w8B5xZW-IST7Agn2g7kSdA.jpeg" alt="" width="720" height="365" data-src="https://cdn-images-1.medium.com/max/720/1*w8B5xZW-IST7Agn2g7kSdA.jpeg" /><figcaption class="wp-caption-text">Vue.js Illustrasi (sumber : https://fullstackfeed.com)</figcaption></figure>
+</div>
+
+<div>
+</div>
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn" style="text-align: left;">
+    <p id="12c3" class="graf graf--p graf--leading">
+      Kali ini kita akan melanjutkan dengan membahas hal dasar lainnya dalam Vue.js, silahkan siapkan kopi dan simak artikel berikut<span class="widont">&nbsp;</span>:
+    </p>
+
+<pre><code>&lt;h4 id=&quot;138b&quot; class=&quot;graf graf--h4 graf-after--p&quot;&gt;
+  1. Filter, Computed dan Watch
+&lt;/h4&gt;
+
+&lt;p id=&quot;d959&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&amp;#x1f449; Filter&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;b7da&quot; class=&quot;graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--p&quot;&gt;
+  &lt;span class=&quot;graf-dropCap&quot;&gt;F&lt;/span&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;ilter &lt;/em&gt;merupakan fitur yang juga diadopsi dari AngularJS dan memiliki fungsi yang hampir sama. &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Filter &lt;/em&gt;di dalam Vue.js digunakan untuk melakukan transformasi atau pun formatting data secara &lt;em class=&quot;markup--em markup--p-em&quot;&gt;real-time&lt;/em&gt;berdasarkan rule yang telah ditetapkan di dalam kode kita.
+&lt;/p&gt;
+
+&lt;p id=&quot;70be&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Keuntungan menggunakan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;filter &lt;/em&gt;adalah kita tidak perlu melakukan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;formatting &lt;/em&gt;secara manual dari setiap data yang ingin kita ubah, namun cukup membuat satu &lt;em class=&quot;markup--em markup--p-em&quot;&gt;filter &lt;/em&gt;dan bisa digunakan berulang-ulang dengan cara yang sangat simple dan mudah.
+&lt;/p&gt;
+
+&lt;p id=&quot;61ef&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Filter &lt;/em&gt;dapat digunakan di dalam template html dengan menambahkan pipe (|) pada data yang ingin kita lakukan transformasi, seperti terlihat pada gambar dibawah ini :
+&lt;/p&gt;&lt;figure id=&quot;3b03&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*D4-aOneUq6C4hrBOCnM84Q.png&quot; data-width=&quot;603&quot; data-height=&quot;142&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;canvas class=&quot;progressiveMedia-canvas js-progressiveMedia-canvas&quot; width=&quot;75&quot; height=&quot;16&quot;&gt;&lt;/canvas&gt;&lt;/p&gt; &lt;figure style=&quot;width: 603px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*D4-aOneUq6C4hrBOCnM84Q.png&quot; alt=&quot;&quot; width=&quot;603&quot; height=&quot;142&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*D4-aOneUq6C4hrBOCnM84Q.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Menggunakan Filter dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;bf51&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Filter &lt;/em&gt;harus mengembalikan nilai yang merupakan hasil dari data yang telah di transformasi ke bentuk yang diinginkan, contohnya bisa dilihat di gambar berikut :
+&lt;/p&gt;&lt;figure id=&quot;98d0&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*BvnnbKYEQP6Wd92I63Zy9w.png&quot; data-width=&quot;598&quot; data-height=&quot;225&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;canvas class=&quot;progressiveMedia-canvas js-progressiveMedia-canvas&quot; width=&quot;75&quot; height=&quot;27&quot;&gt;&lt;/canvas&gt;&lt;/p&gt; &lt;figure style=&quot;width: 598px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*BvnnbKYEQP6Wd92I63Zy9w.png&quot; alt=&quot;&quot; width=&quot;598&quot; height=&quot;225&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*BvnnbKYEQP6Wd92I63Zy9w.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Membuat Filter dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;676f&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  &amp;#x1f449; &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;Computed&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;9869&quot; class=&quot;graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--p&quot;&gt;
+  &lt;span class=&quot;graf-dropCap&quot;&gt;C&lt;/span&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;omputed&lt;/em&gt; merupakan satu method yang akan dijalankan secara otomatis setiap kali variable/object yang ada dibawah function didalamnya mengalami perubahan. &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Computed&lt;/em&gt; sendiri akan/harus mengembalikan suatu nilai yang bisa kita panggil lagi baik di html template maupun javascript.
+&lt;/p&gt;
+
+&lt;p id=&quot;3f6b&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Balikan nilai dari &lt;em class=&quot;markup--em markup--p-em&quot;&gt;computed&lt;/em&gt; ini bersifat mirip dengan variabel di dalam &lt;em class=&quot;markup--em markup--p-em&quot;&gt;data &lt;/em&gt;yang telah dijelaskan pada Bagian 2 sebelumnya. Sehingga bila dilihat di contoh potongan kode pada gambar dibawah ini maka bisa dijelaskan bahwa kita punya variabel di dalam &lt;em class=&quot;markup--em markup--p-em&quot;&gt;data &lt;/em&gt;dengan nama “message” dan setiap perubahan yang terjadi pada nilainya maka otomatis akan men-&lt;em class=&quot;markup--em markup--p-em&quot;&gt;trigger&lt;/em&gt; suatu &lt;em class=&quot;markup--em markup--p-em&quot;&gt;computed&lt;/em&gt; dan akan menghasilkan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;data virtual&lt;/em&gt; dengan nama “reversedMessage&amp;#8221;.
+&lt;/p&gt;&lt;figure id=&quot;a096&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*LLXLOPoAq-2rbjflVtcNCQ.png&quot; data-width=&quot;603&quot; data-height=&quot;277&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;canvas class=&quot;progressiveMedia-canvas js-progressiveMedia-canvas&quot; width=&quot;75&quot; height=&quot;33&quot;&gt;&lt;/canvas&gt;&lt;/p&gt; &lt;figure style=&quot;width: 603px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*LLXLOPoAq-2rbjflVtcNCQ.png&quot; alt=&quot;&quot; width=&quot;603&quot; height=&quot;277&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*LLXLOPoAq-2rbjflVtcNCQ.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Computed dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;fbf2&quot; class=&quot;graf graf--p graf-after--figure&quot;&gt;
+  &amp;#x1f449; &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;Watch&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;4c2f&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Watch memiliki fungsi yang hampir mirip dengan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;computed&lt;/em&gt; namun memiliki persepsi yang berbeda. Jika menggunakan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;computed&lt;/em&gt; maka kita ingin menghasilkan suatu data baru menggunakan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;function &lt;/em&gt;yang jika di dalamnya terjadi perubahan pada variabel nya maka akan dilakukan kalkulasi ulang untuk menghasilkan data baru tersebut, maka dengan menggunakan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;watch&lt;/em&gt;kita berarti ingin memantau perubahan dari suatu variabel yang terdapat didalam &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Data&lt;/em&gt; dan setiap kali terjadi perubahan pada variabel yang kita pantau maka akan otomatis menjalankan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;function &lt;/em&gt;yang ada di dalam &lt;em class=&quot;markup--em markup--p-em&quot;&gt;watch&lt;/em&gt;bersangkutan. &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Watch&lt;/em&gt; juga tidak mengembalikan nilai seperti yang diharuskan pada &lt;em class=&quot;markup--em markup--p-em&quot;&gt;computed&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p id=&quot;b6d6&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Contoh membuat watch bisa dilihat pada gambar berikut :
+&lt;/p&gt;&lt;figure id=&quot;e3fa&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*Ka7d-PCJai4k3lbvcliSzw.png&quot; data-width=&quot;606&quot; data-height=&quot;237&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;canvas class=&quot;progressiveMedia-canvas js-progressiveMedia-canvas&quot; width=&quot;75&quot; height=&quot;27&quot;&gt;&lt;/canvas&gt;&lt;/p&gt; &lt;figure style=&quot;width: 606px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*Ka7d-PCJai4k3lbvcliSzw.png&quot; alt=&quot;&quot; width=&quot;606&quot; height=&quot;237&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*Ka7d-PCJai4k3lbvcliSzw.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Watch dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;h4 id=&quot;48ff&quot; class=&quot;graf graf--h4 graf-after--figure&quot;&gt;
+  2. Mengenal Vue.js Plugins
+&lt;/h4&gt;
+
+&lt;p id=&quot;cf8e&quot; class=&quot;graf graf--p graf-after--h4&quot;&gt;
+  &lt;em class=&quot;markup--em markup--p-em&quot;&gt;Vue.js Plugin&lt;/em&gt; pada dasarnya memiliki tujuan untuk menambahkan suatu fungsi yang bersifat global dan mudah untuk digunakan ulang. Contoh paling mudah adalah ketika kita di Vue.js sering kali menggunakan sintaks &lt;strong class=&quot;markup--strong markup--p-strong&quot;&gt;&lt;em class=&quot;markup--em markup--p-em&quot;&gt;Vue.use(MyPlugin)&lt;/em&gt;&lt;/strong&gt;, ini sebenarnya kita sedang ingin menggunakan suatu &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin &lt;/em&gt;lewat sintaks ini. Semua logika dari &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin &lt;/em&gt;sudah dibungkus di dalamnya sehingga kita bisa menggunakan dengan mudah dan tidak perlu susah-susah untuk inisialisasi ulang disetiap tempat yang membutuhkan melainkan cukup diinisialisasi di &lt;em class=&quot;markup--em markup--p-em&quot;&gt;root &lt;/em&gt;dari aplikasi kita.
+&lt;/p&gt;
+
+&lt;p id=&quot;ecc6&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Sintaks dasar untuk membuat &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin &lt;/em&gt;di dalam Vue.js bisa dilihat pada gambar dibawah ini :
+&lt;/p&gt;&lt;figure id=&quot;2e1d&quot; class=&quot;graf graf--figure graf-after--p&quot;&gt; 
+
+&lt;div class=&quot;aspectRatioPlaceholder is-locked&quot;&gt;
+  &lt;div class=&quot;aspectRatioPlaceholder-fill&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded&quot; data-image-id=&quot;1*R46xLi5QU-S5urIHiaxSGg.png&quot; data-width=&quot;598&quot; data-height=&quot;535&quot; data-scroll=&quot;native&quot;&gt;
+    &lt;canvas class=&quot;progressiveMedia-canvas js-progressiveMedia-canvas&quot; width=&quot;75&quot; height=&quot;66&quot;&gt;&lt;/canvas&gt;&lt;/p&gt; &lt;figure style=&quot;width: 598px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;img class=&quot;progressiveMedia-image js-progressiveMedia-image&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*R46xLi5QU-S5urIHiaxSGg.png&quot; alt=&quot;&quot; width=&quot;598&quot; height=&quot;535&quot; data-src=&quot;https://cdn-images-1.medium.com/max/720/1*R46xLi5QU-S5urIHiaxSGg.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Plugins dalam Vue.js. sumber (https://vuejs.org/)&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;figcaption class=&quot;imageCaption&quot;&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;p id=&quot;a49b&quot; class=&quot;graf graf--p graf-after--figure graf--trailing&quot;&gt;
+  Pengetahuan membuat &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin &lt;/em&gt;di Vue.js ini akan sangat membantu apalagi bila membangun aplikasi yang lumayan kompleks dengan banyak komponen dan saling berkomunikasi antar mereka. Dengan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin &lt;/em&gt;kita bisa membuat satu logika untuk semua tempat, seperti contoh kita membuat beberapa &lt;em class=&quot;markup--em markup--p-em&quot;&gt;filter &lt;/em&gt;yang bisa digunakan di semua komponen dalam aplikasi kita menggunakan &lt;em class=&quot;markup--em markup--p-em&quot;&gt;plugin&lt;/em&gt;. Hal seperti ini tentu menghemat banyak waktu kita karena menghindarkan kita dari membuat duplikasi kode di banyak tempat.
+&lt;/p&gt;</code></pre>  </div>
+</div></section> <section class="section section--body section--last"> 
+
+<div class="section-divider">
+  <hr class="section-divider" />
+</div>
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p id="2000" class="graf graf--p graf--leading">
+      Demikian sedikit sharing mengenai beberapa pengetahuan dasar di Vue.js kali<span class="widont">&nbsp;</span>ini.
+    </p>
+
+<pre><code>&lt;p id=&quot;6b1f&quot; class=&quot;graf graf--p graf-after--p&quot;&gt;
+  Terima kasih dan semoga bermanfaat penjelasan singkatnya.
+&lt;/p&gt;</code></pre>  </div>
+</div></section></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

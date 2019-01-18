@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Belajar Angular - Bagian 4 - Membuat Route - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Belajar Angular - Bagian 4 - Membuat Route</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/angular/1/">angular</a><a href="https://mazipan.github.io/blogs/tag/angularid/1/">angularid</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/javascript/1/">javascript</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><figure style="width: 825px" class="wp-caption aligncenter"><img src="https://mazipan.github.io/wp-contents/images/belajar-angular-bagian-4-mazipanneh.jpg" alt="Belajar Angular - Bagian 4 - Membuat Route" width="825" height="35" /><figcaption class="wp-caption-text">Belajar Angular - Bagian 4 - Membuat Route</figcaption></figure> 
+
+<p><strong>Belajar Angular - Bagian 4 - Membuat Route</strong> - Kita akan membahas mengenai cara membuat Routing menggunakan framework <strong>Angular</strong>. Routing di frontend javascript framework memang seperti sudah menjadi feature yang diwajibkan ada jaman sekarang, <strong>Angular</strong> dalam hal ini seperti biasa yang tidak mengikuti cara framework modern lain dalam menghadirkan Routing nya yang memilih dipisah dari framework utamanya, <strong>Angular</strong> justru selalu hadir dengan paket lengkap termasuk dengan built-in Routing didalamnya. Pada versi 2.x sendiri <strong>Angular</strong> memisahkan repository untuk Routing sehingga Anda akan melihat depedency <code>@angular/router</code> pada <code>package.json</code>, namun bedanya bahwa Router pada Angular di maintain secara official oleh team mereka dan selalu release sebaga satu kesatuan framework bersamaan dengan core<span class="widont">&nbsp;</span>nya.</p>
+<p><span class="more"></span></p>
+<p>Tulisan ini merupakan serial pembahasan mengenai framework <strong>Angular</strong>, Anda mungkin ingin membaca tulisan lainnya berikut<span class="widont">&nbsp;</span>:</p>
+<ol>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-1-pengenalan-dan-inisialisasi-project">Bagian 1 - Pengenalan dan Inisialisasi<span class="widont">&nbsp;</span>Project</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/05/belajar-angular-bagian-2-membuat-komponen/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-2-membuat-komponen">Bagian 2 - Membuat<span class="widont">&nbsp;</span>Komponen</a> </li>
+<li><a href="https://mazipanneh.com/blog/2017/05/belajar-angular-bagian-3-membuat-service/" target="_blank" rel="noopener noreferrer" title="belajar-angular-bagian-3-membuat-service">Bagian 3 - Membuat<span class="widont">&nbsp;</span>Service</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-4-membuat-route/" title="belajar-angular-bagian-4-membuat-route" target="_blank" rel="noopener noreferrer">Bagian 4 - Membuat<span class="widont">&nbsp;</span>Route</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/06/belajar-angular-bagian-5-membuat-custom-pipe-atau-filter/" title="belajar-angular-bagian-5-membuat-custom-pipe-atau-filter" target="_blank" rel="noopener noreferrer">Bagian 5 - Membuat Custom Pipe atau<span class="widont">&nbsp;</span>Filter</a> </li>
+<li><a href="http://mazipanneh.com/blog/2017/07/belajar-angular-bagian-6-persiapan-file-production/" title="belajar-angular-bagian-6-persiapan-file-production" target="_blank" rel="noopener noreferrer">Bagian 6 - Persiapan File<span class="widont">&nbsp;</span>Production</a> </li>
+</ol>
+<p>Baik silahkan disimak, berikut adalah cara sederhana membuat Routing menggunakan Angular<span class="widont">&nbsp;</span>:</p>
+<p>Pertama, kita buat file baru <code>app.routing.module.ts</code>. File ini berisi routing kita serta komponen apa yang akan ditampilkan pada routing tersebut. Berikut kodenya<span class="widont">&nbsp;</span>:</p>
+<pre><code>import { NgModule } from &#39;@angular/core&#39;;
+import { RouterModule, Routes } from &#39;@angular/router&#39;;
+
+import { FilmListComponent } from &#39;./Film/film-list.component&#39;;
+import { PeopleListComponent } from &#39;./People/people-list.component&#39;;
+import { PlanetListComponent } from &#39;./Planet/planet-list.component&#39;;
+import { SpeciesListComponent } from &#39;./Species/species-list.component&#39;;
+import { StarshipListComponent } from &#39;./Starship/starship-list.component&#39;;
+import { VehicleListComponent } from &#39;./Vehicle/vehicle-list.component&#39;;
+
+const appRoutes: Routes = [
+  { path: &#39;&#39;, redirectTo: &#39;film&#39;, pathMatch: &#39;full&#39; },
+  { path: &#39;film&#39;,  component: FilmListComponent},
+  { path: &#39;planet&#39;, component: PlanetListComponent },
+  { path: &#39;people&#39;, component: PeopleListComponent },
+  { path: &#39;species&#39;, component: SpeciesListComponent },
+  { path: &#39;starship&#39;, component: StarshipListComponent },
+  { path: &#39;vehicle&#39;, component: VehicleListComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes, { useHash: true })
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }</code></pre><p>Bisa dilihat, bahwa untuk membuat Routing di Angular kita butuh <code>{ RouterModule, Routes }</code> sebagai library utama pengatur Routing. Setelahnya kita define Route tersebut seperti terlihat pada potongan kode dari kode diatas berikut<span class="widont">&nbsp;</span>:</p>
+<pre><code>const appRoutes: Routes = [
+  { path: &#39;&#39;, redirectTo: &#39;film&#39;, pathMatch: &#39;full&#39; },
+  { path: &#39;film&#39;,  component: FilmListComponent},
+  { path: &#39;planet&#39;, component: PlanetListComponent },
+  { path: &#39;people&#39;, component: PeopleListComponent },
+  { path: &#39;species&#39;, component: SpeciesListComponent },
+  { path: &#39;starship&#39;, component: StarshipListComponent },
+  { path: &#39;vehicle&#39;, component: VehicleListComponent }
+];</code></pre><p>Membuat object dengan tipe class <code>Routes</code> dan menjelaskan path dan komponen yang akan<span class="widont">&nbsp;</span>digunakan.</p>
+<p>Setelah membuat file ini, kita akan meng-include-kan di <code>app.module.ts</code> kita sebagai berikut<span class="widont">&nbsp;</span>:</p>
+<pre><code>import { NgModule }      from &#39;@angular/core&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+import { HttpModule, JsonpModule } from &#39;@angular/http&#39;;
+// Routing Module
+import { AppRoutingModule }  from &#39;./app.routing.module&#39;;
+
+@NgModule({
+
+  imports: [
+    BrowserModule,
+    HttpModule,
+    JsonpModule,
+    AppRoutingModule
+  ],
+
+  declarations: [
+    ... // other code
+  ],
+
+  providers: [
+    ... // other code
+  ],
+
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }</code></pre><p>Karena kita membuat file routing kita tersebut sebagai <code>module</code>, maka kita bisa menambahkan di bagian <code>imports</code> pada file <code>app.module.ts</code></p>
+<p>Berikutnya kita akan meletakan kode tambahan di <code>app.component.html</code> kita, dimana kita harus menambahkan <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>, sehingga file tersebut akan menjadi seperti berikut<span class="widont">&nbsp;</span>:</p>
+<pre><code>&lt;div&gt;
+  &lt;HeaderBlock&gt;&lt;/HeaderBlock&gt;
+  &lt;main role=&quot;main&quot; class=&quot;site__main main&quot;&gt;
+    &lt;nav class=&quot;main__nav nav&quot;&gt;
+      &lt;NavigationListBlock&gt;&lt;/NavigationListBlock&gt;
+      &lt;FooterBlock&gt;&lt;/FooterBlock&gt;
+    &lt;/nav&gt;
+    &lt;article class=&quot;main__content content&quot;&gt;
+      &lt;div class=&quot;content__wrapper&quot;&gt;
+        &lt;router-outlet&gt;&lt;/router-outlet&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+&lt;/div&gt;</code></pre><p>Terakhir, kita akan menambahkan component yang digunakan untuk pindah antar Routing ini atau navigasi antar route. Cara membuatnya sama saja dengan bagaimana kita membuat komponen sederhana, saya hanya akan membagikan sepotong kode view nya saja, berikut kode view dari file <code>navigation.component.html</code> :</p>
+<pre><code>&lt;ul class=&quot;nav__wrapper&quot;&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/film&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/film&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-film&quot;&gt;&lt;/i&gt; Film
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/planet&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/planet&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-globe&quot;&gt;&lt;/i&gt; Planet
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/vehicle&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/vehicle&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-car&quot;&gt;&lt;/i&gt; Vehicle
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/starship&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/starship&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-space-shuttle&quot;&gt;&lt;/i&gt; Starship
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/species&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/species&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-paw&quot;&gt;&lt;/i&gt; Species
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav__item&quot; routerLink=&quot;/people&quot; routerLinkActive=&quot;nav__item--active&quot;&gt;
+    &lt;a routerLink=&quot;/people&quot;&gt;
+      &lt;i class=&quot;nav__icon fa fa-users&quot;&gt;&lt;/i&gt; People
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>Bagian penting dari file ini adalah mengganti <code>href</code> pada element <code>a</code> menggunakan <code>routerLink=&quot;/url&quot;</code>, kita juga bisa men-set class active pada suatu router yang memang sedang aktif dengan menambahkan class di attribut <code>routerLinkActive</code>. Kode diatas agak aneh karena saya menempelkan class active pada <code>li</code> bukan pada <code>a</code>, jadi saya butuh dua <code>routerLink</code> bertumpuk, ini bisa diubah tergantung kondisi<span class="widont">&nbsp;</span>Anda.</p>
+<p>Sekian tulisan dari saya, masih banyak lagi fitur Routing dari Angular yang belum sempat kita ulik bareng-bareng seperti melempar parameter pada router, membuat nested router, membuat router tanpa hash, dll. Router pada Angular versi 2.x kali ini bisa dibilang cukup memuaskan dan bisa bersaing dengan berbagai fremework modern<span class="widont">&nbsp;</span>lainnya.</p>
+<p>Kode yang digunakan dalam tutorial ini diambil dari repository <a href="https://github.com/mazipan/ng2-starwars" target="_blank" rel="noopener noreferrer">https://github.com/mazipan/ng2-starwars</a> dan bisa dilihat demo nya di : <a href="http://mazipan.github.io/ng2-starwars/" target="_blank" rel="noopener noreferrer">http://mazipan.github.io/ng2-starwars/</a>.</p>
+<p>Silahkan dipelajari source code<span class="widont">&nbsp;</span>nya.</p>
+<p>Ditulis oleh Irfan<span class="widont">&nbsp;</span>Maulana.</p>
+<p>Salam.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

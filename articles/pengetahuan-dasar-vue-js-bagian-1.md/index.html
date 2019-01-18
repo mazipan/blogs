@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Pengetahuan Dasar Vue.js — Bagian 1 - Irfan Maulana
+    </title>
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Pengetahuan Dasar Vue.js — Bagian 1</h1>
+        <p class="author">Written by <span class="author">Irfan Maulana</span>
+        </p><a href="https://mazipan.github.io/blogs/tag/vue/1/">vue</a>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>[caption id=”” align=”aligncenter” width=”800”]<img src="https://cdn-images-1.medium.com/max/800/1*TLIHVxC4s25LX9Fls8QZrA.png" alt="Vuejs" width="800" height="243" /> <em>Sumber : <a href="https://vuejs.id/">https://vuejs.id/</a></em>[/caption]</p>
+<p>Artikel ini merupakan serial artikel, baca semua seri Pengetahuan Dasar Vue.js<span class="widont">&nbsp;</span>:</p>
+<ul>
+    <li>Pengetahuan Dasar Vue.js — Bagian 1(Anda<span class="widont">&nbsp;</span>disini)</li>
+    <li><a href="https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-2/" target="_blank" rel="noopener">Pengetahuan Dasar Vue.js — Bagian<span class="widont">&nbsp;</span>2</a></li>
+    <li><a href="https://mazipanneh.com/blog/2017/11/pengetahuan-dasar-vue-js-bagian-3/" target="_blank" rel="noopener">Pengetahuan Dasar Vue.js — Bagian<span class="widont">&nbsp;</span>3</a></li>
+</ul>
+
+<p>Vue.js (<a href="https://vuejs.org/">https://vuejs.org/</a>) seperti di websitenya yang membawa tagline “The Progressive JavaScript Framework” merupakan javascript framework yang membantu kita dalam membuat sebuah website/aplikasi yang membutuhkan banyak interaksi di dalamnya, biasanya berupa Single Page Application. Vue.js belakangan memiliki gaung yang lumayan kencang di kalangan web developer maupun Javascript developer karena kemudahan dalam mempelajari dan mengimplementasikan di dalam website/aplikasi<span class="widont">&nbsp;</span>kita.</p>
+<p>Pada tulisan kali ini kita akan membahas beberapa pengetahuan dasar dan beberapa istilah yang akan sering kita temui jika belajar Vue.js, semoga pembahasan ini akan membantu saya dan kita yang sedang belajar framework ini.
+Langsung saja, silahkan disimak beberapa poin pembahasan berikut<span class="widont">&nbsp;</span>:</p>
+<p><span class="more"></span></p>
+<p><strong>1. Mengenai Vue<span class="widont">&nbsp;</span>Component</strong></p>
+<p>Vue.js seperti framework Javascript modern lainnya juga mengusung konsep component based dimana setiap blok layout dianggap sebagai komponen yang independen dan memiliki style serta fungsi sendiri yang terisolir sehingga mudah untuk digunakan ulang oleh setiap halaman website kita. Setiap komponen tersebut nantinya akan kita susun menjadi blok-blok yang saling terkait dan membangun sebuah tampilan utuh sebuah halaman<span class="widont">&nbsp;</span>website.</p>
+<p>Menggunakan komponen berarti kita akan membuat custom tag di <span class="caps">HTML</span> template kita, secara mudah komponen di Vue.js bisa dibuat sesederhana kode berikut<span class="widont">&nbsp;</span>:</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*UrS8uYY_ud6HnUKVbgPaFg.png" alt="Mendefinisikan Vue.js Component" width="602" height="116" /> <em>Mendefinisikan Vue.js Component</em>[/caption]</p>
+<p>Dari pendefinisian diatas kita bisa menggunakan komponen tersebut dalam <span class="caps">HTML</span> template dengan cara yang tak kalah mudah, yakni seperti berikut<span class="widont">&nbsp;</span>:</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*VE7izWNyCw8OwS4ECyxGGA.png" alt="Menggunakan Vue.js Component dalam HTML Template" width="602" height="116" /> <em>Menggunakan Vue.js Component dalam <span class="caps">HTML</span> Template</em>[/caption]</p>
+<p><strong>2. Data Binding dalam<span class="widont">&nbsp;</span>Vue.js</strong></p>
+<p>Vue.js memang sangat terinspirasi dari AngularJS dalam hal data binding ini, itu mengapa sangat mudah untuk belajar Vue.js bilamana kita pernah belajar AngularJS sebelumnya. Bila di AngularJS kita mengenal ng-bind maka di Vue.js kita mengenal v:bind, berikut beberapa data binding dalam Vue.js<span class="widont">&nbsp;</span>:</p>
+<p><strong>&#x1f449; 1. Binding data ke dalam<span class="widont">&nbsp;</span>view</strong></p>
+<p>Vue.js menggunakan syntax {{ }} seperti terlihat pada gambar diatas, dengan syntax tersebut berarti kita ingin menampilkan sebuah data yang ada dalam Javascript kita ke dalam <span class="caps">HTML</span><span class="widont">&nbsp;</span>template.</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*24isMnRrGBh8ZLkAnkxIeA.png" alt="Binding data ke View" width="602" height="116" /> <em>Binding data ke View</em>[/caption]</p>
+<p><strong>&#x1f449; 2. Attribute<span class="widont">&nbsp;</span>Binding</strong></p>
+<p>Seperti disebut sebelumnya, di Vue.js kita menggunakan v-bind untuk melakukan binding ke dalam <span class="caps">HTML</span>. Maka jika kita melihat ke gambar diatas berarti kita ingin menambahkan attribute title ke dalam span dengan menggunakan data dinamis dari javascript. v-bind pada dasarnya bisa diterapkan pada berbagai attribute di <span class="caps">HTML</span> sehingga kita mungkin akan menemui banyak variasi v-bind ini seperti v-bind:src, v-bind:class, v-bind:alt, dan lain sebagainya. 
+Vue.js juga menyediakan shortcut untuk kita mendefinisikan v-bind di dalam <span class="caps">HTML</span> yakni dengan menghilangkan bagian v-bind nya, jadi kita bisa menggunakan shortcut seperti :title, :src, :class, :alt dan<span class="widont">&nbsp;</span>sebagainya.</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*mSVRJZ1aNZc4CAh3P697Og.png" alt="Attribute binding di Vuejs" width="602" height="116" /> <em>Attribute binding di Vuejs</em>[/caption]</p>
+<p><strong>&#x1f449; 3. Two way data<span class="widont">&nbsp;</span>binding</strong></p>
+<p>Seperti AngularJS, Vue.js juga menyediakan fitur two way data binding yang artinya setiap perubahan pada Javascript akan berpengaruh pada view <span class="caps">HTML</span> dan sebaliknya perubahan pada <span class="caps">HTML</span> view pun akan mempengaruhi atau mengubah nilai di Javascript nya.
+Di Vue.js kita menggunakan v-model untuk melakukan two way binding yang biasanya sering ditempelkan pada sebuah elemen input <span class="caps">HTML</span>, seperti gambar berikut<span class="widont">&nbsp;</span>:</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*gR8ZMoqTliJLwY7V-3prZA.png" alt="Contoh two-way data binding di Vuejs" width="602" height="116" /> <em>Contoh two-way data binding di Vuejs</em>[/caption]</p>
+<p><strong>&#x1f449; 4. Event<span class="widont">&nbsp;</span>binding</strong></p>
+<p>Untuk memanggil suatu event yang telah kita buat di Javascript, Vue.js menggunakan v-on di dalam <span class="caps">HTML</span> template diikuti hook event yang akan ditambahkan. Jadi kita bisa menggunakan berbagai variasi v-on seperti v-on:click, v-on:blur, v-on:focus, v-on:keyup dan<span class="widont">&nbsp;</span>sebagainya.</p>
+<p>[caption id=”” align=”aligncenter” width=”602”]<img src="https://cdn-images-1.medium.com/max/800/1*LhxPyR8mv0Cf5zjPf0XlRQ.png" alt="Event binding di Vuejs" width="602" height="116" /> <em>Event binding di Vuejs</em>[/caption]</p>
+<p>Vue.js menyediakan juga shortcut untuk melakukan event binding ini yakni menggunakan @, sehingga kita bisa menyingkat seperti : @click, @blur,@focus dan<span class="widont">&nbsp;</span>sebagainya.</p>
+<p>….</p>
+<p>Masih akan ada beberapa hal yang ingin saya bahas di judul ini, namun sepertinya akan saya pecah saja kedalam beberapa bagian agar lebih ringan saat<span class="widont">&nbsp;</span>membacanya.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="https://mazipan.github.io/blogs/">&laquo; Home</a></div>
+        <section class="copy">
+          <p>&copy; 2019 Irfan Maulana &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

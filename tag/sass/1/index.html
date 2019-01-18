@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>mazipanneh.com
+    <title>Irfan Maulana
     </title>
-    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana Personal Blog">
+    <link rel="alternate" href="https://mazipan.github.io/blogs/feed.xml" type="application/rss+xml" title="Irfan Maulana's Personal Blog">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="https://mazipan.github.io/blogs/css/main.css">
   </head>
@@ -14,8 +14,8 @@
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
-          <h1><a href="https://mazipan.github.io/blogs">mazipanneh.com</a></h1>
-          <p class="description">Irfan Maulana Personal Blog</p>
+          <h1><a href="https://mazipan.github.io/blogs">Irfan Maulana</a></h1>
+          <p class="description">Irfan Maulana's Personal Blog</p>
         </div>
       </div>
     </header>
@@ -27,127 +27,72 @@
             <h2><a href="https://mazipan.github.io/blogs/articles/membuat-popup-modal-sederhana/">Membuat Popup Modal Sederhana</a></h2>
           </header>
           <section class="content"><p><img src="https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/316_modal/final.png" alt="Membuat Popup Modal Sederhana"></p>
-<p><strong>Membuat Popup Modal Sederhana</strong> &#8211; Popup Modal adalah jendela sembul yang muncul di sebuah aplikasi baik dengan disengaja ataupun sekarang ini banyak pula yang tanpa dilakukan perintah oleh User namun tiba-tiba muncul Popup Modal tersebut. Dalam sebuah aplikasi ataupun halaman website Popup Modal seringkali digunakan ketika kita ingin memberikan informasi ataupun meminta User melakukan sesuatu namun kita tidak ingin User kita meninggalkan halaman yang sedang dikunjunginya sekarang. Salah satu praktek yang seringkali digunakan adalah untuk membuat form Log-in Register, dimana biasanya menggunakan Popup Modal Sebagai penampung<span class="widont">&nbsp;</span>nya.</p>
-<p>Tentu ada banyak alternatif diluar sana untuk membuat sebuah Popup Modal, dari yang sederhana, yang mainstream, sampai yang kompleks secara fungsi maupun tampilan. Salah satu yang sering kalian gunakan mungkin Bootstrap Modal, ya karena memang framework ini salah satu yang paling mainstream di kalangan web developer. Namun kali ini kita akan coba belajar bagaimana membuat sebuah Popup Modal Sederhana dengan cara yang semoga juga masih mudah untuk kalian ikuti dan pelajari. Bukan berarti <a href="https://mazipanneh.com/blog/2017/05/sisi-gelap-bootstrap-css/?nonamp=1" target="_blank">Saya tidak suka Bootstrap</a>, saya hanya suka untuk membuat sesuatu lebih sederhana, Kita semua tau lah Bootstrap keren dan mudah<span class="widont">&nbsp;</span>digunakan. </p>
-<p>Oke, kita mulai saja Membuat Popup Modal Sederhana nya, silahkan ikuti<span class="widont">&nbsp;</span>ya&#8230;</p>
-<p>Pertama kita coba buat <code>block</code> untuk modal nya, kode ini saya coba ikuti dari bagaimana Bootstrap membuat modal nya namun coba disederhanakan dan pastinya dibuat lebih <span class="caps">BEM</span> biar lebih nyaman di hati, berikut contoh kodenya<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;div id=&quot;modalPlain&quot; class=&quot;modal&quot; role=&quot;modal&quot;&gt;
-  &lt;div class=&quot;modal__content&quot;&gt;
-    &lt;div class=&quot;modal__header&quot;&gt;
-      &lt;span class=&quot;modal__close&quot;&gt;&amp;times;&lt;/span&gt;
-      &lt;h2&gt;Modal Header&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal__body&quot;&gt;
-      &lt;p&gt;Some text in the Modal Body&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal__footer&quot;&gt;
-      &lt;h3&gt;Modal Footer&lt;/h3&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre><p>Masih terlihat mudah kan ? kita belum beri <span class="caps">CSS</span> pada <code>block</code> tersebut, tapi mudahnya saya coba jelaskan kita membuat <code>div</code> dengan id yang didefinisikan tambah class <code>modal</code> sebagai parent nya, lantas dibawahnya ada class <code>modal__content</code> yang merupakan penampung dari konten modal kita, dibawahnya ada 3 bagian yakni header, body dan footer yang biasanya ada di setiap Popup Modal terutama<span class="widont">&nbsp;</span>Bootstrap. </p>
-<p>Setelah membuat block <code>modal</code> diatas, waktunya memberikan sentuhan style pada block tersebut agar lebih cantik. Seperti biasa saya prefer menggunakan <span class="caps">SCSS</span> syntax, bagi yang masih bingung bisa baca <a href="https://mazipanneh.com/blog/2017/04/mengenal-dan-belajar-sass-sebagai-css-pre-processor/?nonamp=1" target="_blank">Pengenalan <span class="caps">SASS</span></a> terlebih dahulu. Berikut contoh potongan kodenya<span class="widont">&nbsp;</span>: </p>
-<pre><code>.modal
-{
-    display: none; 
-    position: fixed; 
-    z-index: 999; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4);   
-
-    &amp;__header{        
-        padding: 2px 16px;      
-    }
-
-    &amp;__content {
-        position: relative;
-        background-color: $white;
-        margin: 15% auto;
-        padding: 0;
-        width: 80%;
-
-        box-shadow : 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); 
-
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s;
-
-    } 
-
-    &amp;__body {
-        padding: 2px 16px;
-    }
-
-    &amp;__footer {
-        padding: 2px 16px;
-    }
-
-    &amp;__close {
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        color: $grey;
-        cursor: pointer;
-        text-decoration: none;
-
-        &amp;:hover, &amp;:focus {
-            text-decoration: none;
-        }
-    }
-}
-
-@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0} 
-    to {top: 0; opacity: 1}
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}</code></pre><p>Dengan kode <span class="caps">SASS</span> diatas mungkin kita tidak bisa melihat hasilnya, karena sudah ada rule <code>display: none;</code> di class <code>.modal</code>, maka untuk mengetesnya tinggal coba dihapus terlebih dahulu rule tersebut. Pastikan tampilan Popup Modal sudah sesuai dengan yang kalian<span class="widont">&nbsp;</span>harapkan. </p>
-<p>Oh iya kode <span class="caps">SASS</span> tersebut sudah menggunakan variabel colors punya saya jadi mungkin akan error di tempat Anda, jadi silahkan ganti variabel $white dan $grey dengan hex yang sebenarnya atau gampangnya ganti dengan warna solid white dan grey<span class="widont">&nbsp;</span>saja. </p>
-<p>Sampai langkah kedua, kita sebenarnya udah berhasil membuat Popup Modal kita dengan cepat. Langkah selanjutnya yang perlu dipikirkan adalah switch rule di dalam class <code>.modal</code> yang tadinya <code>display: none;</code> menjadi <code>display: block;</code>. Perlu dipikirkan juga bagaimana cara trigger agar membuka modal<span class="widont">&nbsp;</span>ini.</p>
-<p>Belajar dari Bootstrap, biasanya untuk mentrigger Modal di Bootstrap Kita bisa menggunakan kode<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModalLong&quot;&gt;
-  Launch demo modal
-&lt;/button&gt;</code></pre><p>Bila dilihat, mereka menambahkan attribute <code>data-toggle=&quot;modal&quot;</code> serta <code>data-target=&quot;modal_id_target&quot;</code>, kita bisa buat mirip seperti ini, namun dengan cara yang berbeda. Berikut contoh kode nya<span class="widont">&nbsp;</span>:</p>
-<pre><code>&lt;button class=&quot;button button--blue&quot; data-show=&quot;modal&quot; data-target=&quot;modalPlain&quot;&gt;
-  Open Modal 
-&lt;/button&gt;
-&lt;/p&gt; </code></pre><p>Dan terakhir yang akan kita buat adalah Javascript function yang akan men-switch class modal agar bisa hide/show dengan lancar serta mencari modal mana yang seharusnya ditampilkan ketika di trigger dari suatu<span class="widont">&nbsp;</span>element.</p>
-<p>Berikut contoh kode sederhana nya<span class="widont">&nbsp;</span>:</p>
-<pre><code>var triggerBtn = $(&#39;[data-show=modal]&#39;).click(function(event){
-        var modalId = $(this).attr(&#39;data-target&#39;);        
-        $(&#39;#&#39; + modalId).show();
-    });
-
-    $(&#39;.modal__close&#39;).click(function(event){        
-        $(this).parents(&#39;.modal&#39;).hide();
-    });
-
-    $(window).click(function(event){
-        if (event.target.className === &#39;modal&#39;) {
-            $(event.target).hide();
-        }
-    });</code></pre><p>Setelahnya kita juga perlu menambahkan fungsi sederhana untuk hide/show lewat Javascript, karena siapa tau ada yang ingin trigger tanpa lewat definisi di elemen tersebut kan. Berikut kode sederhananya<span class="widont">&nbsp;</span>:</p>
-<pre><code>function modalShow(modalId){
-    $(&#39;#&#39; + modalId).show();
-}
-
-function modalHide(modalId){
-    $(&#39;#&#39; + modalId).hide();
-}</code></pre><p>Sayangnya fungsi yang kita buat masih jQuery dependent, tapi bila ada masukan mungkin bisa dicoba cara yang lebih sederhana menggunakan VanillaJS saja. Ini saya buat menggunakan jQuery karena saya terlalu malas.<span class="widont">&nbsp;</span>&#x1f647;&#x1f647;&#x1f647; </p>
-<p>Semua kode dalam artikel kali ini saya ambil dari framework kesayangan saya <a href="https://github.com/mazipan/bem-kit" target="_blank"><span class="caps">BEM</span>-Kit</a>. Anda bisa melihat cheatsheet mengenai modal pada <a href="https://github.com/mazipan/bem-kit/wiki/Cheatsheets#modal" target="_blank">halaman ini</a>, kalau penasaran dengan hasilnya bisa juga dilihat dari halaman demo <a href="https://mazipan.github.io/bem-kit/demo/#modal" target="_blank">disini</a>.</p>
-<p>Demikian sharing Sederhana mengenai membuat Popup Modal Sederhana. Semoga bermanfaat<span class="widont">&nbsp;</span>ya. </p>
-<p>Ditulis oleh Irfan Maulana sambil nemenin anak<span class="widont">&nbsp;</span>tidur.</p>
-<p>Salam.</p>
-
+<p><strong>Membuat Popup Modal Sederhana</strong> - Popup Modal adalah jendela sembul yang muncul di sebuah aplikasi baik dengan disengaja ataupun sekarang ini banyak pula yang tanpa dilakukan perintah oleh User namun tiba-tiba muncul Popup Modal tersebut. Dalam sebuah aplikasi ataupun halaman website Popup Modal seringkali digunakan ketika kita ingin memberikan informasi ataupun meminta User melakukan sesuatu namun kita tidak ingin User kita meninggalkan halaman yang sedang dikunjunginya sekarang. Salah satu praktek yang seringkali digunakan adalah untuk membuat form Log-in Register, dimana biasanya menggunakan Popup Modal Sebagai penampung<span class="widont">&nbsp;</span>nya.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/membuat-popup-modal-sederhana/">more</a></p>
           </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/programming/1/">programming</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>17. April 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/membuat-variasi-button-menggunakan-sass.md/">Membuat Variasi Button Menggunakan SASS</a></h2>
+          </header>
+          <section class="content"><figure style="width: 655px" class="wp-caption aligncenter"><img src="https://i.stack.imgur.com/TdX9B.jpg" alt="Variasi Button Menggunakan SASS" width="655" height="222" /><figcaption class="wp-caption-text"><span style="color: #999999; font-size: 10pt;"><em>Contoh Variasi Button dalam Bootstrap (source : https://i.stack.imgur.com/TdX9B.jpg)</em></span></figcaption></figure> 
+
+<p><strong>Membuat Button dengan <span class="caps">SASS</span></strong> - Button merupakan salah satu kompoenen web yang sering digunakan karena fungsinya yang menunjukkan sebuah aksi yang bisa dieksekusi setelah di klik. Button diluar sana terdapat banyak sekali variasinya tergantung dari faktor kebutuhan, estetika, maupun kesenangan pengguna maupun pengembang<span class="widont">&nbsp;</span>web.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/membuat-variasi-button-menggunakan-sass.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>08. April 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/membuat-css-grid-sederhana-dengan-sass.md/">Membuat CSS Grid Sederhana dengan SASS</a></h2>
+          </header>
+          <section class="content"><figure style="width: 480px" class="wp-caption aligncenter"><img src="https://i.stack.imgur.com/F4cBF.jpg" alt="Membuat CSS Grid Sederhana dengan SASS" width="480" height="307" /><figcaption class="wp-caption-text"><span style="color: #999999;"><em>Gambaran grid layout pada sebuah halaman web</em></span></figcaption></figure> 
+
+<p><strong>Membuat <span class="caps">CSS</span> Grid</strong> - <span class="caps">CSS</span> Grid merupakan layout kumpulan class <span class="caps">CSS</span> yang digunakan untuk mengatur layout sebuah halaman website. Pada framework-framework <span class="caps">CSS</span> populer di luar sana, hampir semuanya mengakomodir kebutuhan <span class="caps">CSS</span> Grid dengan pendekatannya<span class="widont">&nbsp;</span>masing-masing.</p>
+<p><span class="caps">CSS</span> Grid biasanya membagi layout ke dalam konsep <code>row</code> dan <code>column</code>. Dimana <code>row</code> akan berfungsi seperti <code>tr</code> pada <em>table</em> <span class="caps">HTML</span>, sedangkan <code>column</code> akan berfungsi layaknya <code>td</code> pada <em>table</em><span class="widont">&nbsp;</span><span class="caps">HTML</span>.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/membuat-css-grid-sederhana-dengan-sass.md/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>06. April 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/styling-checkbox-menggunakan-sass/">Styling checkbox menggunakan SASS</a></h2>
+          </header>
+          <section class="content"><img width="469" height="313" alt="Styling checkbox menggunakan SASS" src="http://www.telerik.com/clientsfiles/a4289618-7f81-403e-977c-60d07326b9a5_checkbox.png?sfvrsn=0" title="" class="aligncenter size-custom" />
+
+<p><strong>Membuat Checkbox dengan <span class="caps">SASS</span></strong> - Bila pada tulisan sebelumnya&nbsp;<a href="https://mazipanneh.com/blog/2017/03/memberi-style-css-sederhana-pada-radio-button/">disini</a>&nbsp;kita sudah&nbsp;bahas mengenai sedikit eksperimen kita dalam memberikan Style pada komponen input radio, maka kali ini kita akan coba ber-eksperimen lagi dengan komponen lainnya dan saya memilih komponen input dengan type checbox atau kita sebut saja sebagai<span class="widont">&nbsp;</span>checkbox.&nbsp;</p>
+<p>Bosan ? semestinya sih kalau lagi dalam tahap belajar tidak boleh bosan ya, karena learning by doing masih jadi cara yang paling baik buat belajar koding. Jadi ya, sabar ya dan silahkan disimak langkah-langkahnya sebagai berikut<span class="widont">&nbsp;</span>:</p>
+<p>Pertama, kita akan siapkan seperti biasa <span class="caps">HTML</span> dasar yang nantinya akan kita beri style. Sederhana saja cuma definisikan input dengan <em>type=”checkbox”_, kita buat saja 3 varian seperti sebelumnya dengan 1 kita buat sebagai input yang _disable</em> atau tidak dapat dipilih oleh pengguna. Berikut kurang lebih kode <span class="caps">HTML</span> yang kita buat<span class="widont">&nbsp;</span>:</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/styling-checkbox-menggunakan-sass/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>05. April 2017</span></p>
+            <h2><a href="https://mazipan.github.io/blogs/articles/mengenal-dan-belajar-sass-sebagai-css-pre-processor/">Mengenal dan Belajar SASS Sebagai CSS Pre-Processor</a></h2>
+          </header>
+          <section class="content"><img class="aligncenter" src="http://wiseheartdesign.com/images/articles/sass-lang.png" alt="Mengenal dan Belajar SASS Sebagai CSS Pre-Processor" />
+
+<p><strong>Mengenal <span class="caps">SASS</span></strong>, <strong>Belajar <span class="caps">SASS</span></strong> - Sudah tau <strong><span class="caps">SASS</span></strong> ? Yap hari ini kita akan belajar dan mengenal <span class="caps">SASS</span> sebagai salah satu vendor <span class="caps">CSS</span> Pre-processor yang tersedia di pasaran. Artikel ini ditujukan untuk yang sudah paham dengan <span class="caps">CSS</span>, bila Anda merasa masih terlalu awam dengan <span class="caps">CSS</span> mungkin <a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">artikel ini</a> akan membantu Anda memahami<span class="widont">&nbsp;</span><span class="caps">CSS</span>.</p>
+<p>Pre-processor sendiri merupakan extend dari <span class="caps">CSS</span>, dimana ketika kita ngoding <span class="caps">CSS</span> kita biasa berkutat dengan bahasa yang sudah harus matang dan tidak boleh ada proses lagi bagi browser untuk memahami nya, ini yang membuat kita tidak bisa menanamkan <em>logic</em> seperti perulangan, peng-kondisian, ataupun pemakaian kembali kode yang ada. Dari sinilah lahir berbagai pre-processor untuk <span class="caps">CSS</span>, termasuk <span class="caps">SASS</span> itu<span class="widont">&nbsp;</span>sendiri.</p>
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/mengenal-dan-belajar-sass-sebagai-css-pre-processor/">more</a></p>
+          </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
         </article>
         <article class="article intro">
           <header>
@@ -158,32 +103,11 @@ function modalHide(modalId){
 
 <p>Pernahkan Anda melihat komponen input dengan tipe Radio standard yang di sajikan oleh <span class="caps">HTML</span> ? Betapa tidak enaknya dipandang mata bukan ? Maka sekarang kita akan coba memberikan sentuhan sederhana kita agar tampilan input dengan tipe Radio ini lebih nyaman untuk dilihat<span class="widont">&nbsp;</span>mata.</p>
 <p>Pertama, kita akan coba buat elemen <span class="caps">HTML</span> radio kita dan coba saja kita lihat apa yang ditampilkan oleh browser kita apabila tidak ada satupun style yang berada disana, berikut potongan kode <span class="caps">HTML</span> nya<span class="widont">&nbsp;</span>:</p>
-<div class="gist-oembed" data-gist="mazipan/064088c71371de3ed8e7150e611b0b1b.json">
-</div>
-
-<p>Dengan kode tersebut, akan menghasilkan tampilan seperti berikut<span class="widont">&nbsp;</span>:</p>
-<figure style="width: 191px" class="wp-caption aligncenter"><img src="https://cdn-images-1.medium.com/max/800/1*uyIFVh7aFFk0WHsg8nXEbA.png" alt="Radio Button Standard" width="191" height="24" /><figcaption class="wp-caption-text"><span style="color: #999999;"><em>Radio Button Standard</em></figcaption></figure></span>
-
-<p>Bila Anda kesulitan memahami kode <span class="caps">HTML</span> tersebut Anda mungkin perlu membaca tulisan ini dahulu&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/">Perjalanan Menjadi Frontend Developer Bagi Pemula – Seri 1 – Mengenal<span class="widont">&nbsp;</span><span class="caps">HTML</span></a>.</p>
-<!--more-->
-
-<p>Untuk memberikan sentuhan baru pada komponen ini, maka kita perlu menambahkan beberapa rule <span class="caps">CSS</span> kepada potongan kode <span class="caps">HTML</span> tersebut. Namun karena kita kan banyak mengulang kata-kata class utama yang akan kita beri style jadi saya memilih menggunakan pre-processor <span class="caps">SASS</span> agar membantu memudahkan dalam menulis style tersebut, bila Anda belum tau apa itu <span class="caps">SASS</span> silahkan baca dulu artikel berikut&nbsp;<a href="https://mazipanneh.com/blog/2017/04/mengenal-dan-belajar-sass-sebagai-css-pre-processor/">Mengenal&nbsp;dan Belajar <span class="caps">SASS</span> Sebagai <span class="caps">CSS</span><span class="widont">&nbsp;</span>Pre-Processor.</a></p>
-<p>Langsung saja, saya telah membuat gist untuk kode <span class="caps">SASS</span> yang akan memberikan style pada elemen <span class="caps">HTML</span> kita diatas. Silahkan dibaca, dipelajari dan dimodifikasi seenak Anda sesuai dengan kebutuhan masing-masing. Anda bisa temui kodenya seperti berikut<span class="widont">&nbsp;</span>:</p>
-<div class="gist-oembed" data-gist="mazipan/b13a1add0b1983c6357092e360ed8f5f.json?file=simple-styling-radios.scss">
-</div>
-
-<p>Tampilan dari kode diatas akan menghasilkan tampilan yang kurang lebih seperti gambar berikut<span class="widont">&nbsp;</span>:</p>
-<figure style="width: 275px" class="wp-caption aligncenter"><img src="https://cdn-images-1.medium.com/max/800/1*RMQD11Vh2eqfTe3hP94gUw.png" alt="Radio Button Setelah diberi CSS" width="275" height="32" /><figcaption class="wp-caption-text"><span style="color: #999999;"><em>Radio Button Setelah diberi <span class="caps">CSS</span></em></figcaption></figure></span>
-
-<p>Pada intinya kita memanipulasi psedo element <strong>:before</strong> dan <strong>:after</strong> dari label input Radio tersebut dan menggantinya dengan border solid 1px yang ditambah border radius 50% agar menjadi lingkaran, kita juga menambahkan state di psedo class <strong>:checked</strong> untuk membedakan ketika radio tersebut sedang dalam keadaan terpilih dan<span class="widont">&nbsp;</span>tidak.</p>
-<p>Selamat belajar ya, bila Anda pemula dan susah memahami beberapa istilah yang saya sebutkan diatas Anda mungkin perlu membaca tulisan ini terlebih dahulu&nbsp;<a href="https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-2-mengenal-css/">Perjalanan Menjadi Frontend Developer Bagi Pemula – Seri 2 – Mengenal<span class="widont">&nbsp;</span><span class="caps">CSS</span></a>.</p>
-<p>Anda juga bisa melihat live preview dari pekerjaan tersebut <a href="https://codepen.io/mazipan/pen/ryQZON" target="_blank">disini</a>.</p>
-<p>Telah di posting juga di medium saya <a href="https://medium.com/@mazipanneh/sass-untuk-styling-sederhana-radio-1aaef180f62c" target="_blank">disini</a>.</p>
-<p>Download Ebook Programming&nbsp;<a href="https://mazipanneh.com/blog/download-ebook-programming/">disini</a></p>
-<p>Terima kasih,</p>
-<p>Ditulis sesaat sebelum pulang kerja oleh Irfan<span class="widont">&nbsp;</span>Maulana</p>
-
+<p>
+            <p class="more"><a href="https://mazipan.github.io/blogs/articles/memberi-style-css-sederhana-pada-radio-button/">more</a></p>
           </section>
+          <div class="article__tags">  <span><i class="fa fa-tags"> </i></span> Tags :  <a href="https://mazipan.github.io/blogs/tag/css/1/">css</a><a href="https://mazipan.github.io/blogs/tag/frontend/1/">frontend</a><a href="https://mazipan.github.io/blogs/tag/sass/1/">sass</a>
+          </div>
         </article>
       </div>
     </div>
