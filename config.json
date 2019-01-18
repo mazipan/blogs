@@ -2,9 +2,15 @@
   "locals": {
     "baseUrl": "/blogs",
     "url": "https://mazipan.github.io/blogs",
-    "name": "mazipanneh.com",
+    "name": "Irfan Maulana",
     "owner": "Irfan Maulana",
-    "description": "Irfan Maulana Personal Blog"
+    "description": "Irfan Maulana's Personal Blog",
+    "social": {
+      "github": "https://github.com/mazipan",
+      "facebook": "https://www.facebook.com/mazipanneh",
+      "twitter": "https://twitter.com/Maz_Ipan",
+      "linkedin": "https://www.linkedin.com/in/irfanmaulanamazipan"
+    }
   },
   "plugins": [
     "./plugins/paginator.coffee",

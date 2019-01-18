@@ -1,6 +1,6 @@
 ---
 id: 241
-title: 'Php Indonesia Technology Update And Trend 2016 &#8211; II'
+title: 'Php Indonesia Technology Update And Trend 2016 - II'
 date: 2017-05-06T12:44:42+00:00
 author: Irfan Maulana
 layout: page
@@ -12,7 +12,7 @@ ampforwp_custom_content_editor_checkbox:
 ampforwp-amp-on-off:
   - hide-amp
 ---
-**Php Indonesia Technology Update And Trend 2016 &#8211; II** merupakan acara yang diadakan oleh komunitas PHP Indonesia di kantor Microsoft Indonesia pada 26 Maret 2016 yang lalu.
+**Php Indonesia Technology Update And Trend 2016 - II** merupakan acara yang diadakan oleh komunitas PHP Indonesia di kantor Microsoft Indonesia pada 26 Maret 2016 yang lalu.
 
 Acara ini sendiri bertujuan untuk memberikan update perkembangan teknologi yang ada diluar sana, selain juga jadi ajang meetup dan berkumpul secara offline bagi para member yang mengikuti acara tersebut.
   

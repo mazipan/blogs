@@ -12,7 +12,7 @@ ampforwp_custom_content_editor_checkbox:
 ampforwp-amp-on-off:
   - hide-amp
 ---
-**Ebook Pengenalan Framework Angular Bagi Pemula** &#8211; Ebook ini membahas mengenai framework Angular Versi 2 keatas, didalamnya terdapat penjelasan bagi mereka yang baru belajar Angular. Ebook ini berisi langkah-langkah disertai contoh kode dalam membuatnya. Disajikan dalam bahasa Indonesia yang ditujukan bagi developer Indonesia yang ingin belajar Angular namun terkendala dengan minimnya resource dalam bahasa Indonesia. <figure id="attachment_72" style="width: 359px" class="wp-caption aligncenter">
+**Ebook Pengenalan Framework Angular Bagi Pemula** - Ebook ini membahas mengenai framework Angular Versi 2 keatas, didalamnya terdapat penjelasan bagi mereka yang baru belajar Angular. Ebook ini berisi langkah-langkah disertai contoh kode dalam membuatnya. Disajikan dalam bahasa Indonesia yang ditujukan bagi developer Indonesia yang ingin belajar Angular namun terkendala dengan minimnya resource dalam bahasa Indonesia. <figure id="attachment_72" style="width: 359px" class="wp-caption aligncenter">
 
 [<img class="wp-image-72 size-full" title="Cover Ebook Pengenalan Framework Angular Bagi Pemula" src="https://mazipan.github.io/wp-contents/images/ebook-pengenalan-framework-angular-2-bagi-pemula-mazipanneh.com.PNG" alt="Cover Ebook Pengenalan Framework Angular Bagi Pemula" width="359" height="479" />](https://mazipanneh.com/blog/download-ebook-programming/)<figcaption class="wp-caption-text"><span style="font-size: 10pt; color: #999999;"><em>Cover Ebook Pengenalan Framework Angular Bagi Pemula</em></span></figcaption></figure> 
 

@@ -10,11 +10,13 @@ template: article.pug
 
 <img class="aligncenter" src="https://4.bp.blogspot.com/-bSC70QFZkuI/Vuww_pDfYWI/AAAAAAAAG9E/qyILtW2DIQQNAL6perYoxoMsU1bYnMSFQ/s640/css-introduction.png" alt="Mengenal CSS" />
 
-**Mengenal CSS** &#8211; Setelah seri 1 [membahas HTML](https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/), pada seri kedua kali ini saya akan membahas mengenai CSS dasar.
+**Mengenal CSS** - Setelah seri 1 [membahas HTML](https://mazipanneh.com/blog/2017/03/perjalanan-menjadi-frontend-developer-bagi-pemula-seri-1-mengenal-html/), pada seri kedua kali ini saya akan membahas mengenai CSS dasar.
    
 Sekali lagi saya mengingatkan bahwa tulisan ini adalah rangkaian untuk memberikan pengetahuan dasar bagi mereka yang pemula yang ingin belajar dan mengetahui dasar untuk menjadi Frontend Developer.
 
 Berikut bahasan mengenai CSS, silahkan disimak.
+
+<span class="more"></span>
 
 &nbsp;
 

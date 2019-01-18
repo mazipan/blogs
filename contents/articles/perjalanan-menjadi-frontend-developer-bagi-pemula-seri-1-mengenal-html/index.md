@@ -8,13 +8,15 @@ template: article.pug
 ---
 <img class="aligncenter" src="https://d3rj1gznkm47xj.cloudfront.net/6c91737b-715e-4c59-aad0-b947bb097907.png" alt="Mengenal HTML" />
 
-**Mengenal HTML** &#8211; Web developer kini bisa dipisahkan ke dalam 2 spesialisasi yakni Backend dan Frontend developer. Dalam post ini kita akan membahas beberapa pengetahuan dasar untuk menjadi Frontend developer.&nbsp;
+**Mengenal HTML** - Web developer kini bisa dipisahkan ke dalam 2 spesialisasi yakni Backend dan Frontend developer. Dalam post ini kita akan membahas beberapa pengetahuan dasar untuk menjadi Frontend developer.&nbsp;
 
 Pada postingan pertama saya akan membahas pengetahuan dasar mengenai HTML, kenapa dimulai dari HTML ? Tentu saja karena HTML menjadi dasar bagi semua web developer dan saya ingin membahas dari hal yang mendasar karena memang target dari post ini adalah mereka yang benar-benar pemula dan ingin belajar mengenai web development terutama di sisi Frontend.
 
 **
    
 ** 
+
+<span class="more"></span>
 
 **Apa itu HTML ?**
 

@@ -115,7 +115,7 @@ Berikut open source project yang telah saya buat, sebagian besar sudah bisa An
 
 **ExtJS**
 
-  1. **ExtJS &#8211; TNMD**
+  1. **ExtJS - TNMD**
   
     Merupakan contoh dashboard monitoring menggunakan framework ExtJS di pandu dengan javascript library untuk charting FusionChart.
   
@@ -146,7 +146,7 @@ Berikut open source project yang telah saya buat, sebagian besar sudah bisa An
     
   
     Link : <https://github.com/mazipan/lightweight-admin-template>
-  3. **CSS Framework &#8211; BEM-Kit**
+  3. **CSS Framework - BEM-Kit**
   
     Merupakan CSS Framework yang dibuat menggunakan aturan dari BEM CSS. Dibuat menggunakan SASS dan mengimplementasikan _silent extend_ sehingga bisa digunakan hanya bagian yang dibutuhkan saja.
   

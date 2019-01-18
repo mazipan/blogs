@@ -1,6 +1,6 @@
 ---
 id: 292
-title: 'UNTAG &#8211; Seminar Teknologi &#8211; Technofest 2017'
+title: 'UNTAG - Seminar Teknologi - Technofest 2017'
 date: 2017-05-18T14:21:27+00:00
 author: Irfan Maulana
 layout: page

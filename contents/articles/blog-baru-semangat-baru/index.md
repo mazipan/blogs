@@ -13,6 +13,8 @@ Saya sudah menulis blog sejak 2011-an, waktu itu jaman-jaman masih kuliah. Jaman
    
 Namun ya seperti biasa, saya hanya menulis jika sedang ingin saja dan saya rasa sudah lama sejak post terakhir saya publish. Belum lama ini saya coba menulis di Blog yang self hosted, tujuannya biar bisa lebih advance lagi seperti atur SEO, bisa lebih di customize blog nya dan yang penting biar ada semangat baru buat nulis dengan adanya Blog baru ini, Blog Baru Semangat Baru.
 
+<span class="more"></span>
+
 Blog ini masih setia dengan platform WordPress yang sudah sangat familiar dengan saya selama beberapa tahun belakangan. Mungkin karena saya juga bisanya cuma platform ini dan menurut saya sendiri lumayan enak dan mudah untuk digunakan apalagi bagi mereka yang baru memulai Blogging.
 
 Dan akhirnya selamat datang di Blog saya, semoga kedepannya bisa mulai menulis lagi hal-hal yang bermanfaat, semoga dengan Blog baru ini akan ada gairah baru dalam berbagi ilmu pengetahuan kepada yang lain, Blog Baru Semangat Baru.

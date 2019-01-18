@@ -1,6 +1,6 @@
 ---
 id: 378
-title: 'UNSADA &#8211; DevTalk 2'
+title: 'UNSADA - DevTalk 2'
 date: 2017-06-21T08:54:08+00:00
 author: Irfan Maulana
 layout: page

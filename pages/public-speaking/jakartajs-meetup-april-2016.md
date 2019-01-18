@@ -14,7 +14,7 @@ ampforwp-amp-on-off:
 ---
 ![JakartaJS](https://i1.wp.com/i1176.photobucket.com/albums/x322/mazipanneh/jakarta-js_zpshwswgdfg.png?zoom=2)
 
-**JakartaJS Meetup April 2016** &#8211; JakartaJS adalah komunitas javascript di Jakarta. Komunitas yang mempunyai kegiatan meetup rutin setiap bulan dengan bahasan yang meliputi javascript dan berbagai technology disekitarnya.
+**JakartaJS Meetup April 2016** - JakartaJS adalah komunitas javascript di Jakarta. Komunitas yang mempunyai kegiatan meetup rutin setiap bulan dengan bahasan yang meliputi javascript dan berbagai technology disekitarnya.
 
 
 

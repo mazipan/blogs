@@ -3,6 +3,8 @@ const log = require('console-emoji');
 const opn = require('opn');
 
 let env = wintersmith('./config.json');
+
+env.locals.url = ''
 // preview
 env.preview(function(error, server) {
   if (error) throw error;

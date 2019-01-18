@@ -2,10 +2,7 @@
 title: Memberi style CSS sederhana pada Radio Button
 date: 2017-03-31T10:24:37+00:00
 author: Irfan Maulana
-categories:
-  - CSS
-  - Frontend
-  - Programming
+categories: CSS, Frontend, Programming
 tags: css, frontend, sass
 template: article.pug
 
@@ -15,6 +12,8 @@ template: article.pug
 Pernahkan Anda melihat komponen input dengan tipe Radio standard yang di sajikan oleh HTML ? Betapa tidak enaknya dipandang mata bukan ? Maka sekarang kita akan coba memberikan sentuhan sederhana kita agar tampilan input dengan tipe Radio ini lebih nyaman untuk dilihat mata.
 
 Pertama, kita akan coba buat elemen HTML radio kita dan coba saja kita lihat apa yang ditampilkan oleh browser kita apabila tidak ada satupun style yang berada disana, berikut potongan kode HTML nya :
+
+<span class="more"></span>
 
 <div class="gist-oembed" data-gist="mazipan/064088c71371de3ed8e7150e611b0b1b.json">
 </div>

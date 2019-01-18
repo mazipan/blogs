@@ -17,11 +17,20 @@ block content
           p.more
             a(href=locals.url + article.url) more
 
+      div.article__tags   
+        span
+          i.fa.fa-tags  
+        | #{ ' Tags : ' } 
+        - var tags = env.helpers.getTagsFromArticle(article)
+          each tag in tags
+            if env.helpers.getTagHome(tag) !== undefined
+              a(href=locals.url+env.helpers.getTagHome(tag).url)= tag
+
 block prepend footer
   div.nav
     if prevPage
-      a(href=locals.url + prevPage.url) &laquo; Newer
+      a(href=locals.url + prevPage.url) &laquo; Prev Page
     else
       a(href=locals.url + '/archives/') &laquo; Archives
     if nextPage
-      a(href=locals.url + nextPage.url) Next page &raquo;
+      a(href=locals.url + nextPage.url) Next Page &raquo;

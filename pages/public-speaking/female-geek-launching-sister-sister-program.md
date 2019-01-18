@@ -1,6 +1,6 @@
 ---
 id: 247
-title: 'Female Geek &#8211; Launching Sister to Sister Program'
+title: 'Female Geek - Launching Sister to Sister Program'
 date: 2017-05-06T17:34:17+00:00
 author: Irfan Maulana
 layout: page

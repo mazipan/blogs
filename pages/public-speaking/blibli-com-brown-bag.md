@@ -14,7 +14,7 @@ ampforwp-amp-on-off:
 ampforwp_custom_sidebar_select:
   - none
 ---
-**Blibli.com Brown Bag** &#8211; merupakan salah satu internal technology sharing session yang diadakan oleh Blibli.com dalam rangka saling berbagi dan update tentang berbagai macam perkembangan teknologi baik yang sedang atau akan di implementasikan oleh Blibli.com technology departement.
+**Blibli.com Brown Bag** - merupakan salah satu internal technology sharing session yang diadakan oleh Blibli.com dalam rangka saling berbagi dan update tentang berbagai macam perkembangan teknologi baik yang sedang atau akan di implementasikan oleh Blibli.com technology departement.
 
 Dalam acara ini sendiri saya ditunjuk untuk berbagi kepada teman-teman mengenai NodeJs Web Development. Berhubung saya sebelumnya juga sudah sempat menulis beberapa post mengenai NodeJs maka saya membawakan materi yang sudah saya tulis dan memindahkan ke versi slide presentation. 
 

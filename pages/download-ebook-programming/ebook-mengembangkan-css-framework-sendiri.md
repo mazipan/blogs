@@ -12,7 +12,7 @@ ampforwp_custom_content_editor_checkbox:
 ampforwp-amp-on-off:
   - hide-amp
 ---
-**Ebook Mengembangkan CSS Framework Sendiri** &#8211; Ebook ini berisi langkah-langkah dalam membuat framework CSS sendiri menggunakan SASS sebagai tools untuk membantu mempermudah kita, di dalamnya juga terdapat bagaimana setup project untuk development SASS menggunakan NodeJS dan Gruntjs sebagai task runner untuk compile kode SASS kita. Ebook ini dibuat berdasarkan framework Awesome-BEMCSS<figure id="attachment_30" style="width: 200px" class="wp-caption aligncenter">
+**Ebook Mengembangkan CSS Framework Sendiri** - Ebook ini berisi langkah-langkah dalam membuat framework CSS sendiri menggunakan SASS sebagai tools untuk membantu mempermudah kita, di dalamnya juga terdapat bagaimana setup project untuk development SASS menggunakan NodeJS dan Gruntjs sebagai task runner untuk compile kode SASS kita. Ebook ini dibuat berdasarkan framework Awesome-BEMCSS<figure id="attachment_30" style="width: 200px" class="wp-caption aligncenter">
 
 [<img class="wp-image-30 size-large" title="Ebook Mengembangkan CSS Framework Sendiri" src="https://mazipan.github.io/wp-contents/images/ebook-mengembangkan-css-framework-sendiri-mazipanneh.com.PNG" alt="Ebook Mengembangkan CSS Framework Sendiri" width="200" height="300" />](https://mazipanneh.com/blog/download-ebook-programming/)<figcaption class="wp-caption-text"><span style="font-size: 10pt; color: #999999;"><em>Cover Ebook Mengembangkan CSS Framework Sendiri</em></span></figcaption></figure> 
 

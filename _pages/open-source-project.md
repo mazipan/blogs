@@ -1,13 +1,13 @@
 ---
 ID: 2
-post_title: Open Source Project
+title: Open Source Project
 author: Irfan Maulana
 post_excerpt: ""
 layout: page
 permalink: >
   https://mazipanneh.com/blog/open-source-project/
 published: true
-post_date: 2017-03-09 15:40:19
+date: 2017-03-09 15:40:19
 ---
 <img src="http://itamchannel.com/wp-content/uploads/2014/12/opensource.jpg" alt="Open Source Project" />
 

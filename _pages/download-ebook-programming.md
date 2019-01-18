@@ -1,13 +1,13 @@
 ---
 ID: 32
-post_title: Download Ebook Programming
+title: Download Ebook Programming
 author: Irfan Maulana
 post_excerpt: ""
 layout: page
 permalink: >
   https://mazipanneh.com/blog/download-ebook-programming/
 published: true
-post_date: 2017-03-11 13:00:59
+date: 2017-03-11 13:00:59
 ---
 <strong>Download Ebook Programming</strong> yang saya buat di sela-sela waktu luang saya. Ebooknya masih sangat jauh dari bagus, namun saya berusaha menuliskan apa yang saya bisa dan saya tahu.
 

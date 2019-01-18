@@ -14,10 +14,15 @@ block header
     | #{ 'Written by ' }
     +author(page.metadata.author)
 
+  - var tagsBreadcrumb = env.helpers.getTagsFromArticle(page)
+    each tag in tagsBreadcrumb
+      if env.helpers.getTagHome(tag) !== undefined
+        a(href=locals.url+env.helpers.getTagHome(tag).url)= tag
+
 block content
   article.article
     section.content!= typogr(page.html).typogrify()
 
 block prepend footer
   div.nav
-    a(href=locals.url + contents.index.url) &laquo; Full blog
+    a(href=locals.url + contents.index.url) &laquo; Home
