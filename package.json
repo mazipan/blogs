@@ -16,7 +16,7 @@
     "medium.css": "^1.0.2",
     "moment": "^2.23.0",
     "typogr": "0.6.8",
-    "underscore": "1.9.1",
+    "underscore": "1.12.1",
     "wintersmith": "2.5.0",
     "wintersmith-i18n": "^1.0.2",
     "wintersmith-jsbundler": "0.1.0",
